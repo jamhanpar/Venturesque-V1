@@ -1,5 +1,5 @@
 {
-  "homepage": "https://jamhanpar.github.io/Venturesque/",
+  "homepage": "https://jamhanpar.github.io/Venturesque",
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
