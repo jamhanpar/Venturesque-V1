@@ -14,8 +14,13 @@ GET http://127.0.0.1:5000/api/questions
 Content-Type: application/json
 
 ### Edit a question
-
+PATCH http://127.0.0.1:5000/api/questions/608990cba163b218a682e33a
+Content-Type: application/json
 
 ### Delete a question
 DELETE http://127.0.0.1:5000/api/questions/608990cba163b218a682e33a
+Content-Type: application/json
+
+### Yelp
+GET https://api.yelp.com/v3/businesses/search
 Content-Type: application/json
