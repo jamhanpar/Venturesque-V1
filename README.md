@@ -33,5 +33,9 @@ TBD
 # How to run the test suite
 - npm install
 
-# Resources:
+# Contributors
+* James Park (Full Stack Software Engineer): https://www.linkedin.com/in/jameshansungpark/
+* Vivian Chen (UX / UI Graphic Designer): https://www.linkedin.com/in/viv-chen/
+
+# Resources
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
