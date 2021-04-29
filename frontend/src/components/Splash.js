@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import '../components/stylesheets/reset.css';
+// import '../components/stylesheets/reset.css';
 import './stylesheets/splash.css';
 
 const Splash = () => {
