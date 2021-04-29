@@ -23,6 +23,7 @@ TBD
 * Express
 
 # APIs and External Libraries
+* Yelp - restaurant recommendations
 * FreeLogoDesign.org - logos and icons
 * Unsplash.com - site images
 
@@ -31,3 +32,6 @@ TBD
 
 # How to run the test suite
 - npm install
+
+# Resources:
+* Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
