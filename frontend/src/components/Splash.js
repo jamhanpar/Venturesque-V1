@@ -9,7 +9,7 @@ const Splash = () => {
     const [friend, setFriend] = useState('');
 
     return (
-      <div class="app-container">
+      <div className="app-container">
         {/* <header>Header</header>
         <nav>Navbar</nav>
         <section>Section</section>
@@ -17,18 +17,18 @@ const Splash = () => {
         <aside>Side Menu / Article</aside>
         <footer>Footer</footer> */}
 
-        <section class="search-input">
+        <section className="search-input">
             <form>
                 <div>
-                    <label for="location">The best first date near </label>  
-                    <input type="text" id="location" placeholder='address, city, zipcode' onChange={() => setLocation()}/>
+                    <label htmlFor="location">The best first date near </label>  
+                    <input type="text" id="location" placeholder='address, city, zipcode' onChange={() => setLocation()} value={location}/>
                 </div>
                 <div>
-                    <input type="text" id="date" placeholder='date' onChange={() => setDate()}/>
+                    <input type="text" id="date" placeholder='date' onChange={() => setDate()} value={date}/>
                 </div>
                 <div>
-                    <label for="friend">with </label>
-                    <input type="text" id="friend" placeholder='friend' onChange={() => setFriend()}/>
+                    <label htmlFor="friend">with </label>
+                    <input type="text" id="friend's email" placeholder='friend' onChange={() => setFriend()} value={friend}/>
                 </div>
             </form>
         </section>
