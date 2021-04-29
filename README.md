@@ -40,4 +40,5 @@ TBD
 * Vivian Chen (UX / UI Graphic Designer): https://www.linkedin.com/in/viv-chen/
 
 # Resources
+* React App Github Page Deployment Documentation: https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3

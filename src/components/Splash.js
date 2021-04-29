@@ -30,6 +30,9 @@ const Splash = () => {
                     <label htmlFor="friend">with </label>
                     <input type="text" id="friend's email" placeholder='friend' onChange={() => setFriend()} value={friend}/>
                 </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </section>
       </div>
