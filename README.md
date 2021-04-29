@@ -13,6 +13,8 @@ TBD
 * React.js 17.0.1
 * Redux.js 4.0.5
 * Node v10.13.0
+* Node Sass v5.0.0
+* Axios 0.21.1
 * Heroku
 
 # Languages / Libraries
