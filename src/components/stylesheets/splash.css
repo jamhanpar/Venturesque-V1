@@ -1,7 +1,7 @@
 /* front page user input form */
 .search-input {
     /* border: 1px solid black; */
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -9,17 +9,17 @@
 }
 
 form {
-    border: 1px solid black;
+    width: 400px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: flex-start;
 }
 
-form div {
-    padding: 5px;
-}
-
-button {
-    text-align: center;
+.search-input-item {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
 }

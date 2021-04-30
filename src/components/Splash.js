@@ -8,6 +8,15 @@ const Splash = () => {
     const [date, setDate] = useState("");
     const [friend, setFriend] = useState('');
 
+    const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+            return [...document.querySelectorAll(el)]
+        } else {
+            return document.querySelector(el)
+        }
+    }
+
     return (
       <div className="app-container">
         {/* <header>Header</header>
@@ -19,18 +28,18 @@ const Splash = () => {
 
         <section className="search-input">
             <form>
-                <div>
-                    <label htmlFor="location">The best first date near </label>  
+                <div className="search-input-item">
+                    <label htmlFor="location">The best first date near</label>    
                     <input type="text" id="location" placeholder='address, city, zipcode' onChange={() => setLocation()} value={location}/>
                 </div>
-                <div>
+                <div className="search-input-item">
                     <input type="text" id="date" placeholder='date' onChange={() => setDate()} value={date}/>
                 </div>
-                <div>
+                <div className="search-input-item">
                     <label htmlFor="friend">with </label>
                     <input type="text" id="friend's email" placeholder='friend' onChange={() => setFriend()} value={friend}/>
                 </div>
-                <div>
+                <div className="search-input-item">
                     <button type="submit">Submit</button>
                 </div>
             </form>
