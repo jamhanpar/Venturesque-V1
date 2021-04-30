@@ -19,13 +19,7 @@ const Splash = () => {
 
     return (
       <div className="app-container">
-        {/* <header>Header</header>
-        <nav>Navbar</nav>
-        <section>Section</section>
-        <article>Article</article>
-        <aside>Side Menu / Article</aside>
-        <footer>Footer</footer> */}
-
+        {/* <nav>Navbar</nav> */}
         <section className="search-input">
             <form>
                 <div className="search-input-item">
@@ -44,6 +38,7 @@ const Splash = () => {
                 </div>
             </form>
         </section>
+        {/* <footer>Footer</footer> */}
       </div>
     );
 }
