@@ -5,11 +5,11 @@ import './App.css';
 // Components
 import { Nav } from './components/Navbar';
 
-// Routes
+// Pages
 import Splash from './components/Splash.jsx';
+import PageNotFound from './pages/PageNotFound';
 import { LoginSignup } from './pages/LoginSignup';
 import { Results } from './pages/Results';
-import PageNotFound from './pages/PageNotFound';
 
 const routes = {
   '/': () => <Splash />,
