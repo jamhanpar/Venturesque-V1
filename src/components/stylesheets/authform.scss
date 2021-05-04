@@ -1,7 +1,6 @@
 @import './fonts.scss';
 
 .auth-form-container {
-    /* border: 1px solid black; */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -10,8 +9,17 @@
     align-items: center;
 }
 
-.auth-form-container h1 {
-    font-family: $sourceSansPro;
+.auth-form {
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-form h1 {
+    font-family: $sourceSansProBlack;
     font-size: 24px;
     font-weight: bold;
 }

@@ -31,21 +31,23 @@ export const AuthForm = ({ toggle }) => {
 
     return (
         <div className='auth-form-container'>
-            <h1>{ toggle === 'signup' ? 'Sign up for Venturesque' : 'Log In to Venturesque' }</h1>
-            <p>{ toggle === 'signup' ? '& start saving your preferences and your favorite spots!' : 'new to Venturesque? Sign up!' }</p>
-            <form onSubmit={onSubmit}>
-                { toggleForm() }
-                <div className='email-item'>
-                    <input type='email' id='email' placeholder='email' onChange={() => setEmail()} value={email}/>
-                </div>
-                <div className='password-input-item'>
-                    <input type='password' id='password' placeholder='password' onChange={() => setPassword()} value={password}/>
-                </div>
-                <div className='submit-input-item'>
-                    <button type='submit'>{ toggle === 'login' ? 'Log In' : 'Sign Up' }</button>
-                </div>
-            </form>
-            { toggleFormLinks() }
+            <div className="auth-form">
+                <h1>{ toggle === 'signup' ? 'Sign up for Venturesque' : 'Log In to Venturesque' }</h1>
+                <p>{ toggle === 'signup' ? '& start saving your preferences and your favorite spots!' : 'new to Venturesque? Sign up!' }</p>
+                <form onSubmit={onSubmit}>
+                    { toggleForm() }
+                    <div className='email-item'>
+                        <input type='email' id='email' placeholder='email' onChange={() => setEmail()} value={email}/>
+                    </div>
+                    <div className='password-input-item'>
+                        <input type='password' id='password' placeholder='password' onChange={() => setPassword()} value={password}/>
+                    </div>
+                    <div className='submit-input-item'>
+                        <button type='submit'>{ toggle === 'login' ? 'Log In' : 'Sign Up' }</button>
+                    </div>
+                </form>
+                { toggleFormLinks() }
+            </div>
         </div>
     )
 }
