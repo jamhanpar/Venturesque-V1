@@ -39,6 +39,7 @@ TBD
 * James Park (Full Stack Software Engineer): https://www.linkedin.com/in/jameshansungpark/
 * Vivian Chen (UX / UI Graphic Designer): https://www.linkedin.com/in/viv-chen/
 
-# Resources
+# Tools / Libraries / Resources
 * React App Github Page Deployment Documentation: https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
+* Google Fonts API: https://developers.google.com/fonts/docs/getting_started
