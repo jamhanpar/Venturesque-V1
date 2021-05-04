@@ -1,19 +1,20 @@
 import { Provider } from 'react-redux';
-// import { HashRouter, Switch, Route } from 'react-router-dom';
 import { useRoutes } from 'hookrouter';
 import './App.css';
 
+// Components
 import { Nav } from './components/Navbar';
-import { Home } from './pages/Home';
+
+// Routes
 import Splash from './components/Splash.jsx';
 import { LoginSignup } from './pages/LoginSignup';
-// import Results from './components/Results';
+import { Results } from './pages/Results';
 import PageNotFound from './pages/PageNotFound';
 
 const routes = {
   '/': () => <Splash />,
   '/auth/:toggle': ({ toggle }) => <LoginSignup toggle={ toggle } />,
-  // '/results': () => <Results />
+  '/results': () => <Results />
 }
 
 function App({ store }) {
