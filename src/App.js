@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { useRoutes } from 'hookrouter';
-import './App.css';
+import './App.scss';
 
 // Components
 import { Nav } from './components/Navbar';

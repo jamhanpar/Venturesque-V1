@@ -43,3 +43,4 @@ TBD
 * React App Github Page Deployment Documentation: https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
 * Google Fonts API: https://developers.google.com/fonts/docs/getting_started
+* Incorporating Node SASS to Create-React-App: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications
