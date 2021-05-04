@@ -12,9 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState();
 
   ReactDOM.render(
-    <React.StrictMode>
-      <App store={store}/>
-    </React.StrictMode>,
+    <App store={store}/>,
     document.getElementById('root')
   );
 
