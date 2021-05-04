@@ -9,8 +9,8 @@ export const Nav = () => {
             <img className="logo" src={logo} alt="App Logo"></img>   
             <ul className="login-signup-container">
                 <A href="/">Home</A>
-                <A href="/login">Login</A>
-                <A href="/signup">Signup</A>
+                <A href="/auth/login">Login</A>
+                <A href="/auth/signup">Signup</A>
             </ul>        
         </div>
     );
