@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { A } from 'hookrouter';
-import './stylesheets/authform.css';
+import './stylesheets/authform.scss';
 
 export const AuthForm = ({ toggle }) => {
     const [firstName, setFirstName] = useState('');
