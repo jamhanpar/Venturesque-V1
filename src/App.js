@@ -1,23 +1,30 @@
 import { Provider } from 'react-redux';
-import { HashRouter, Switch, Route } from 'react-router-dom';
+// import { HashRouter, Switch, Route } from 'react-router-dom';
 import { useRoutes } from 'hookrouter';
 import './App.css';
 
-import Splash from './components/Splash';
-import LoginSignup from './components/LoginSignup';
+import { Nav } from './components/Navbar';
+import { Home } from './pages/Home';
+import Splash from './components/Splash.jsx';
+import { LoginSignup } from './pages/LoginSignup';
+// import Results from './components/Results';
+import PageNotFound from './pages/PageNotFound';
+
+const routes = {
+  '/': () => <Splash />,
+  '/auth/:toggle': ({ toggle }) => <LoginSignup toggle={ toggle } />,
+  // '/results': () => <Results />
+}
 
 function App({ store }) {
+  const routeMatch = useRoutes(routes);
+
   return (
-    <Provider store={store}>
-      <HashRouter>
-        <div className="App">
-          <Switch>
-            <Route path="/home" component={Splash} />
-            <Route path="/login" component={LoginSignup} />
-            {/* <Route path="/signup" component={LoginSignup} /> */}
-          </Switch>
-        </div>
-      </HashRouter>
+    <Provider store={store} className="provider">
+      <div className="App">
+        <Nav />
+        {routeMatch || <PageNotFound />}
+      </div>
     </Provider>
   );
 }
