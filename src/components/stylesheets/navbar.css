@@ -1,9 +1,22 @@
-.nav-container{
-    border: 1px solid black;
+.nav-container {
     width: 100%;
-    height: 30px;
+    max-height: 50px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.logo-container {
+    margin-left: 10px;
+}
+
+.logo {
+    width: auto;
+    max-height: 40px;
+}
+
+.login-signup-container {
+    margin-right: 10px;
 }
