@@ -33,7 +33,7 @@ TBD
 - TBD
 
 # How to run the test suite
-- npm install
+- npm i @reduxjs/toolkit axios dotenv gh-pages node-sass react react-dom react-redux react-router-dom redux-logger yelp-fusion hookrouter
 
 # Contributors
 * James Park (Full Stack Software Engineer): https://www.linkedin.com/in/jameshansungpark/
