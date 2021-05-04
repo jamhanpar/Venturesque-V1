@@ -1,7 +1,9 @@
 @import '../src/components/stylesheets/reset.css';
 
 .App {
-  text-align: center;
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
