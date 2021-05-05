@@ -22,3 +22,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+
+# HIDE BEARER TOKEN Before uploading to production
+/src/hooks/yelp-api/config.js

@@ -44,3 +44,4 @@ TBD
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
 * Google Fonts API: https://developers.google.com/fonts/docs/getting_started
 * Incorporating Node SASS to Create-React-App: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications
+* CORS Anywhere: https://github.com/Rob--W/cors-anywhere
