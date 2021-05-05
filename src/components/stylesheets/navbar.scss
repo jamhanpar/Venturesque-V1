@@ -33,12 +33,12 @@
 }
 
 .login-button {
-    color: black;
+    color: $offGrey;
 }
 
 .signup-button {
     border-radius: 5px;
-    background-color: black;
-    color: white;
-    padding: 10px 31px;
+    background-color: $offGrey;
+    color: $offWhite;
+    padding: 12px 31px;
 }
