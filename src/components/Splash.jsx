@@ -20,6 +20,8 @@ const Splash = () => {
 
     const onSubmit = () => {
         console.log('inputs submitted');
+
+        // on submission route to results page with location and default search parameter for now
     }
 
     return (

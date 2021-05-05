@@ -1,5 +1,6 @@
 import { Provider } from 'react-redux';
 import { useRoutes } from 'hookrouter';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 // Components
@@ -14,7 +15,7 @@ import { Results } from './pages/Results';
 const routes = {
   '/Venturesque': () => <Splash />,
   '/auth/:toggle': ({ toggle }) => <LoginSignup toggle={ toggle } />,
-  '/results': () => <Results />
+  '/results?term=:term&location=:location': ({ term, location }) => <Results />
 }
 
 function App({ store }) {
@@ -25,6 +26,11 @@ function App({ store }) {
       <div className="App">
         <Nav />
         {routeMatch || <PageNotFound />}
+
+        <Switch>
+          <Route path='/results' component={Results}/>
+          <Route path='/' component={Splash}/>
+        </Switch>
       </div>
     </Provider>
   );

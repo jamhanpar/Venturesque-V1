@@ -4,6 +4,8 @@ import App from './App';
 import { configureAppStore } from './store/store';
 import './index.css';
 
+import { BrowserRouter } from 'react-router-dom';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   let initialState = {};
@@ -12,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState();
 
   ReactDOM.render(
-    <App store={store}/>,
+    <BrowserRouter>
+      <App store={store}/>
+    </BrowserRouter>,
     document.getElementById('root')
   );
 

@@ -16,6 +16,10 @@ TBD
 * Node Sass v5.0.0
 * Axios 0.21.1
 * Heroku
+* hookrouter
+* use-react-router
+* yelp-fusion
+* react-router-dom
 
 # Languages / Libraries
 * HTML
@@ -45,3 +49,5 @@ TBD
 * Google Fonts API: https://developers.google.com/fonts/docs/getting_started
 * Incorporating Node SASS to Create-React-App: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications
 * CORS Anywhere: https://github.com/Rob--W/cors-anywhere
+* React Router: https://reactrouter.com/web/guides/quick-start
+* Use React Router: https://www.npmjs.com/package/use-react-router

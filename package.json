@@ -20,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "redux-logger": "^3.0.6",
+    "use-react-router": "^1.0.7",
     "web-vitals": "^1.1.1",
     "yelp-fusion": "^3.0.0"
   },

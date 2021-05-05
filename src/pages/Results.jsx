@@ -1,10 +1,10 @@
 import React from 'react';
 import { Search } from "../components/Search/Search";
 
-export const Results = () => {
+export const Results = ({ term, location}) => {
     return (
         <div>
-            <Search />
+            <Search term={term} location={location}/>
         </div>
     )
 }
