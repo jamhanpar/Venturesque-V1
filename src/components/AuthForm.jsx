@@ -31,8 +31,8 @@ export const AuthForm = ({ toggle }) => {
 
     const toggleFormLinks = () => (
         toggle === 'signup' 
-            ? <p className="auth-form-redirect-link">Already have an account? <A href='/auth/login' className='login-button'>Login</A></p> 
-            : <A href='/forgot-password' className='forgot-password-button'>Forgot password?</A>
+            ? <p className="auth-form-redirect-link">Already have an account? <A href='/auth/login' className='login-link'>Login</A></p> 
+            : <A href='/forgot-password' className='forgot-password-link'>Forgot password?</A>
     )
 
     return (
