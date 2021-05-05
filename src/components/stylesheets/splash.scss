@@ -1,0 +1,77 @@
+@import './fonts.scss';
+@import './colors.scss';
+
+.search-input {
+    width: auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.search-input-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin: 15px 0px;
+}
+
+.landing-page-text {
+    font-family: $sourceSansPro;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.rotate-text {
+    padding: 0px 78px;
+}
+
+.landing-page-date-input {
+    border       : 1px solid $inputOutline;
+    max-width    : 300px;
+    border-radius: 5px;
+    text-indent  : 10px;
+    font-family  : $sourceSansPro;
+    font-size    : 35px;
+    font-weight: bold;
+    color        : $inputPlaceholder;
+}
+
+.landing-page-input {
+    border: 1px solid $inputOutline;
+    max-width: 300px;
+    border-radius: 5px;
+    text-indent: 15px;
+    margin-left: 20px;
+    font-family: $sourceSansPro;
+    font-size: 35px;
+    font-weight: bold;
+    color: $inputPlaceholder;
+}
+
+::placeholder {
+    font-family: $sourceSansPro;
+    color: $inputPlaceholder;
+}
+
+.generate-button {
+    background-color: $offGrey;
+    border: 1px solid $offGrey;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    margin-top: 15px;
+    padding: 12px 31px;
+    font-family: $sourceSansPro;
+    font-size: 30px;
+    color: $offWhite;
+}
