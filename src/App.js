@@ -12,7 +12,7 @@ import { LoginSignup } from './pages/LoginSignup';
 import { Results } from './pages/Results';
 
 const routes = {
-  '/home': () => <Splash />,
+  '/': () => <Splash />,
   '/auth/:toggle': ({ toggle }) => <LoginSignup toggle={ toggle } />,
   '/results': () => <Results />
 }

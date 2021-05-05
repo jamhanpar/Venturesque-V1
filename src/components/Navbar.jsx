@@ -6,7 +6,7 @@ import "./stylesheets/navbar.scss";
 export const Nav = () => {
     return (
         <div className="nav-container">
-            <A href="/home"><img className="logo" src={logo} alt="App Logo" /></A>
+            <A href="/"><img className="logo" src={logo} alt="App Logo" /></A>
             <ul className="auth-nav-container">
                 <li><A className="auth-nav-link login-button" href="/auth/login">Log In</A></li>
                 <li><A className="auth-nav-link signup-button" href="/auth/signup">Sign Up</A></li>
