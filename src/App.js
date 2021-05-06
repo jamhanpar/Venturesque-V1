@@ -13,7 +13,7 @@ import { LoginSignup } from './pages/LoginSignup';
 import { Results } from './pages/Results';
 
 const routes = {
-  '/Venturesque': () => <Splash />,
+  // '/Venturesque': () => <Splash />,
   '/auth/:toggle': ({ toggle }) => <LoginSignup toggle={ toggle } />,
   '/results?term=:term&location=:location': ({ term, location }) => <Results />
 }
@@ -25,11 +25,12 @@ function App({ store }) {
     <Provider store={store} className="provider">
       <div className="App">
         <Nav />
-        {routeMatch || <PageNotFound />}
+        {/* {routeMatch || <PageNotFound />} */}
+        {routeMatch}
 
         <Switch>
-          <Route path='/results' component={Results}/>
-          <Route path='/' component={Splash}/>
+          <Route exact path='/' component={Splash}/>
+          {/* <Route path='/results' component={Results}/> */}
         </Switch>
       </div>
     </Provider>

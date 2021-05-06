@@ -1,32 +1,42 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchRestaurants } from '../actions/yelp_actions';
+import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 
-const Splash = () => {
+const Splash = (props) => {
     const [searchTerm, setSearchTerm] = useState('Restaurants');
     const [location, setLocation] = useState('Hoboken');
     const [date, setDate] = useState('');
     const [friend, setFriend] = useState('Vivian Chen');    
-    
-    const select = (el, all = false) => {
-        el = el.trim()
-        if (all) {
-            return [...document.querySelectorAll(el)]
-        } else {
-            return document.querySelector(el)
-        }
+
+    const { history } = useReactRouter();
+
+    function search(term, location) {
+        const urlEncodedTerm = encodeURI(term);
+        const urlEncodedLocation = encodeURI(location);
+        history.push(`/search?term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
     }
+    
+    // const select = (el, all = false) => {
+    //     el = el.trim()
+    //     if (all) {
+    //         return [...document.querySelectorAll(el)]
+    //     } else {
+    //         return document.querySelector(el)
+    //     }
+    // }
 
-    const onSubmit = () => {
-        console.log('inputs submitted');
-
+    const handleSubmit = (e) => {
         // on submission route to results page with location and default search parameter for now
+        e.preventDefault();
+        
+        search(searchTerm, location);
     }
 
     return (
         <section className='search-input'>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best <span className='rotate-text'>first</span> date near </label>    
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={() => setLocation()} value={location}/>
@@ -38,7 +48,7 @@ const Splash = () => {
                     <label className='landing-page-text' htmlFor='friend'>with </label>
                     <input className='landing-page-input' type='text' id='friend' placeholder='friend' onChange={() => setFriend()} value={friend}/>
                 </div>
-                <button className='generate-button' type='submit'>Generate</button>
+                <button className='generate-button' type='submit' onClick={handleSubmit}>Generate</button>
             </form>
         </section>
     );
