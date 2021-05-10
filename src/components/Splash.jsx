@@ -5,17 +5,17 @@ import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 
 const Splash = (props) => {
-    const [searchTerm, setSearchTerm] = useState('Restaurants');
-    const [location, setLocation] = useState('Hoboken');
+    const [searchTerm, setSearchTerm] = useState('restaurants');
+    const [location, setLocation] = useState('');
     const [date, setDate] = useState('');
     const [friend, setFriend] = useState('Vivian Chen');    
 
     const { history } = useReactRouter();
 
-    function search(term, location) {
+    function results(term, location) {
         const urlEncodedTerm = encodeURI(term);
         const urlEncodedLocation = encodeURI(location);
-        history.push(`/search?term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
+        history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
     }
     
     // const select = (el, all = false) => {
@@ -30,8 +30,8 @@ const Splash = (props) => {
     const handleSubmit = (e) => {
         // on submission route to results page with location and default search parameter for now
         e.preventDefault();
-        
-        search(searchTerm, location);
+
+        results(searchTerm, location);
     }
 
     return (
@@ -39,7 +39,7 @@ const Splash = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best <span className='rotate-text'>first</span> date near </label>    
-                    <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={() => setLocation()} value={location}/>
+                    <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
                 </div>
                 <div className='search-input-item'>
                     <input className='landing-page-date-input' type='date' id='date' placeholder='date' onChange={() => setDate()} value={date}/>
