@@ -20,6 +20,7 @@ TBD
 * use-react-router
 * yelp-fusion
 * react-router-dom
+* query-string
 
 # Languages / Libraries
 * HTML
