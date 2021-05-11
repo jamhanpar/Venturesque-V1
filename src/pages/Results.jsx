@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchRestaurants } from '../actions/yelp_actions';
 import { fetchWeather } from '../actions/weather_action';
+=======
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchRestaurants } from '../actions/yelp_actions';
+import { fetchWeather } from '../actions/weather_actions';
+>>>>>>> 🔍: imported search results and passing the business as props to SearchResults component
 import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
 import { SearchResults } from '../components/Search/SearchResults';
 import googleMap from "../assets/img/temp-google-map.png";
@@ -52,16 +59,3 @@ export const Results = ({ fetchUser }) => {
         </div>
     )
 }
-
-// const msp = state => {
-//     debugger
-//     return {
-//         user: state,
-//     }
-// };
-
-// const mdp = (dispatch) => ({
-//     fetchUser: () => dispatch(fetchUser()),
-// });
-
-export default connect(null, null)(Results);
