@@ -21,7 +21,7 @@ export const Results = ({ fetchUser }) => {
             <button onClick={() => fetchRestaurants(term, location)}>Fetch Restaurants</button>
             <button onClick={() => fetchWeather()}>Fetch Weather</button>
             <button onClick={() => fetchUser()}>Fetch User</button>
-            <SearchResults businesses={businesses} />
+            <SearchResults businesses={businesses.slice(0, 1)} />
             {/* <SearchBar /> */}
         </div>
     )
