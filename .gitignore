@@ -29,4 +29,4 @@ yarn-error.log*
 
 # HIDE BEARER TOKEN Before uploading to production
 /src/hooks/yelp-api/config.js
-/src/actions/weather_actions.js
+/src/actions/weather_action.js
