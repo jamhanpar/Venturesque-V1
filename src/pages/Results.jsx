@@ -52,3 +52,16 @@ export const Results = ({ fetchUser }) => {
         </div>
     )
 }
+
+// const msp = state => {
+//     debugger
+//     return {
+//         user: state,
+//     }
+// };
+
+// const mdp = (dispatch) => ({
+//     fetchUser: () => dispatch(fetchUser()),
+// });
+
+export default connect(null, null)(Results);
