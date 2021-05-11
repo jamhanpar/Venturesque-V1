@@ -2,36 +2,54 @@ import { createAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const receiveRestaurants = createAction('RECEIVE_RESTAURANTS');
-export const yelpBaseURL = 'https://api.yelp.com/v3/'
+export const yelpBaseURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3'
 
-// export const fetchRestaurants = (term, location) => async dispatch => {
-//     try {
-//         const res = await axios.get(`${yelpBaseURL}/business/search`, { 
-//             params: {
-//                 location,
-//                 term
-//             }
-//         }, {
-//             headers: {
-//                 Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
-//             }
-//         });
-//         dispatch(receiveRestaurants(res.data));
-//     }
-//     catch (err) {
-//         console.log(err)
-//     }
+// export const fetchRestaurants = () => {
+//     return axios
+//         .get('https://randomuser.me/api')
+//         .then( res => console.log(res) )
+//         .catch( err => console.log(err) )
 // }
 
-const yelp = require('yelp-fusion');
-const client = yelp.client(process.env.REACT_APP_YELP_API_KEY);
-
-export const fetchRestaurants = (term, location) => async dispatch => { 
-    client.search({ term, location })
-        .then( res => dispatch(receiveRestaurants(res.data)))
-        .catch(err => console.log(err));
+export const fetchRestaurants = (term, location) => async dispatch => {
+    try {
+        const res = await axios.get(`${yelpBaseURL}/businesses/search`, { 
+            headers: {
+                authorization: `Bearer ${YELP_API_KEY}`,
+            },
+            params: {
+                term,
+                location
+            }
+        })
+        dispatch(receiveRestaurants(res.data));
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 
+// const yelp = require('yelp-fusion');
+// const client = yelp.client('YELP_API_KEY');
+
+// export const fetchRestaurants = (term, location) => { 
+//     client.search({ term, location })
+//         // .then( res => receiveRestaurants(res.data) )
+//         .then( res => console.log(res) )
+//         .catch( err => console.log(err) )
+// }
+
+// attempting with ajax
+// export const fetchRestaurantsAJAX = (term, location) => {
+//     $.ajax({
+//         url: yelpBaseURL,
+//         method: 'GET',
+//         headers: { Authorization: `Bearer ${process.env.YELP_API_KEY}`},
+//         dataType: 'JSON'        
+//     })
+//         .then( res => console.log(res) )
+//         .catch( err => console.log(err) )
+// }
 
 // Example
 // let YelpREST = axios.create({
