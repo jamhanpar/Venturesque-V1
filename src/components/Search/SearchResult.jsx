@@ -6,9 +6,9 @@ export function SearchResult(props) {
     return (
         <div>
             {/* <img src={props.business.image_url} alt="business"/> */}
-            <img src="https://via.placeholder.com/300x300?text=Business+Image" alt="business"/>
+            <img src={props.business.image_url} alt="business"/>
             <div>
-                <h2>Business Name</h2>
+                <h2>{props.business.name}</h2>
                 <div>Business Rating</div>
                 <p>$$ <span>Burgers</span> <span>Fast Food</span></p>
             </div>
