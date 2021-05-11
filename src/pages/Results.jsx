@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchRestaurants } from '../actions/yelp_actions';
-import { fetchWeather } from '../actions/weather_actions';
+import { fetchWeather } from '../actions/weather_action';
 import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
 import { SearchResults } from '../components/Search/SearchResults';
 
