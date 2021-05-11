@@ -1,21 +1,30 @@
 import React from 'react';
+// import useReactRouter from 'use-react-router';
+import { useParams } from 'react-router-dom';
 import { Search } from '../components/Search/Search';
 import { SearchBar } from '../components/SearchBar';
-import useReactRouter from 'use-react-router';
+import { fetchRestaurants } from "../actions/yelp_actions";
 
-export const Results = ({ term, location}) => {
-    const { history } = useReactRouter();
+export const Results = () => {
+    // const { location } = useReactRouter();
+    // console.log(location);
+    // const params = new URLSearchParams(location.search);
+    // const termParam = params.get('term');
+    // const locationParam = params.get('location');
+    const { term, location } = useParams();
 
-    function search(term, location) {
-        const urlEncodedTerm = encodeURI(term);
-        const urlEncodedLocation = encodeURI(location);
-        history.push(`/results?find_desc=${urlEncodedTerm}&find_loc=${urlEncodedLocation}`);
-    }    
+    console.log(`${process.env.YELP_API_KEY}`);    
 
     return (
         <div>
-            <Search term={term} location={location} />
-            <SearchBar search={search} />
+            <p>{term}</p>
+            <p>{location}</p>
+            <button onClick={() => fetchRestaurants(term, location)}>Fetch Restaurants</button>
+            <h1>Hello</h1>
+            <Search />
+            <SearchBar />
+            {/* <p>{termParam}</p>
+            <p>{locationParam}</p> */}
         </div>
     )
 }
