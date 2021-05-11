@@ -1,12 +1,7 @@
 import React from 'react';
-import { connect } from "react-redux";
-// import useReactRouter from 'use-react-router';
 import { useParams } from 'react-router-dom';
-import { Search } from '../components/Search/Search';
-import { SearchBar } from '../components/SearchBar';
 import { fetchRestaurants } from '../actions/yelp_actions';
-import { fetchWeather, getUsername } from '../actions/weather_actions';
-import { fetchUser } from '../actions/user_action';
+import { fetchWeather } from '../actions/weather_actions';
 import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
 import { SearchResults } from '../components/Search/SearchResults';
 
@@ -18,11 +13,6 @@ export const Results = ({ fetchUser }) => {
     // const locationParam = params.get('location');
     const { term, location } = useParams();
     const [businesses, amountResults, searchParams, setSearchParams] = useBusinessSearch(term, location);
-    console.log(businesses);
-    const firstBusiness = businesses[0]
-    console.log(firstBusiness);
-
-    debugger
 
     return (
         <div>
@@ -36,16 +26,3 @@ export const Results = ({ fetchUser }) => {
         </div>
     )
 }
-
-// const msp = state => {
-//     debugger
-//     return {
-//         user: state,
-//     }
-// };
-
-// const mdp = (dispatch) => ({
-//     fetchUser: () => dispatch(fetchUser()),
-// });
-
-export default connect(null, null)(Results);
