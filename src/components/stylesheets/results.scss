@@ -3,6 +3,7 @@
 
 .search-results-container {
     border: 1px solid green;
+    background-color: $offBlue;
     width: 100%;
     height: auto;
     display: flex;
@@ -12,7 +13,9 @@
 }
 
 .results-search-container {
-    border: 1px solid black; 
+    border: 1px solid black;
+    background-color: $offWhite;
+    border-radius: 5px;
     width: 752px;
     height: 485px;
     display: flex;
@@ -28,8 +31,22 @@
     margin-top: 12px;
 }
 
+.results-text {
+    font-family: $sourceSansPro;
+    font-size  : 24px;
+    font-weight: 900;
+    color      : $submitButtonColor;
+}
+
+.results-search-input {
+    border-radius: 10px;
+    width: 179px;
+    height: 40px;
+    text-indent: 10px;
+    margin: 0px 10px;
+}
+
 .search-form {
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -46,14 +63,21 @@
     align-items: center;
 }
 
+.separator {
+    font-family: $sourceSansPro;
+    font-size: 64px;
+    font-weight: 900;
+    color: $offBlue;
+    margin: 0px 53px;
+}
+
 .google-map-container {
-    border: 1px solid blue;
     width: 25%;
     height: 100%;
 }
 
 .google-map-img {
-    border: 1px solid red;
+    border-radius: 10px;
     width: 100%;
     height: auto;
 }

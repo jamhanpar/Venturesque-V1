@@ -30,12 +30,12 @@ export const Results = ({ fetchUser }) => {
                 <div className="results-search-container">
                     <h1 className="results-search-container-title">The Best Date</h1>
                     <form className="search-form" >
-                        <span>in</span>
-                        <input type="text" placeholder={location} />
-                        <span>with</span>
-                        <input type="text" placeholder="friend" />
-                        <span>on</span>
-                        <input type="text" placeholder={date}/>
+                        <span className="results-text">in</span>
+                        <input className="results-search-input" type="text" placeholder={location} />
+                        <span className="results-text">with</span>
+                        <input className="results-search-input" type="text" placeholder="friend" />
+                        <span className="results-text">on</span>
+                        <input className="results-search-input" type="text" placeholder={date}/>
                         <i className="fas fa-search"></i>
                     </form>
                     <div className="results-container">
