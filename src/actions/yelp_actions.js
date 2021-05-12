@@ -15,7 +15,7 @@ export const fetchRestaurants = (term, location) => async dispatch => {
     try {
         const res = await axios.get(`${yelpBaseURL}/businesses/search`, { 
             headers: {
-                authorization: `Bearer ${YELP_API_KEY}`,
+                authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
             },
             params: {
                 term,
