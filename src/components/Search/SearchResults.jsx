@@ -1,8 +1,20 @@
 import React from 'react';
 import { SearchResult } from './SearchResult';
+import "../stylesheets/searchResultItem.scss";
 
 export function SearchResults(props) {
-    if(!props.businesses ||  !props.businesses.length) return (<div></div>);
+    if(!props.businesses ||  !props.businesses.length) {
+        return (
+            <div className='search-result-item-card'>
+                <img src='https://via.placeholder.com/200x200' alt="business"/>
+                <div>
+                    <h2>Business Name</h2>
+                    <p>Description</p>
+                    {/* <p>$$ <span>Burgers</span> <span>Fast Food</span></p> */}
+                </div>
+            </div>
+        )
+    };
 
     const searchResults = props.businesses.map(business => <SearchResult key={business.id} business={business} />)
     
