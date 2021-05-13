@@ -8,7 +8,7 @@ import { Nav } from './components/Navbar';
 // Pages
 import Splash from './components/Splash.jsx';
 import { LoginSignup } from './pages/LoginSignup';
-import { Results } from './pages/Results';
+import Results from './pages/Results';
 
 export const App = ({ store }) => (
   <div className="App">
