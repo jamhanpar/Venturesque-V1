@@ -21,7 +21,6 @@ const Results = (props) => {
 
     // sort by highest rated and most reviewed
 
-    debugger
     return (
         <div>
             {/* <p>{term}</p>
