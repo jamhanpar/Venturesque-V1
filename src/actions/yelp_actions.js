@@ -11,23 +11,23 @@ export const yelpBaseURL = 'https://cors-anywhere.herokuapp.com/https://api.yelp
 //         .catch( err => console.log(err) )
 // }
 
-export const fetchRestaurants = (term, location) => async dispatch => {
-    try {
-        const res = await axios.get(`${yelpBaseURL}/businesses/search`, { 
-            headers: {
-                authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
-            },
-            params: {
-                term,
-                location
-            }
-        })
-        dispatch(receiveRestaurants(res.data));
-    }
-    catch (err) {
-        console.log(err)
-    }
-}
+// export const fetchRestaurants = (term, location) => async dispatch => {
+//     try {
+//         const res = await axios.get(`${yelpBaseURL}/businesses/search`, { 
+//             headers: {
+//                 authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
+//             },
+//             params: {
+//                 term,
+//                 location
+//             }
+//         })
+//         dispatch(receiveRestaurants(res.data));
+//     }
+//     catch (err) {
+//         console.log(err)
+//     }
+// }
 
 // const yelp = require('yelp-fusion');
 // const client = yelp.client('YELP_API_KEY');
