@@ -19,9 +19,6 @@ const initialState = {}
 
 export const questionReducer = createReducer(initialState, builder => {
     builder
-        .addCase('RECEIVE_USER', (state, action) => {
-            state = action.payload
-        })
         .addCase('RECEIVE_QUESTIONS', (state, action) => {
             state = action.payload
         })
