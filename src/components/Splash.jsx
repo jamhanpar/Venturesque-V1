@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchRestaurants } from '../actions/yelp_actions';
+// import { fetchRestaurants } from '../actions/yelp_actions';
 import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 
@@ -60,7 +60,7 @@ const Splash = (props) => {
 // });
 
 const mdp = dispatch => ({
-    fetchRestaurants: (term, location) => dispatch(fetchRestaurants(term, location))
+    // fetchRestaurants: (term, location) => dispatch(fetchRestaurants(term, location))
 });
 
 export default connect(null, mdp)(Splash);
