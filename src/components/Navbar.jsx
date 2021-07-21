@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './../assets/img/temp-logo.png';
 import "./stylesheets/navbar.scss";
+import Weather from '../hooks/weather-api/api';
 
 export const Nav = () => {
     return (
@@ -10,6 +11,7 @@ export const Nav = () => {
             <Link to="/"><img className="logo" src={logo} alt="App Logo" /></Link>
             {/* <A href="/"><img className="logo" src={logo} alt="App Logo" /></A> */}
             <ul className="auth-nav-container">
+                <Weather />
                 <Link className="auth-nav-link login-button" to="/results">Results</Link>
                 <Link className="auth-nav-link login-button" to="/auth/login">Log In</Link>
                 <Link className="auth-nav-link signup-button" to="/auth/signup">Sign Up</Link>
