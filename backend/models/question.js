@@ -26,4 +26,5 @@ const QuestionSchema = Schema({
 })
 
 // Instance of a question model using the provided schema
+// Test
 module.exports = Question = mongoose.model('Question', QuestionSchema)
