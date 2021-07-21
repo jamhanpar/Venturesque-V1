@@ -6,8 +6,8 @@ https://www.jameshansungpark.com/Venturesque/
 
 # App Features
 ### Landing Page - In Progress
-### Frontend Auth - Not Started
-### Dynamic Portfolio Dashboard - Not Started
+### Frontend Auth - Not Started - Need to setup backend
+### Populate Weather Information into a component - Work In Progress
 
 # Dependencies & Version
 * React.js 17.0.1
@@ -33,6 +33,7 @@ https://www.jameshansungpark.com/Venturesque/
 * Yelp - restaurant recommendations
 * FreeLogoDesign.org - logos and icons
 * Unsplash.com - site images
+* Accuweather - current weather forecasts
 
 # Database creation
 - TBD
@@ -43,10 +44,12 @@ https://www.jameshansungpark.com/Venturesque/
 # Contributors
 * James Park (Full Stack Software Engineer): https://www.linkedin.com/in/jameshansungpark/
 * Vivian Chen (UX / UI Graphic Designer): https://www.linkedin.com/in/viv-chen/
+* Jung Park (Full Stack Software Engineer): https://github.com/junghyun2006/
 
 # Tools / Libraries / Resource Documentation
 * React App Github Page Deployment Documentation: https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
 * Yelp API Documentation: https://www.yelp.com/developers/documentation/v3
+* AccuWeather API Documentation: https://developer.accuweather.com/apis
 * Google Fonts API: https://developers.google.com/fonts/docs/getting_started
 * Incorporating Node SASS to Create-React-App: https://scotch.io/starters/react/adding-sass-to-create-react-app-applications
 * CORS Anywhere: https://github.com/Rob--W/cors-anywhere
