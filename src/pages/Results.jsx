@@ -8,6 +8,7 @@ import { SearchResults } from '../components/Search/SearchResults';
 import googleMap from "../assets/img/temp-google-map.png";
 import { connect } from "react-redux";
 import "../components/stylesheets/results.scss";
+import { WeatherDisplay } from '../components/Weather/WeatherDisplay';
 
 const Results = (props) => {
     // const { location } = useReactRouter();
@@ -23,8 +24,6 @@ const Results = (props) => {
 
     return (
         <div>
-            {/* <p>{term}</p>
-            <p>{location}</p> */}
             <div className="search-results-container">
                 <div className="results-search-container">
                     <h1 className="results-search-container-title">The Best Date</h1>
@@ -47,17 +46,12 @@ const Results = (props) => {
                     <img className="google-map-img" src={googleMap} alt="google maps" />
                 </div>
             </div>
-            {/* <button onClick={() => fetchRestaurants(term, location)}>Fetch Restaurants</button> */}
-            <button onClick={() => props.fetchWeather()}>Fetch Weather</button>
-            <button onClick={() => props.fetchUser()}>Fetch User</button>
-            {/* <SearchBar /> */}
+            <WeatherDisplay location={location}/>
         </div>
     )
 }
 
-// const msp = () => ({
-
-// });
+// const msp = () => ({});
 
 const mdp = dispatch => {
     return {

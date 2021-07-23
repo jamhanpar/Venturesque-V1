@@ -2,29 +2,53 @@ import React from 'react';
 import axios from 'axios';
 import { ACCUWEATHER_API_KEY } from '../config';
 
-const Weather = () => {
-    const tempLocationKey = 339490;
-
-    async function getWeather() {
-        try {
-            const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${tempLocationKey}?apikey=${ACCUWEATHER_API_KEY}`);
-            console.log(response.data);
-        } catch (error) {
-            console.error(error);
-        }
+export async function getWeather(locationKey) {
+    try {
+        const res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCUWEATHER_API_KEY}`);
+        console.log(res.data);
+        return res.data;        // [{}]
+    } catch (error) {
+        console.error(error);
     }
-
-    // const getWeather = () => {
-    //     axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${tempLocationKey}?apikey=BiWL0Qcw0XWr0YzB79UTc37dDx9c3UKW`)
-    //         .then(data => console.log(data))
-    //         .catch(err => console.log(err));
-    // }
-
-    return (
-        <>
-            <button onClick={() => getWeather()}>Weather</button>
-        </>
-    )
 }
 
-export default Weather;
+export async function getCities(city) {
+    try {
+        const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCUWEATHER_API_KEY}&q=${city}`);
+        console.log(res.data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+// export const Weather = () => {
+//     const tempLocationKey = 339490;
+//     const searchTerm = 'Palisades%20Park';
+
+//     async function getWeather(locationKey) {
+//         try {
+//             const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCUWEATHER_API_KEY}`);
+//             console.log(response.data);
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     }
+
+//     async function getCities(city) {
+//         try {
+//             const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCUWEATHER_API_KEY}&q=${city}`);
+//             console.log(res.data);
+//         } catch (error) {
+//             console.error(error);
+//         }
+//     }
+
+//     return (
+//         <>
+//             <button onClick={() => getWeather()}>Weather</button>
+//             <button onClick={() => getCities('Palisades Park')}>Cities</button>
+//         </>
+//     )
+// }
+
+// export default Weather;
