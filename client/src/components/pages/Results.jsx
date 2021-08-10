@@ -32,10 +32,17 @@ const Results = (props) => {
 
     let restaurantIndex = null;
 
-    if (restaurants)
-      restaurantIndex = restaurants.map((restaurant, i) => {
-        return <li key={i}>{restaurant.name}</li>;
-      });
+    if (restaurants) {
+        const sortedRestaurants = restaurants.sort((a,b) => {
+            let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
+            let bValue = (b.review_count < 15 || a.rating === 5) ? 0 : b.rating + b.review_count/100000
+            return bValue - aValue
+        })
+  
+        restaurantIndex = sortedRestaurants.map((restaurant, i) => {
+          return <li key={i}>{restaurant.name}</li>;
+        });
+    }
 
     // sort by highest rated and most reviewed
     return (
