@@ -85,8 +85,8 @@ form {
 }
 
 .generate-button {
-    background-color: $offGrey;
-    border: 1px solid $offGrey;
+    background-color: $offBlue;
+    border: 1px solid $offBlue;
     border-radius: 5px;
     width: auto;
     height: auto;
@@ -98,4 +98,25 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.landing-page-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $offGrey;
+  font-family: $sourceSansPro;
+  font-size: 40px;
+  opacity: 1; /* Firefox */
+}
+
+.landing-page-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $offGrey;
+  font-family: $sourceSansPro;
+  font-size: 40px;
+  opacity: 1; /* Firefox */
+}
+
+.landing-page-input::-ms-input-placeholder { /* Microsoft Edge */
+  color: $offGrey;
+  font-family: $sourceSansPro;
+  font-size: 40px;
+  opacity: 1; /* Firefox */
 }

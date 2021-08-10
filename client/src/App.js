@@ -12,6 +12,7 @@ import Home from './components/pages/Home';
 import Testing from './components/pages/Testing';
 import { LoginSignup } from './components/pages/LoginSignup';
 import Results from './components/pages/Results';
+import About from './components/pages/About';
 
 export const App = ({ store }) => (
   <div className="App">
@@ -20,6 +21,7 @@ export const App = ({ store }) => (
       <Switch>
           <SearchProvider>
             <Route exact path='/' component={Home}/>
+            <Route path='/about' component={About}/>
             <Route path='/testing' component={Testing}/>
             <Route path='/search/term=:term&location=:location' component={Results}/>
           </SearchProvider>

@@ -26,6 +26,7 @@ const Results = (props) => {
     useEffect(() => {
         fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
             setRestaurants(data.businesses);
+            console.log(data.businesses)
         })
     }, [])
 

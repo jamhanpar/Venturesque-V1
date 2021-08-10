@@ -9,6 +9,7 @@ export const Nav = () => {
             <Link to="/"><img className="logo" src={logo} alt="App Logo" /></Link>
             {/* <A href="/"><img className="logo" src={logo} alt="App Logo" /></A> */}
             <ul className="auth-nav-container">
+                <Link className="auth-nav-link login-button" to="/about">About</Link>
                 <Link className="auth-nav-link login-button" to="/testing">Testing</Link>
                 <Link className="auth-nav-link login-button" to="/auth/login">Log In</Link>
                 <Link className="auth-nav-link signup-button" to="/auth/signup">Sign Up</Link>
