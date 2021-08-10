@@ -5,7 +5,7 @@ const initialState = {}
 export const restaurantReducer = createReducer(initialState, builder => {
     builder
         .addCase('RECEIVE_RESTAURANTS', (state, action) => {
-            return action.payload
+            state = action.payload
         })
         .addDefaultCase((state, action) => {
             return state

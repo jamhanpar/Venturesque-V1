@@ -7,7 +7,7 @@ import './stylesheets/splash.scss';
 const Splash = (props) => {
     // const [searchTerm, setSearchTerm] = useState('restaurants');
     const searchTerm = 'restaurants';
-    const [location, setLocation] = useState('');
+    const [location, setLocation] = useState('Hoboken');
     const [date, setDate] = useState('');
     const [friend, setFriend] = useState('Vivian Chen');    
 
