@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 
+//icons
+import { FaSistrix } from 'react-icons/fa';
+
 const Splash = (props) => {
     // const [searchTerm, setSearchTerm] = useState('restaurants');
     const searchTerm = 'restaurants';
@@ -41,6 +44,7 @@ const Splash = (props) => {
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best first date near </label>    
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
+                    <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
                 {/* <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='friend'>with </label>
@@ -51,7 +55,6 @@ const Splash = (props) => {
                     <input className='landing-page-date-input' type='date' id='date' placeholder='date' onChange={() => setDate()} value={date}/>
                 </div> */}
                 <div className='submit-button-container'>
-                    <button className='generate-button' type='submit' onClick={handleSubmit}>Generate</button>
                 </div>
             </form>
         </section>

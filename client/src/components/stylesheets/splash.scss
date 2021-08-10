@@ -94,4 +94,8 @@ form {
     font-family: $sourceSansPro;
     font-size: 30px;
     color: $offWhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
