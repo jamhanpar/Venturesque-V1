@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Testing = (props) => {
     return (
         <div>
+            Testing Page
         </div>
     )
 }
