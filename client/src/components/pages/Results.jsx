@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { fetchRestaurants } from '../actions/yelp_actions';
 // import { fetchWeather } from '../actions/weather_action';
@@ -9,19 +9,30 @@ import googleMap from "../../assets/img/temp-google-map.png";
 import { connect } from "react-redux";
 import "../stylesheets/results.scss";
 import { WeatherDisplay } from '../Weather/WeatherDisplay';
+import { useSearchContext } from '../../hooks/contexts/searchContext';
+import { fetchRestaurants } from '../../util/restaurants';
 
 const Results = (props) => {
+    const searchCtx = useSearchContext();
+    const [restaurants, setRestaurants] = useState();
+
     // const { location } = useReactRouter();
     // console.log(location);
     // const params = new URLSearchParams(location.search);
     // const termParam = params.get('term');
     // const locationParam = params.get('location');
     const { term, location } = useParams();
-    const [businesses, amountResults, searchParams, setSearchParams] = useBusinessSearch(term, location);
+    // const [businesses, amountResults, searchParams, setSearchParams] = useBusinessSearch(term, location);
     const [date, setDate] = useState('');
+    
+    useEffect(() => {
+        fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
+            setRestaurants(data.businesses);
+        })
+    }, [])
 
     // sort by highest rated and most reviewed
-
+    debugger
     return (
         <div>
             <div className="search-results-container">
@@ -36,11 +47,11 @@ const Results = (props) => {
                         <input className="results-search-input" type="text" placeholder={date}/>
                         <i className="fas fa-search"></i>
                     </form>
-                    <div className="results-container">
+                    {/* <div className="results-container">
                         <SearchResults businesses={businesses.slice(0, 1)} />
                         <span className="separator">&</span>
                         <SearchResults businesses={businesses.slice(0, 1)} />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="google-map-container">
                     <img className="google-map-img" src={googleMap} alt="google maps" />
