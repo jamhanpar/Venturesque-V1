@@ -4,7 +4,6 @@ import { fetchRestaurants } from '../../util/restaurants';
 
 const Testing = (props) => {
     useEffect(() => {
-        debugger
         props.getRestaurants('hoboken', 'restaurant')
     });
 
@@ -22,7 +21,6 @@ const msp = (state) => {
 };
 
 const mdp = dispatch => {
-    debugger
     return {
         getRestaurants: (location, searchTerm) => dispatch(fetchRestaurants(location, searchTerm))
     }
