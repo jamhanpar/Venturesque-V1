@@ -5,7 +5,8 @@ const axios = require('axios');
 // this is required to access the .env file
 require('dotenv').config() 
 
-router.get('/restaurants', (req, res) => {
+router.get('/restaurants/location=:location&cuisine=:cuisine', (req, res) => {
+    const { location, cuisine } = req.params 
    
     // create a yelp rest instance
     let yelpREST = axios.create({
@@ -20,8 +21,8 @@ router.get('/restaurants', (req, res) => {
     
     yelpREST("/businesses/search", {
       params: {
-        location: "New York",
-        term: "coffee",
+        location: location,
+        term: cuisine,
         limit: 10,
       },
     }).then(({ data }) => {
