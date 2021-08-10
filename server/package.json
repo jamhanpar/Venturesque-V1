@@ -7,7 +7,9 @@
     "start": "node app.js",
     "server": "nodemon app.js",
     "server:debug": "nodemon --inspect app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -20,7 +22,10 @@
   },
   "homepage": "https://github.com/jamhanpar/Backend_Template#readme",
   "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.2.1",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.6",
     "requests": "^0.3.0",
@@ -28,6 +33,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  },
-  "proxy": "http://localhost:5000"
+  }
 }
