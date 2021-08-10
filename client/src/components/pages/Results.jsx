@@ -30,6 +30,13 @@ const Results = (props) => {
         })
     }, [])
 
+    let restaurantIndex = null;
+
+    if (restaurants)
+      restaurantIndex = restaurants.map((restaurant, i) => {
+        return <li key={i}>{restaurant.name}</li>;
+      });
+
     // sort by highest rated and most reviewed
     return (
         <div>
