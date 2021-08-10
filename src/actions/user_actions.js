@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+// import axios from 'axios';
 import * as userUtils from '../util/users';
 
 export const receiveUser = createAction('RECEIVE_USER');

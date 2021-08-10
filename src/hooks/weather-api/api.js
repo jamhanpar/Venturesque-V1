@@ -1,10 +1,9 @@
-import React from 'react';
 import axios from 'axios';
-import { ACCUWEATHER_API_KEY } from '../config';
+import { ACCU_API_KEY } from '../config';
 
 export async function getWeather(locationKey) {
     try {
-        const res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCUWEATHER_API_KEY}`);
+        const res = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCU_API_KEY}`);
         console.log(res.data);
         return res.data;        // [{}]
     } catch (error) {
@@ -14,7 +13,7 @@ export async function getWeather(locationKey) {
 
 export async function getCities(city) {
     try {
-        const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCUWEATHER_API_KEY}&q=${city}`);
+        const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCU_API_KEY}&q=${city}`);
         console.log(res.data);
     } catch (error) {
         console.error(error);
@@ -27,7 +26,7 @@ export async function getCities(city) {
 
 //     async function getWeather(locationKey) {
 //         try {
-//             const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCUWEATHER_API_KEY}`);
+//             const response = await axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${ACCU_API_KEY}`);
 //             console.log(response.data);
 //         } catch (error) {
 //             console.error(error);
@@ -36,7 +35,7 @@ export async function getCities(city) {
 
 //     async function getCities(city) {
 //         try {
-//             const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCUWEATHER_API_KEY}&q=${city}`);
+//             const res = await axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${ACCU_API_KEY}&q=${city}`);
 //             console.log(res.data);
 //         } catch (error) {
 //             console.error(error);

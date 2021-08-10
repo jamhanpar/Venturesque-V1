@@ -6,12 +6,9 @@ export function WeatherDisplay({location}) {
     
     useEffect(() => {
         getWeather(339490)
-            .then(res => setCurrentTemp(res[0].Temperature.Imperial.Value))
+          .then(res => console.log(res))
+            // .then(res => setCurrentTemp(res.Temperature.Imperial.Value))
     }, []);
-
-    function useWeather(location) {
-        debugger
-    }
 
     return (
       <div>
