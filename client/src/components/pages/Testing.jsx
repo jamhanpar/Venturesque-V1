@@ -3,8 +3,11 @@ import { connect } from 'react-redux';
 import { fetchRestaurants } from '../../util/restaurants';
 
 const Testing = (props) => {
+    const {restaurants, setRestaurants } = useState([]);
+
     useEffect(() => {
-        props.getRestaurants('hoboken', 'restaurant')
+        const restaurantsList = props.getRestaurants('hoboken', 'restaurant');
+        setRestaurants(restaurantsList);
     });
 
     return (
