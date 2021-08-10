@@ -3,10 +3,13 @@ import axios from 'axios';
 
 export const receiveRestaurants = createAction('RECEIVE_RESTAURANTS');
 
-export const fetchRestaurants = () => async dispatch => {
+export const fetchRestaurants = (location, cuisine) => async dispatch => {
     try {
-        const res = await axios.get(`http://localhost:5000/api/yelp/restaurants`)
-        dispatch(receiveRestaurants(res.data))
+        const res = await axios.get(`/api/yelp/restaurants/location=${location}&cuisine=${cuisine}`)
+        debugger
+        const data = res.data.businesses;
+        console.log(data)
+        dispatch(receiveRestaurants(data))
     }
     catch (err) {
         console.log(err)
