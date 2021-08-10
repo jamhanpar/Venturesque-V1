@@ -1,31 +1,26 @@
-import React, { useEffect } from 'react';
-// import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import { fetchRestaurants } from '../../util/restaurants';
 import { WeatherDisplay } from '../Weather/WeatherDisplay';
 
 const Testing = (props) => {
-    // const {restaurants, setRestaurants } = useState([]);
+    // const [ restaurants, setRestaurants ] = useState([]);
 
     useEffect(() => {
-        const restaurantsList = fetchRestaurants('hoboken', 'restaurant');
-        // setRestaurants(restaurantsList);
-    });
+        fetchRestaurants('hoboken', 'restaurant')
+    }, []);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+    }
 
     return (
         <div>
             <WeatherDisplay />
+            <div>
+                <button onClick={() => handleClick()}>Restaurants</button>
+            </div>
         </div>
     )
 }
-
-// const msp = (state) => ({
-//     restaurants: state.restaurants
-// });
-
-// const mdp = dispatch => ({
-//     getRestaurants: (location, searchTerm) => dispatch(fetchRestaurants(location, searchTerm))
-// });
-
-// export default connect(msp, mdp)(Testing);
 
 export default Testing;
