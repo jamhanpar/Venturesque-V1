@@ -38,8 +38,8 @@ const Results = (props) => {
                     <form className="search-form" >
                         <span className="results-text">in</span>
                         <input className="results-search-input" type="text" placeholder={location} />
-                        <span className="results-text">with</span>
-                        <input className="results-search-input" type="text" placeholder="friend" />
+                        {/* <span className="results-text">with</span>
+                        <input className="results-search-input" type="text" placeholder="friend" /> */}
                         {/* <span className="results-text">on</span>
                         <input className="results-search-input" type="text" placeholder={date}/> */}
                         <i className="fas fa-search"></i>
@@ -54,17 +54,14 @@ const Results = (props) => {
                     <img className="google-map-img" src={googleMap} alt="google maps" />
                 </div>
             </div>
-            <WeatherDisplay location={location}/>
         </div>
     )
 }
 
 // const msp = () => ({});
 
-const mdp = dispatch => {
-    return {
-        fetchUser: () => dispatch(fetchUser())
-    }
-};
+const mdp = dispatch => ({
+    fetchUser: () => dispatch(fetchUser())
+});
 
 export default connect(null, mdp)(Results);

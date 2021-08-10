@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-// import { fetchRestaurants } from '../actions/yelp_actions';
 import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 import { useSearchContext } from '../hooks/contexts/searchContext';
@@ -8,13 +7,12 @@ import { useSearchContext } from '../hooks/contexts/searchContext';
 //icons
 import { FaSistrix } from 'react-icons/fa';
 
-const Splash = (props) => {
+const Splash = () => {
     const searchCtx = useSearchContext();
-    // const [searchTerm, setSearchTerm] = useState('restaurants');
     const searchTerm = 'restaurants';
     const [location, setLocation] = useState('');
-    const [date, setDate] = useState('');
-    const [friend, setFriend] = useState('Vivian Chen');    
+    // const [date, setDate] = useState('');
+    // const [friend, setFriend] = useState('Vivian Chen');    
 
     const { history } = useReactRouter();
 
@@ -23,15 +21,6 @@ const Splash = (props) => {
         const urlEncodedLocation = encodeURI(location);
         history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
     }
-    
-    // const select = (el, all = false) => {
-    //     el = el.trim()
-    //     if (all) {
-    //         return [...document.querySelectorAll(el)]
-    //     } else {
-    //         return document.querySelector(el)
-    //     }
-    // }
 
     const handleSubmit = (e) => {
         // on submission route to results page with location and default search parameter for now
@@ -63,12 +52,4 @@ const Splash = (props) => {
     );
 }
 
-// const msp = () => ({
-
-// });
-
-const mdp = dispatch => ({
-    // fetchRestaurants: (term, location) => dispatch(fetchRestaurants(term, location))
-});
-
-export default connect(null, mdp)(Splash);
+export default Splash;
