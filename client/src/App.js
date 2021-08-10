@@ -7,10 +7,10 @@ import './App.scss';
 import { Nav } from './components/Navbar';
 
 // Pages
-import Home from './pages/Home';
+import Home from './components/pages/Home';
 import Splash from './components/Splash';
-import { LoginSignup } from './pages/LoginSignup';
-import Results from './pages/Results';
+import { LoginSignup } from './components/pages/LoginSignup';
+import Results from './components/pages/Results';
 
 export const App = ({ store }) => (
   <div className="App">

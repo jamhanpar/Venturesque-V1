@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 // import { fetchRestaurants } from '../actions/yelp_actions';
 // import { fetchWeather } from '../actions/weather_action';
-import { fetchUser } from '../actions/user_actions';
-import { useBusinessSearch } from '../hooks/yelp-api/useBusinessSearch';
-import { SearchResults } from '../components/Search/SearchResults';
-import googleMap from "../assets/img/temp-google-map.png";
+import { fetchUser } from '../../actions/user_actions';
+import { useBusinessSearch } from '../../hooks/yelp-api/useBusinessSearch';
+import { SearchResults } from '../Search/SearchResults';
+import googleMap from "../../assets/img/temp-google-map.png";
 import { connect } from "react-redux";
-import "../components/stylesheets/results.scss";
-import { WeatherDisplay } from '../components/Weather/WeatherDisplay';
+import "../stylesheets/results.scss";
+import { WeatherDisplay } from '../Weather/WeatherDisplay';
 
 const Results = (props) => {
     // const { location } = useReactRouter();

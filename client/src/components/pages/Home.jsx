@@ -1,6 +1,6 @@
 import React from 'react';
-import Splash from '../components/Splash';
-import Footer from '../components/Footer';
+import Splash from '../Splash';
+import Footer from '../Footer';
 
 const Home = () => {
     return (
