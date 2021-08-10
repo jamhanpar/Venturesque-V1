@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { fetchRestaurants } from '../actions/yelp_actions';
-// import { fetchWeather } from '../actions/weather_action';
 import { fetchUser } from '../../actions/user_actions';
 import { useBusinessSearch } from '../../hooks/yelp-api/useBusinessSearch';
 import { SearchResults } from '../Search/SearchResults';
@@ -42,8 +40,8 @@ const Results = (props) => {
                         <input className="results-search-input" type="text" placeholder={location} />
                         <span className="results-text">with</span>
                         <input className="results-search-input" type="text" placeholder="friend" />
-                        <span className="results-text">on</span>
-                        <input className="results-search-input" type="text" placeholder={date}/>
+                        {/* <span className="results-text">on</span>
+                        <input className="results-search-input" type="text" placeholder={date}/> */}
                         <i className="fas fa-search"></i>
                     </form>
                     {/* <div className="results-container">

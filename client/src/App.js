@@ -10,7 +10,6 @@ import { Nav } from './components/Navbar';
 // Pages
 import Home from './components/pages/Home';
 import Testing from './components/pages/Testing';
-import Splash from './components/Splash';
 import { LoginSignup } from './components/pages/LoginSignup';
 import Results from './components/pages/Results';
 

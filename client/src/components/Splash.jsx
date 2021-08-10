@@ -12,9 +12,15 @@ const Splash = (props) => {
     const searchCtx = useSearchContext();
     // const [searchTerm, setSearchTerm] = useState('restaurants');
     const searchTerm = 'restaurants';
+<<<<<<< HEAD
     const [location, setLocation] = useState('');
     const [date, setDate] = useState('');
     const [friend, setFriend] = useState('Vivian Chen');    
+=======
+    const [location, setLocation] = useState('Hoboken');
+    // const [date, setDate] = useState('');
+    // const [friend, setFriend] = useState('Vivian Chen');    
+>>>>>>> 990329b (resolved all errors and warning messages)
 
     const { history } = useReactRouter();
 
