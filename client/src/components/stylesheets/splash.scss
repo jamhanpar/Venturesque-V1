@@ -19,16 +19,17 @@ form {
     align-items: flex-start;
 }
 
-.search-input-item, .submit-button-container {
+.search-input-item {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     margin: 15px 0px;
 }
 
 .landing-page-text {
     font-family: $sourceSansPro;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: bold;
 }
 
@@ -39,7 +40,7 @@ form {
     overflow: hidden;
     border-right: 3px solid;
     font-family: $sourceSansPro;
-    font-size: 45px;
+    font-size: 35px;
     padding: 0px 78px;
   }
   
@@ -69,9 +70,10 @@ form {
 
 .landing-page-input {
     border: 1px solid $inputOutline;
-    max-width: 300px;
+    width: auto;
+    max-width: 350px;
     border-radius: 5px;
-    text-indent: 15px;
+    padding: 7px 15px;
     margin-left: 20px;
     font-family: $sourceSansPro;
     font-size: 35px;
@@ -79,17 +81,12 @@ form {
     color: $inputPlaceholder;
 }
 
-::placeholder {
-    font-family: $sourceSansPro;
-    color: $inputPlaceholder;
-}
-
 .generate-button {
     background-color: $offBlue;
-    border: 1px solid $offBlue;
+    border: 2px solid $offBlue;
     border-radius: 5px;
     width: auto;
-    height: auto;
+    height: 100%;
     padding: 12px 31px;
     font-family: $sourceSansPro;
     font-size: 30px;
@@ -103,20 +100,20 @@ form {
 .landing-page-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: $offGrey;
   font-family: $sourceSansPro;
-  font-size: 40px;
+  font-size: 35px;
   opacity: 1; /* Firefox */
 }
 
 .landing-page-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: $offGrey;
   font-family: $sourceSansPro;
-  font-size: 40px;
+  font-size: 35px;
   opacity: 1; /* Firefox */
 }
 
 .landing-page-input::-ms-input-placeholder { /* Microsoft Edge */
   color: $offGrey;
   font-family: $sourceSansPro;
-  font-size: 40px;
+  font-size: 35px;
   opacity: 1; /* Firefox */
 }
