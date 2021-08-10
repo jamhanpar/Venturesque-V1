@@ -39,7 +39,7 @@ const Splash = (props) => {
         <section className='search-input'>
             <form onSubmit={handleSubmit}>
                 <div className='search-input-item'>
-                    <label className='landing-page-text' htmlFor='location'>the best <span className='rotate-text'>first</span> date near </label>    
+                    <label className='landing-page-text' htmlFor='location'>the best <div className='typing-text'>first</div> date near </label>    
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
                 </div>
                 {/* <div className='search-input-item'>
