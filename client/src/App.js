@@ -7,7 +7,8 @@ import './App.scss';
 import { Nav } from './components/Navbar';
 
 // Pages
-import Splash from './components/Splash.jsx';
+import Home from './pages/Home';
+import Splash from './components/Splash';
 import { LoginSignup } from './pages/LoginSignup';
 import Results from './pages/Results';
 
@@ -16,7 +17,7 @@ export const App = ({ store }) => (
     <Provider store={store}>
       <Nav />
       <Switch>
-        <Route exact path='/' component={Splash}/>
+        <Route exact path='/' component={Home}/>
         <Route path='/search/term=:term&location=:location' component={Results}/>
         <Route path='/results' component={Results}/>
         <Route path='/auth/:toggle' component={LoginSignup}/>

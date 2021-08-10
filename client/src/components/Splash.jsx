@@ -42,14 +42,17 @@ const Splash = (props) => {
                     <label className='landing-page-text' htmlFor='location'>the best <span className='rotate-text'>first</span> date near </label>    
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
                 </div>
-                <div className='search-input-item'>
-                    <input className='landing-page-date-input' type='date' id='date' placeholder='date' onChange={() => setDate()} value={date}/>
-                </div>
-                <div className='search-input-item'>
+                {/* <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='friend'>with </label>
                     <input className='landing-page-input' type='text' id='friend' placeholder='friend' onChange={() => setFriend()} value={friend}/>
+                </div> */}
+                <div className='search-input-item'>
+                    <label className='landing-page-text' htmlFor='date'>on </label>
+                    <input className='landing-page-date-input' type='date' id='date' placeholder='date' onChange={() => setDate()} value={date}/>
                 </div>
-                <button className='generate-button' type='submit' onClick={handleSubmit}>Generate</button>
+                <div className='submit-button-container'>
+                    <button className='generate-button' type='submit' onClick={handleSubmit}>Generate</button>
+                </div>
             </form>
         </section>
     );
