@@ -6,9 +6,7 @@ export const receiveRestaurants = createAction('RECEIVE_RESTAURANTS');
 export const fetchRestaurants = (location, cuisine) => async dispatch => {
     try {
         const res = await axios.get(`/api/yelp/restaurants/location=${location}&cuisine=${cuisine}`)
-        debugger
-        const data = res.data.businesses;
-        console.log(data)
+        const data = res.data;
         dispatch(receiveRestaurants(data))
     }
     catch (err) {

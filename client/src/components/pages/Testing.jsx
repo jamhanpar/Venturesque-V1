@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchRestaurants } from '../../util/restaurants';
 
-const Testing = () => {
+const Testing = (props) => {
     useEffect(() => {
-        fetchRestaurants('hoboken', 'restaurant')
+        debugger
+        props.getRestaurants('hoboken', 'restaurant')
     });
-    
 
     return (
         <div>
@@ -15,12 +15,17 @@ const Testing = () => {
     )
 }
 
-// const msp = () => ({});
+const msp = (state) => {
+    return {
+        restaurants: state.restaurants
+    }
+};
 
 const mdp = dispatch => {
+    debugger
     return {
         getRestaurants: (location, searchTerm) => dispatch(fetchRestaurants(location, searchTerm))
     }
 };
 
-export default connect(null, mdp)(Testing);
+export default connect(msp, mdp)(Testing);
