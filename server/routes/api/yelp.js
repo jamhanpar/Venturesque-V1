@@ -23,7 +23,7 @@ router.get('/restaurants/location=:location&cuisine=:cuisine', (req, res) => {
       params: {
         location: location,
         term: cuisine,
-        limit: 100,
+        limit: 50,
       },
     }).then(({ data }) => {
     //   let { businesses } = data
