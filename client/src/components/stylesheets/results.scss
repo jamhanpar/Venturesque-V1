@@ -14,11 +14,22 @@
 .results-search-container {
     background-color: $offWhite;
     border-radius: 5px;
-    width: 752px;
-    height: 485px;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px 10px;
+}
+
+.search-info-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
 }
 
 .results-search-container-title {
@@ -66,6 +77,22 @@
     font-weight: 900;
     color: $offBlue;
     margin: 0px 53px;
+}
+
+.restaurant-activity-container {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-results {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .google-map-container {
