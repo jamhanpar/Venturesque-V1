@@ -24,10 +24,10 @@ const Results = (props) => {
     const [date, setDate] = useState('');
     
     useEffect(() => {
-        fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
-            setRestaurants(data.businesses);
-            console.log(data.businesses)
-        })
+        // fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
+        //     setRestaurants(data.businesses);
+        //     console.log(data.businesses)
+        // })
     }, [])
 
     let restaurantIndex = null;
