@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
-import { SearchResults } from '../Search/SearchResults';
+import { SearchResult } from '../Search/SearchResult';
 import googleMap from "../../assets/img/temp-google-map.png";
 import { connect } from "react-redux";
 import "../stylesheets/results.scss";
@@ -15,25 +15,28 @@ const Results = (props) => {
     const [date, setDate] = useState('');
     
     useEffect(() => {
-        // fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
-        //     setRestaurants(data.businesses);
-        //     console.log(data.businesses)
-        // })
+        fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
+            setRestaurants(data.businesses);
+            console.log(data.businesses)
+        })
     }, [])
 
-    let restaurantIndex = null;
+    if (!restaurants) return null
 
-    if (restaurants) {
-        const sortedRestaurants = restaurants.sort((a,b) => {
-            let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
-            let bValue = (b.review_count < 15 || a.rating === 5) ? 0 : b.rating + b.review_count/100000
-            return bValue - aValue
-        })
-  
-        restaurantIndex = sortedRestaurants.map((restaurant, i) => {
-          return <li key={i}>{restaurant.name}</li>;
-        });
-    }
+    
+    const sortedRestaurants = restaurants.sort((a,b) => {
+        let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
+        let bValue = (b.review_count < 15 || a.rating === 5) ? 0 : b.rating + b.review_count/100000
+        return bValue - aValue
+    })
+
+    const restaurantIndex = sortedRestaurants.map((restaurant, i) => {
+        return <li key={i}>{restaurant.name}</li>;
+    });
+
+    const bestRestaurant = sortedRestaurants[0]
+
+    console.log(bestRestaurant)
 
     // sort by highest rated and most reviewed
     return (
@@ -59,14 +62,10 @@ const Results = (props) => {
                     </div>
                     <div className="restaurant-activity-container">
                         <div className="search-results">
-                            <SearchResults />
-                            <SearchResults />
-                            <SearchResults />
+                            <SearchResult restaurant={bestRestaurant}/>
                         </div>
                         <div className="search-results">
-                            <SearchResults />
-                            <SearchResults />
-                            <SearchResults />
+                            <SearchResult restaurant={bestRestaurant}/>
                         </div>
                     </div>
                 </div>
