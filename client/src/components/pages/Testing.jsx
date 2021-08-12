@@ -1,6 +1,5 @@
 import React from 'react';
 import { fetchRestaurants } from '../../util/restaurants';
-import { WeatherDisplay } from '../Weather/WeatherDisplay';
 import { fetchActivities, fetchGooglePhoto } from '../../util/activities';
 import { fetchWeather } from '../../util/weather';
 

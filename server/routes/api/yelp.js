@@ -8,7 +8,7 @@ require('dotenv').config()
 router.get('/restaurants/location=:location&cuisine=:cuisine', (req, res) => {
     const { location, cuisine } = req.params 
    
-    // create a yelp rest instance
+    // create an axios rest instance
     let yelpREST = axios.create({
       baseURL: "https://api.yelp.com/v3/",
       headers: {
@@ -17,8 +17,7 @@ router.get('/restaurants/location=:location&cuisine=:cuisine', (req, res) => {
       },
     })
 
-    // replace "/businesses/search" /w desired Endpoint
-    
+    // replace w/ desired Endpoint
     yelpREST("/businesses/search", {
       params: {
         location: location,
@@ -26,10 +25,6 @@ router.get('/restaurants/location=:location&cuisine=:cuisine', (req, res) => {
         limit: 50,
       },
     }).then(({ data }) => {
-    //   let { businesses } = data
-    //   businesses.forEach((b) => {
-    //     console.log("Name: ", b.name)
-    //   })
         res.json(data)
     })
 });
