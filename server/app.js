@@ -7,9 +7,11 @@ const db = require('./config/keys').mongoURI;
 
 // importing questions routes
 const questions = require('./routes/api/questions');
+
 // any additional routes import here
 const users = require('./routes/api/users');
 const yelp = require('./routes/api/yelp');
+const google = require('./routes/api/google');
 
 // parsing all incoming req and outgoing res to json
 app.use(express.json())
@@ -22,12 +24,13 @@ mongoose
 
 // create a route
 app.get('/', (req, res) => res.send("App is working!"))
+
 // using this router
 app.use('/api/questions', questions);
 // any additional routes add here
 app.use('/api/users', users);
-
 app.use('/api/yelp', yelp);
+app.use('/api/google', google);
 
 // connecting our ports
 const port = process.env.PORT || 5000

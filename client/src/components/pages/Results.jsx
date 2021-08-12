@@ -22,7 +22,6 @@ const Results = (props) => {
     }, [])
 
     if (!restaurants) return null
-
     
     const sortedRestaurants = restaurants.sort((a,b) => {
         let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
