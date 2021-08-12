@@ -4,14 +4,14 @@ const axios = require('axios');
 
 require('dotenv').config() 
 
-router.get('/location=:location', (req, res) => {
-  const { location } = req.params 
+router.get('/location=:locationKey', (req, res) => {
+  const { locationKey } = req.params 
 
   let accuweatherREST = axios.create({
     baseURL: `http://dataservice.accuweather.com/currentconditions/v1`,
   })
 
-  accuweatherREST(`/${location}?`, {
+  accuweatherREST(`/${locationKey}?`, {
     params: {
       apikey: `${process.env.ACCU_API_KEY}`,
     },
