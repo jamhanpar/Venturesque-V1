@@ -17,7 +17,7 @@ const Results = (props) => {
     const [activities, setActivities] = useState();
     
     useEffect(() => {
-        fetchRestaurants(searchCtx.search, 'korean')
+        fetchRestaurants(searchCtx.search, 'restaurant')
             .then(res => {
                 setRestaurants(res);
                 fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
