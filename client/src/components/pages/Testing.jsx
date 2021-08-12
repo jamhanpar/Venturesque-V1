@@ -7,7 +7,6 @@ import { fetchWeather } from '../../util/weather';
 const Testing = () => {
     return (
         <div>
-            <WeatherDisplay />
             <div>
                 <h1>API Testing:</h1>
                 <button onClick={() => fetchRestaurants('hoboken', 'restaurant')}>Restaurants</button>
