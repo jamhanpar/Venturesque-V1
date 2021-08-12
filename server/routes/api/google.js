@@ -17,9 +17,9 @@ router.get('/activities/location=:location', (req, res) => {
     
     googleREST("/nearbysearch/json?", {
       params: {
-        location: location,     // hoboken = { lat: 40.7440, lng: 74.0324 }
-        radius: 5000,           // 5000 km from location
-        limit: 10,
+        location: location,    // hoboken = { lat: 40.7440, lng: 74.0324 }
+        radius: 10000,           // 10 km from location
+        type: 'liquor_store',
         key: `${process.env.GOOGLE_API_KEY}`,
       },
     }).then(({ data }) => {

@@ -9,7 +9,7 @@ const Testing = () => {
             <WeatherDisplay />
             <div>
                 <button onClick={() => fetchRestaurants('hoboken', 'restaurant')}>Restaurants</button>
-                <button onClick={() => fetchActivities()}>Activities</button>
+                <button onClick={() => fetchActivities({lat: 40.7440, lng: -74.0324})}>Activities</button>
             </div>
         </div>
     )
