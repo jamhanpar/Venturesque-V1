@@ -7,35 +7,48 @@ import { connect } from "react-redux";
 import "../stylesheets/results.scss";
 import { useSearchContext } from '../../hooks/contexts/searchContext';
 import { fetchRestaurants } from '../../util/restaurants';
+import { fetchActivities } from '../../util/activities';
 
 const Results = (props) => {
     const searchCtx = useSearchContext();
     const [restaurants, setRestaurants] = useState();
     const { term, location } = useParams();
     const [date, setDate] = useState('');
+    const [activities, setActivities] = useState();
     
     useEffect(() => {
-        fetchRestaurants(searchCtx.search, 'korean').then(({data}) => {
-            setRestaurants(data.businesses);
-            console.log(data.businesses)
-        })
-    }, [])
+        fetchRestaurants(searchCtx.search, 'korean')
+            .then(res => {
+                setRestaurants(res);
 
-    if (!restaurants) return null
+                fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
+                    .then(res => {
+                        setActivities(res)
+                    })
+            })
+    }, []);
+
+    if (!restaurants || !activities) return null
     
     const sortedRestaurants = restaurants.sort((a,b) => {
+        let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
+        let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
+        return bValue - aValue
+    })
+
+    // Restaurant Index
+    // const restaurantIndex = sortedRestaurants.map((restaurant, i) => {
+    //     return <li key={i}>{restaurant.name}</li>;
+    // });
+
+    const sortedActivities = activities.sort((a,b) => {
         let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
         let bValue = (b.review_count < 15 || a.rating === 5) ? 0 : b.rating + b.review_count/100000
         return bValue - aValue
     })
 
-    const restaurantIndex = sortedRestaurants.map((restaurant, i) => {
-        return <li key={i}>{restaurant.name}</li>;
-    });
-
-    const bestRestaurant = sortedRestaurants[0]
-
-    console.log(bestRestaurant)
+    const bestRestaurant = sortedRestaurants[0];
+    const bestActivity = sortedActivities[0];
 
     // sort by highest rated and most reviewed
     return (
@@ -61,10 +74,10 @@ const Results = (props) => {
                     </div>
                     <div className="restaurant-activity-container">
                         <div className="search-results">
-                            <SearchResult restaurant={bestRestaurant}/>
+                            <SearchResult restaurant={bestRestaurant} type='restaurant'/>
                         </div>
                         <div className="search-results">
-                            <SearchResult restaurant={bestRestaurant}/>
+                            <SearchResult activity={bestActivity} type='activity'/>
                         </div>
                     </div>
                 </div>
