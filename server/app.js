@@ -11,7 +11,8 @@ const questions = require('./routes/api/questions');
 // any additional routes import here
 const users = require('./routes/api/users');
 const yelp = require('./routes/api/yelp');
-const google = require('./routes/api/google');
+const googleActivities = require('./routes/api/googleActivities');
+const googlePhoto = require('./routes/api/googlePhoto');
 
 // parsing all incoming req and outgoing res to json
 app.use(express.json())
@@ -30,7 +31,8 @@ app.use('/api/questions', questions);
 // any additional routes add here
 app.use('/api/users', users);
 app.use('/api/yelp', yelp);
-app.use('/api/google', google);
+app.use('/api/google/activities', googleActivities);
+app.use('/api/google/photo', googlePhoto);
 
 // connecting our ports
 const port = process.env.PORT || 5000
