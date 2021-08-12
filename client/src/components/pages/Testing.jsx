@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { fetchRestaurants } from '../../util/restaurants';
 import { WeatherDisplay } from '../Weather/WeatherDisplay';
+import { fetchActivities } from '../../util/activities';
 
-const Testing = (props) => {
-    // const [ restaurants, setRestaurants ] = useState([]);
-
-    useEffect(() => {
-        fetchRestaurants('hoboken', 'restaurant')
-    }, []);
-
-    const handleClick = (e) => {
-        e.preventDefault();
-    }
-
+const Testing = () => {
     return (
         <div>
             <WeatherDisplay />
             <div>
-                <button onClick={() => handleClick()}>Restaurants</button>
+                <button onClick={() => fetchRestaurants('hoboken', 'restaurant')}>Restaurants</button>
+                <button onClick={() => fetchActivities()}>Activities</button>
             </div>
         </div>
     )
