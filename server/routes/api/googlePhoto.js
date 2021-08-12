@@ -7,7 +7,6 @@ require('dotenv').config()
 
 router.get('/photoref=:photoref', (req, res) => {
   const { photoref } = req.params;
-  console.log(photoref);
 
   let googleREST = axios.create({
     baseURL: "https://maps.googleapis.com/maps/api/place",
@@ -20,8 +19,8 @@ router.get('/photoref=:photoref', (req, res) => {
       sensor: false,
       key: `${process.env.GOOGLE_API_KEY}`,
     },
-  }).then(({ data }) => {
-      res.json(data);
+  }).then((data) => {
+      res.send(data.request._redirectable._options.href) 
   })
 
 });

@@ -13,8 +13,7 @@ export const fetchActivities = async (lat, lng) => {        // location = {lat:3
 export const fetchGooglePhoto = async (photoreference) => {
     try {
         const res = await axios.get(`/api/google/photo/photoref=${photoreference}`)
-        console.log(res);
-        return res;
+        return res.data;
     } 
     catch (err) {
         console.log(err)

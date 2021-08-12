@@ -20,8 +20,6 @@ const Results = (props) => {
         fetchRestaurants(searchCtx.search, 'korean')
             .then(res => {
                 setRestaurants(res);
-                debugger
-
                 fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
                     .then(res => {
                         setActivities(res)
