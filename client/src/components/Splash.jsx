@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import useReactRouter from "use-react-router";
 import './stylesheets/splash.scss';
 import { useSearchContext } from '../hooks/contexts/searchContext';
@@ -23,8 +22,9 @@ const Splash = () => {
     }
 
     const handleSubmit = (e) => {
-        // on submission route to results page with location and default search parameter for now
         e.preventDefault();
+
+        // on submission route to results page with location and default search parameter for now
         results(searchTerm, location);
         searchCtx.setSearch(location);
     }

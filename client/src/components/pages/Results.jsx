@@ -1,22 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import useReactRouter from "use-react-router";
+import { connect } from "react-redux";
+
 import { fetchUser } from '../../actions/user_actions';
 import { SearchResult } from '../Search/SearchResult';
-import googleMap from "../../assets/img/temp-google-map.png";
-import { connect } from "react-redux";
-import "../stylesheets/results.scss";
 import { useSearchContext } from '../../hooks/contexts/searchContext';
 import { fetchRestaurants } from '../../util/restaurants';
 import { fetchActivities } from '../../util/activities';
+import googleMap from "../../assets/img/temp-google-map.png";
+import "../stylesheets/results.scss";
 
 const Results = (props) => {
     const searchCtx = useSearchContext();
     const [restaurants, setRestaurants] = useState();
-    const { term, location } = useParams();
-    const [date, setDate] = useState('');
     const [activities, setActivities] = useState();
+    let { term, location } = useParams();
+    const [tempLoc, setTempLoc] = useState();
+    const [date, setDate] = useState('');
+
+    const { history } = useReactRouter();
     
     useEffect(() => {
+        setTempLoc(location);
+
         fetchRestaurants(searchCtx.search, 'restaurant')
             .then(res => {
                 setRestaurants(res);
@@ -25,7 +32,7 @@ const Results = (props) => {
                         setActivities(res)
                     })
             })
-    }, []);
+    }, [searchCtx.search]);
 
     if (!restaurants || !activities) return null
     
@@ -49,6 +56,19 @@ const Results = (props) => {
     const bestRestaurant = sortedRestaurants[0];
     const bestActivity = sortedActivities[0];
 
+    const results = (term, location) => {
+        const urlEncodedTerm = encodeURI(term);
+        const urlEncodedLocation = encodeURI(location);
+        history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        results('restaurant', tempLoc);
+        searchCtx.setSearch(tempLoc);
+    }
+
     // sort by highest rated and most reviewed
     return (
         <div>
@@ -56,14 +76,14 @@ const Results = (props) => {
                 <div className="results-search-container">
                     <div className="search-info-container">
                         <h1 className="results-search-container-title">The Best Date</h1>
-                        <form className="search-form" >
+                        <form className="search-form" onSubmit={handleSubmit}>
                             <span className="results-text">in</span>
-                            <input className="results-search-input" type="text" placeholder={location} />
+                            <input className="results-search-input" type="text" value={tempLoc} onChange={(e) => setTempLoc(e.target.value)} />
                             {/* <span className="results-text">with</span>
                             <input className="results-search-input" type="text" placeholder="friend" /> */}
                             {/* <span className="results-text">on</span>
                             <input className="results-search-input" type="text" placeholder={date}/> */}
-                            <i className="fas fa-search"></i>
+                            <button type="submit"><i className="fas fa-search" /></button>
                         </form>
                         {/* <div className="results-container">
                             <SearchResults businesses={businesses.slice(0, 1)} />
