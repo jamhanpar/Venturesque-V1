@@ -10,6 +10,7 @@ const Splash = () => {
     const searchCtx = useSearchContext();
     const searchTerm = 'restaurants';
     const [location, setLocation] = useState('');
+    const [cuisine, setCuisine] = useState('Restaurant');
     // const [date, setDate] = useState('');
     // const [friend, setFriend] = useState('Vivian Chen');    
 
@@ -25,7 +26,7 @@ const Splash = () => {
         e.preventDefault();
 
         // on submission route to results page with location and default search parameter for now
-        results(searchTerm, location);
+        results(cuisine, location);
         searchCtx.setSearch(location);
     }
 
@@ -35,6 +36,7 @@ const Splash = () => {
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best first date near </label>  
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
+                    <input className='landing-page-input' type='text' id='cuisine' placeholder='Restaurant' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/>
                     <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
                 {/* <div className='search-input-item'>

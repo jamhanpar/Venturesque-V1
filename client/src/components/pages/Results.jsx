@@ -24,7 +24,7 @@ const Results = (props) => {
     useEffect(() => {
         setTempLoc(location);
 
-        fetchRestaurants(searchCtx.search, 'restaurant')
+        fetchRestaurants(searchCtx.search, term)
             .then(res => {
                 setRestaurants(res);
                 fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
