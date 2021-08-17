@@ -20,13 +20,9 @@ const Results = (props) => {
     // const [date, setDate] = useState('');
 
     const { history } = useReactRouter();
-
-    debugger
     
     useEffect(() => {
         setTempLoc(location);
-        
-        debugger
 
         fetchRestaurants(searchCtx.search, term)
             .then(res => {
