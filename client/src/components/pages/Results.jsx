@@ -102,6 +102,7 @@ const Results = (props) => {
 }
 
 Results.defaultProps = {
+    location: 'hoboken',
     cuisine: 'restaurant',
 }
 
