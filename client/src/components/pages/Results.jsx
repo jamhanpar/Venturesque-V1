@@ -102,7 +102,7 @@ const Results = (props) => {
 }
 
 Results.defaultProps = {
-    cuisine = 'restaurant',
+    cuisine: 'restaurant',
 }
 
 // const msp = () => ({});
