@@ -3,8 +3,6 @@ import "../stylesheets/searchResultItem.scss";
 import { fetchGooglePhoto } from '../../util/activities';
 
 export function SearchResult({ restaurant, activity, type }) { 
-  // const { image_url, name, phone, price, rating, review_count, is_closed, coordinates, url } = restaurant;
-  // const { name, rating, user_ratings_total, photos } = activity;
   const [photoURL, setPhotoURL] = useState(null);
 
   useEffect(() => {
@@ -14,11 +12,9 @@ export function SearchResult({ restaurant, activity, type }) {
           setPhotoURL(res)
         });
     }
-    
+
     // eslint-disable-next-line
   }, [activity]);
-
-  // if (!photoURL && type !== 'restaurant') return null;
 
   if (type === 'restaurant') {
     return (
