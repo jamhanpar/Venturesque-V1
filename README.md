@@ -10,17 +10,28 @@ https://www.jameshansungpark.com/Venturesque/
 ### Populate Weather Information into a component - Work In Progress
 
 # Dependencies & Version
+## Frontend
 * React.js 17.0.1
 * Redux.js 4.0.5
 * Node v10.13.0
-* Node Sass v5.0.0
-* Axios 0.21.1
+* node-sass v5.0.0
 * Heroku
-* hookrouter
-* use-react-router
-* yelp-fusion
-* react-router-dom
-* query-string
+* hookrouter 1.2.5
+* use-react-router 1.0.7
+* yelp-fusion 3.0.0
+* react-router-dom 5.2.0
+* query-string 7.0.0
+* json-server 0.16.3
+* react-icons 4.2.0
+## Backend
+* axios 0.21.1
+* concurrently 6.2.1
+* cors 2.8.5
+* dotenv 10.0.0
+* express 4.17.1
+* mongoose 5.12.6
+* requests 0.3.0
+* validator 13.6.0
 
 # Languages / Libraries
 * HTML
