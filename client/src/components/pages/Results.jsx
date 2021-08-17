@@ -101,6 +101,10 @@ const Results = (props) => {
     )
 }
 
+Results.defaultProps = {
+    cuisine = 'restaurant',
+}
+
 // const msp = () => ({});
 
 const mdp = dispatch => ({
