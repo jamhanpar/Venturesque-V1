@@ -14,6 +14,8 @@ export function SearchResult({ restaurant, activity, type }) {
           setPhotoURL(res)
         });
     }
+    
+    // eslint-disable-next-line
   }, [activity]);
 
   // if (!photoURL && type !== 'restaurant') return null;

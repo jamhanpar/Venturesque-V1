@@ -17,21 +17,27 @@ const Results = (props) => {
     const [activities, setActivities] = useState();
     let { term, location } = useParams();
     const [tempLoc, setTempLoc] = useState();
-    const [date, setDate] = useState('');
+    // const [date, setDate] = useState('');
 
     const { history } = useReactRouter();
+
+    debugger
     
     useEffect(() => {
         setTempLoc(location);
+        
+        debugger
 
         fetchRestaurants(searchCtx.search, term)
             .then(res => {
                 setRestaurants(res);
+
                 fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
                     .then(res => {
                         setActivities(res)
                     })
             })
+        // eslint-disable-next-line
     }, [searchCtx.search]);
 
     if (!restaurants || !activities) return null
@@ -79,17 +85,8 @@ const Results = (props) => {
                         <form className="search-form" onSubmit={handleSubmit}>
                             <span className="results-text">in</span>
                             <input className="results-search-input" type="text" value={tempLoc} onChange={(e) => setTempLoc(e.target.value)} />
-                            {/* <span className="results-text">with</span>
-                            <input className="results-search-input" type="text" placeholder="friend" /> */}
-                            {/* <span className="results-text">on</span>
-                            <input className="results-search-input" type="text" placeholder={date}/> */}
                             <button type="submit"><i className="fas fa-search" /></button>
                         </form>
-                        {/* <div className="results-container">
-                            <SearchResults businesses={businesses.slice(0, 1)} />
-                            <span className="separator">&</span>
-                            <SearchResults businesses={businesses.slice(0, 1)} />
-                        </div> */}
                     </div>
                     <div className="restaurant-activity-container">
                         <div className="search-results">

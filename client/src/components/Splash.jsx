@@ -8,7 +8,6 @@ import { FaSistrix } from 'react-icons/fa';
 
 const Splash = () => {
     const searchCtx = useSearchContext();
-    const searchTerm = 'restaurants';
     const [location, setLocation] = useState('');
     const [cuisine, setCuisine] = useState('Restaurant');
     // const [date, setDate] = useState('');
@@ -39,14 +38,6 @@ const Splash = () => {
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='Restaurant' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/>
                     <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
-                {/* <div className='search-input-item'>
-                    <label className='landing-page-text' htmlFor='friend'>with </label>
-                    <input className='landing-page-input' type='text' id='friend' placeholder='friend' onChange={() => setFriend()} value={friend}/>
-                </div> */}
-                {/* <div className='search-input-item'>
-                    <label className='landing-page-text' htmlFor='date'>on </label>
-                    <input className='landing-page-date-input' type='date' id='date' placeholder='date' onChange={() => setDate()} value={date}/>
-                </div> */}
                 <div className='submit-button-container'>
                 </div>
             </form>
