@@ -11,18 +11,21 @@ import { fetchActivities } from '../../util/activities';
 import googleMap from "../../assets/img/temp-google-map.png";
 import "../stylesheets/results.scss";
 
+import { FaSearch } from 'react-icons/fa';
+
 const Results = (props) => {
     const searchCtx = useSearchContext();
     const [restaurants, setRestaurants] = useState();
     const [activities, setActivities] = useState();
     let { term, location } = useParams();
     const [tempLoc, setTempLoc] = useState();
-    // const [date, setDate] = useState('');
+    const [cuisine, setCuisine] = useState();
 
     const { history } = useReactRouter();
     
     useEffect(() => {
         setTempLoc(location);
+        setCuisine(term);
 
         fetchRestaurants(searchCtx.search, term)
             .then(res => {
@@ -71,7 +74,6 @@ const Results = (props) => {
         searchCtx.setSearch(tempLoc);
     }
 
-    // sort by highest rated and most reviewed
     return (
         <div>
             <div className="search-results-container">
@@ -81,7 +83,9 @@ const Results = (props) => {
                         <form className="search-form" onSubmit={handleSubmit}>
                             <span className="results-text">in</span>
                             <input className="results-search-input" type="text" value={tempLoc} onChange={(e) => setTempLoc(e.target.value)} />
-                            <button type="submit"><i className="fas fa-search" /></button>
+                            <input className="results-search-input" type="text" value={cuisine} onChange={(e) => setCuisine(e.target.value)} />
+                            {/* <button type="submit"><i className="fas fa-search" /></button> */}
+                            <button className="search-icon-btn" type="submit"><FaSearch className="search-icon" /></button>
                         </form>
                     </div>
                     <div className="restaurant-activity-container">
