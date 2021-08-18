@@ -39,8 +39,6 @@ const Splash = () => {
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='Restaurant' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/>
                     <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
-                <div className='submit-button-container'>
-                </div>
             </form>
         </section>
     );
