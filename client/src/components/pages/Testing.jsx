@@ -5,7 +5,7 @@ import { fetchWeather } from '../../util/weather';
 
 import Restaurants from '../Restaurants/Restaurants';
 
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaSearch } from 'react-icons/fa';
 import '../stylesheets/testing.scss';
 
 const Testing = () => {
@@ -31,6 +31,11 @@ const Testing = () => {
     return (
         <div>
             <div className="border">
+                <h1>Icons</h1>
+                <FaTimes style={{ color: 'red', cursor: 'pointer' }}/>
+                <FaSearch style={{ color: 'red' }}/>
+            </div>
+            <div className="border">
                 <h1>API Testing:</h1>
                 <button onClick={() => fetchRestaurants('hoboken', 'restaurant')}>Restaurants</button>
                 <button onClick={() => fetchActivities( 40.7440, -74.0324)}>Activities</button>
@@ -40,10 +45,6 @@ const Testing = () => {
             <div className="border">
                 <h1>Component Testing</h1>
                 <Restaurants restaurants={restaurants} />
-            </div>
-            <div className="border">
-                <h1>Icons</h1>
-                <FaTimes style={{ color: 'red', cursor: 'pointer' }}/>
             </div>
         </div>
     )

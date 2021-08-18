@@ -9,3 +9,7 @@ Currently, we need to provide a type parameter to google places api, but how can
 # Retrieve Photo in parent component for Activity so the activity item card and restaurant item card render at the same time
 
 Currently, there is a slight delay when the activity image renders on the activity item card because the image is being fetched after the restaurant item card has been rendered
+
+# Add a "use current location" alert when user doesn't provide a location input
+
+Currently, the user needs to enter a location (city, zipcode, etc) to get results otherwise, they will not receive any results.
