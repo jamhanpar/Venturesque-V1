@@ -11,8 +11,8 @@ import '../stylesheets/testing.scss';
 const Testing = () => {
     // const [user, setUser] = useState();
     const [restaurants, setRestaurants] = useState([]);
-    const city = 'boston';
-    const cuisine = 'restaurant';
+    const city = 'pittsburgh';
+    const cuisine = 'crepes';
 
     useEffect(() => {
         // const fetchUser = async () => {

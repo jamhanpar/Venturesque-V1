@@ -9,7 +9,7 @@ import { FaSistrix } from 'react-icons/fa';
 const Splash = () => {
     const searchCtx = useSearchContext();
     const [location, setLocation] = useState('');
-    const [cuisine, setCuisine] = useState('Restaurant');
+    const [cuisine, setCuisine] = useState('restaurant');
     // const [date, setDate] = useState('');
     // const [friend, setFriend] = useState('Vivian Chen');    
 

@@ -6,7 +6,7 @@ const Restaurants = (props) => {
     const filtered = sorted.filter(restaurant => restaurant.rating >= 4)
 
     const restaurantIndex = filtered.map(restaurant => (
-        <Restaurant restaurant={ restaurant }/>
+        <Restaurant key={ restaurant.id } restaurant={ restaurant }/>
     ))
 
     return (
