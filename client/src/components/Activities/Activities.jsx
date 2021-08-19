@@ -8,7 +8,7 @@ const Activities = (props) => {
     const filtered = sorted.filter(activity => activity.rating >= 4)
 
     const activityIndex = filtered.map(activity => (
-        <Activity key={ activity.id } activity={ activity }/>
+        <Activity key={ activity.place_id } activity={ activity }/>
     ))
 
     return (
