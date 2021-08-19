@@ -4,13 +4,16 @@ import { fetchActivities, fetchGooglePhoto } from '../../util/activities';
 import { fetchWeather } from '../../util/weather';
 
 import Restaurants from '../Restaurants/Restaurants';
+import Activities from '../Activities/Activities';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import '../stylesheets/testing.scss';
+import Activity from '../Activities/Activities';
 
 const Testing = () => {
     // const [user, setUser] = useState();
     const [restaurants, setRestaurants] = useState([]);
+    const [activities, setActivities] = useState([]);
     const city = 'palisades park';
     const cuisine = 'restaurant';
 
@@ -23,7 +26,12 @@ const Testing = () => {
         // }
 
         fetchRestaurants(city, cuisine)
-            .then(res => setRestaurants(res));
+            .then(res => {
+                setRestaurants(res);
+
+                fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
+                    .then(res => setActivities(res))
+            });
     }, [])
 
     if (!restaurants) return null;
@@ -45,6 +53,7 @@ const Testing = () => {
             <div className="border">
                 <h1>Component Testing</h1>
                 <Restaurants restaurants={restaurants} />
+                <Activity activities={activities} />
             </div>
         </div>
     )

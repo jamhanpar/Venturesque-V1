@@ -1,6 +1,8 @@
 import React from 'react';
 import Restaurant from './Restaurant';
 
+import '../stylesheets/restaurants.scss';
+
 const Restaurants = (props) => {
     const sorted = props.restaurants.sort((a, b) => b.review_count - a.review_count)
     const filtered = sorted.filter(restaurant => restaurant.rating >= 4)
@@ -10,7 +12,7 @@ const Restaurants = (props) => {
     ))
 
     return (
-        <div>
+        <div className="restaurant-list">
             {restaurantIndex}
         </div>
     )
