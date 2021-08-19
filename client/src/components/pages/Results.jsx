@@ -17,10 +17,10 @@ const Results = (props) => {
     const searchCtx = useSearchContext();
     const [restaurants, setRestaurants] = useState();
     const [activities, setActivities] = useState();
-    let { term, location } = useParams();
     const [tempLoc, setTempLoc] = useState();
     const [cuisine, setCuisine] = useState();
-
+    
+    let { term, location } = useParams();
     const { history } = useReactRouter();
     
     useEffect(() => {
