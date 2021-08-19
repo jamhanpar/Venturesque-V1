@@ -6,8 +6,8 @@ import { connect } from "react-redux";
 import { fetchUser } from '../../actions/user_actions';
 import { SearchResult } from '../Search/SearchResult';
 import { useSearchContext } from '../../hooks/contexts/searchContext';
-import { fetchRestaurants } from '../../util/restaurants';
-import { fetchActivities } from '../../util/activities';
+import { fetchRestaurants } from '../../util/apis/restaurants';
+import { fetchActivities } from '../../util/apis/activities';
 import googleMap from "../../assets/img/temp-google-map.png";
 import "../stylesheets/results.scss";
 

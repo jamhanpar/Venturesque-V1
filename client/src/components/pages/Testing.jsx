@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { fetchRestaurants } from '../../util/restaurants';
-import { fetchActivities, fetchGooglePhoto } from '../../util/activities';
-import { fetchWeather } from '../../util/weather';
+import { fetchRestaurants } from '../../util/apis/restaurants';
+import { fetchActivities, fetchGooglePhoto } from '../../util/apis/activities';
+import { fetchWeather } from '../../util/apis/weather';
 
 import Restaurants from '../Restaurants/Restaurants';
 import Activities from '../Activities/Activities';
