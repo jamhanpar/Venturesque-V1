@@ -20,7 +20,7 @@ const Results = (props) => {
     const [tempLoc, setTempLoc] = useState();
     const [cuisine, setCuisine] = useState();
     
-    let { term, location } = useParams();
+    let { term, location } = useParams(); 
     const { history } = useReactRouter();
     
     useEffect(() => {

@@ -6,7 +6,6 @@ import './App.scss';
 
 // Components
 import { Nav } from './components/Navbar';
-import Footer from './components/Footer';
 
 // Pages
 import Home from './components/pages/Home';
@@ -28,7 +27,6 @@ export const App = ({ store }) => (
           </SearchProvider>
         <Route path='/auth/:toggle' component={LoginSignup}/>
       </Switch>
-      <Footer />
     </Provider>
   </div>
 );
