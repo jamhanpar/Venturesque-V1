@@ -4,21 +4,25 @@ import useReactRouter from "use-react-router";
 import { connect } from "react-redux";
 
 import { fetchUser } from '../../actions/user_actions';
-import { SearchResult } from '../Search/SearchResult';
 import { useSearchContext } from '../../hooks/contexts/searchContext';
 import { fetchRestaurants } from '../../util/apis/restaurants';
 import { fetchActivities } from '../../util/apis/activities';
-import googleMap from "../../assets/img/temp-google-map.png";
-import "../stylesheets/results.scss";
+
+import { SearchResult } from '../Search/SearchResult';
 
 import { FaSearch } from 'react-icons/fa';
 
+import googleMap from "../../assets/img/temp-google-map.png";
+import "../stylesheets/results.scss";
+import Restaurants from '../Restaurants/Restaurants';
+
+
 const Results = (props) => {
     const searchCtx = useSearchContext();
-    const [restaurants, setRestaurants] = useState();
-    const [activities, setActivities] = useState();
     const [tempLoc, setTempLoc] = useState();
     const [cuisine, setCuisine] = useState();
+    const [restaurants, setRestaurants] = useState();
+    const [activities, setActivities] = useState();
     
     let { term, location } = useParams(); 
     const { history } = useReactRouter();
@@ -27,10 +31,12 @@ const Results = (props) => {
         setTempLoc(location);
         setCuisine(term);
 
+        // get restaurants
         fetchRestaurants(searchCtx.search, term)
             .then(res => {
                 setRestaurants(res);
 
+                // get activities
                 fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
                     .then(res => {
                         setActivities(res)
@@ -39,18 +45,13 @@ const Results = (props) => {
         // eslint-disable-next-line
     }, [searchCtx.search]);
 
-    if (!restaurants || !activities) return null
+    if (!restaurants || !activities) return null;
     
     const sortedRestaurants = restaurants.sort((a,b) => {
         let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
         let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
         return bValue - aValue
     })
-
-    // Restaurant Index
-    // const restaurantIndex = sortedRestaurants.map((restaurant, i) => {
-    //     return <li key={i}>{restaurant.name}</li>;
-    // });
 
     const sortedActivities = activities.sort((a,b) => {
         let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
