@@ -11,8 +11,8 @@ import '../stylesheets/testing.scss';
 const Testing = () => {
     // const [user, setUser] = useState();
     const [restaurants, setRestaurants] = useState([]);
-    const city = 'pittsburgh';
-    const cuisine = 'crepes';
+    const city = 'palisades park';
+    const cuisine = 'restaurant';
 
     useEffect(() => {
         // const fetchUser = async () => {
@@ -37,7 +37,7 @@ const Testing = () => {
             </div>
             <div className="border">
                 <h1>API Testing:</h1>
-                <button onClick={() => fetchRestaurants('hoboken', 'restaurant')}>Restaurants</button>
+                <button onClick={() => fetchRestaurants('queens', 'restaurant')}>Restaurants</button>
                 <button onClick={() => fetchActivities( 40.7440, -74.0324)}>Activities</button>
                 <button onClick={() => fetchGooglePhoto("Aap_uEBKiq1wMmnu2IfnEZq-B3g3QTtL3hwg0mJmhvCMAqHqhXxKyxRs06HPGj7ccXHvOgv3313p-l4D6ISnkAme3LZvJWaM15LYwH2mb18LoP_d3XQkpLKKdm84am3OpuVD3YLSIb-i3P7XjhdzUNEuLeMpFht3hKeoTJqeyvzvykiitxRA")}>Photo</button>
                 <button onClick={() => fetchWeather(339490)}>Weather</button>
