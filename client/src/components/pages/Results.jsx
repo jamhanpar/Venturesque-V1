@@ -8,16 +8,15 @@ import { useSearchContext } from '../../hooks/contexts/searchContext';
 import { fetchRestaurants } from '../../util/apis/restaurants';
 import { fetchActivities } from '../../util/apis/activities';
 import { SearchResult } from '../Search/SearchResult';
+import Restaurants from '../Restaurants/Restaurants';
 import { FaSearch, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import googleMap from "../../assets/img/temp-google-map.png";
 import "../stylesheets/results.scss";
 
-import { sortBestRestaurant } from '../../util/algorithms/sortingAlgo';
-
-const Results = (props) => {
+const Results = () => {
     const searchCtx = useSearchContext();
     const [locationTerm, setLocationTerm] = useState();
-    const [cuisine, setCuisine] = useState();
+    const [cuisineTerm, setCuisineTerm] = useState();
     const [restaurants, setRestaurants] = useState();
     const [activities, setActivities] = useState();
     
@@ -30,10 +29,10 @@ const Results = (props) => {
     
     useEffect(() => {
         setLocationTerm(location);
-        setCuisine(term);
+        setCuisineTerm(term);
 
         // get restaurants
-        fetchRestaurants(searchCtx.search, term)
+        fetchRestaurants(searchCtx.search, searchCtx.cuisine)
             .then(res => {
                 setRestaurants(res);
 
@@ -63,8 +62,8 @@ const Results = (props) => {
     const bestRestaurant = sortedRestaurants[currentRestaurantIdx];
     const bestActivity = sortedActivities[currentActivityIdx];
 
-    const results = (term, location) => {
-        const urlEncodedTerm = encodeURI(term);
+    const results = (cuisine, location) => {
+        const urlEncodedTerm = encodeURI(cuisine);
         const urlEncodedLocation = encodeURI(location);
         history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
     }
@@ -72,8 +71,9 @@ const Results = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        results(cuisine, locationTerm);
+        results(cuisineTerm, locationTerm);
         searchCtx.setSearch(locationTerm);
+        searchCtx.setSearch(cuisineTerm);
     }
 
     return (
@@ -85,17 +85,12 @@ const Results = (props) => {
                         <form className="search-form" onSubmit={handleSubmit}>
                             <span className="results-text">in</span>
                             <input className="results-search-input" type="text" value={locationTerm} onChange={(e) => setLocationTerm(e.target.value)} />
-                            <input className="results-search-input" type="text" value={cuisine} onChange={(e) => setCuisine(e.target.value)} />
+                            <input className="results-search-input" type="text" value={cuisineTerm} onChange={(e) => setCuisineTerm(e.target.value)} />
                             <button className="search-icon-btn" type="submit"><FaSearch className="search-icon" /></button>
                         </form>
                     </div>
                     <div className="restaurant-activity-container">
-                        <div className="search-results">
-                            <FaAngleLeft onClick={() => setCurrentRestaurantIdx(currentRestaurantIdx - 1)}/>
-                            <SearchResult restaurant={bestRestaurant} type='restaurant' />
-                            {currentRestaurantIdx}
-                            <FaAngleRight onClick={() => setCurrentRestaurantIdx(currentRestaurantIdx + 1)} />
-                        </div>
+                        <Restaurants restaurants={restaurants} />
                         <div className="search-results">
                             <FaAngleLeft onClick={() => setCurrentActivityIdx(currentActivityIdx - 1)}/>
                             <SearchResult activity={bestActivity} type='activity'/>

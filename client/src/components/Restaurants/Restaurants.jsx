@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Restaurant from './Restaurant';
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
+import "../stylesheets/results.scss";
 import '../stylesheets/restaurants.scss';
 
 const Restaurants = (props) => {
-    const [bestRestaurant, setBestRestaurant] = useState();
     const [currentIdx, setCurrentIdx] = useState(0);
 
     const filtered = props.restaurants.filter(restaurant => restaurant.rating >= 4);
@@ -15,14 +16,12 @@ const Restaurants = (props) => {
         <Restaurant key={ restaurant.id } restaurant={ restaurant }/>
     ))
 
-    useEffect(() => {
-        setBestRestaurant(restaurantIndex[currentIdx]);
-    }, [])
-
     return (
-        <div className="restaurant-list">
-            {bestRestaurant}
-            {restaurantIndex}
+        <div className="search-results">
+            <FaAngleLeft onClick={() => setCurrentIdx(currentIdx - 1)}/>
+            {restaurantIndex[currentIdx]}
+            {currentIdx}
+            <FaAngleRight onClick={() => setCurrentIdx(currentIdx + 1)} />
         </div>
     )
 }

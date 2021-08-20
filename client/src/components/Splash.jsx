@@ -8,14 +8,13 @@ import { FaSistrix } from 'react-icons/fa';
 
 const Splash = () => {
     const searchCtx = useSearchContext();
-    const [location, setLocation] = useState('');
+
+    const [location, setLocation] = useState('hoboken');
     const [cuisine, setCuisine] = useState('restaurant');
-    // const [date, setDate] = useState('');
-    // const [friend, setFriend] = useState('Vivian Chen');    
 
     const { history } = useReactRouter();
 
-    function results(term, location) {
+    const results = (term, location) => {
         const urlEncodedTerm = encodeURI(term);
         const urlEncodedLocation = encodeURI(location);
         history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
@@ -25,8 +24,9 @@ const Splash = () => {
         e.preventDefault();
 
         // on submission route to results page with location and default search parameter for now
-        results(cuisine, location);
         searchCtx.setSearch(location);
+        searchCtx.setCuisine(cuisine);
+        results(cuisine, location);
     }
 
     return (
