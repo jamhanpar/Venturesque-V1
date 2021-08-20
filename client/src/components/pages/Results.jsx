@@ -7,19 +7,16 @@ import { fetchUser } from '../../actions/user_actions';
 import { useSearchContext } from '../../hooks/contexts/searchContext';
 import { fetchRestaurants } from '../../util/apis/restaurants';
 import { fetchActivities } from '../../util/apis/activities';
-
 import { SearchResult } from '../Search/SearchResult';
-
-import { FaSearch } from 'react-icons/fa';
-
+import { FaSearch, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import googleMap from "../../assets/img/temp-google-map.png";
 import "../stylesheets/results.scss";
-import Restaurants from '../Restaurants/Restaurants';
 
+import { sortBestRestaurant } from '../../util/algorithms/sortingAlgo';
 
 const Results = (props) => {
     const searchCtx = useSearchContext();
-    const [tempLoc, setTempLoc] = useState();
+    const [locationTerm, setLocationTerm] = useState();
     const [cuisine, setCuisine] = useState();
     const [restaurants, setRestaurants] = useState();
     const [activities, setActivities] = useState();
@@ -27,8 +24,12 @@ const Results = (props) => {
     let { term, location } = useParams(); 
     const { history } = useReactRouter();
     
+    // let [bestRestaurant, setBestRestaurant] = useState();
+    let [currentRestaurantIdx, setCurrentRestaurantIdx] = useState(0);
+    let [currentActivityIdx, setCurrentActivityIdx] = useState(0);
+    
     useEffect(() => {
-        setTempLoc(location);
+        setLocationTerm(location);
         setCuisine(term);
 
         // get restaurants
@@ -41,10 +42,10 @@ const Results = (props) => {
                     .then(res => {
                         setActivities(res)
                     })
-            })
+        })
         // eslint-disable-next-line
     }, [searchCtx.search]);
-
+    
     if (!restaurants || !activities) return null;
     
     const sortedRestaurants = restaurants.sort((a,b) => {
@@ -59,8 +60,8 @@ const Results = (props) => {
         return bValue - aValue
     })
 
-    const bestRestaurant = sortedRestaurants[0];
-    const bestActivity = sortedActivities[0];
+    const bestRestaurant = sortedRestaurants[currentRestaurantIdx];
+    const bestActivity = sortedActivities[currentActivityIdx];
 
     const results = (term, location) => {
         const urlEncodedTerm = encodeURI(term);
@@ -71,8 +72,8 @@ const Results = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        results('restaurant', tempLoc);
-        searchCtx.setSearch(tempLoc);
+        results(cuisine, locationTerm);
+        searchCtx.setSearch(locationTerm);
     }
 
     return (
@@ -83,18 +84,23 @@ const Results = (props) => {
                         <h1 className="results-search-container-title">The Best Date</h1>
                         <form className="search-form" onSubmit={handleSubmit}>
                             <span className="results-text">in</span>
-                            <input className="results-search-input" type="text" value={tempLoc} onChange={(e) => setTempLoc(e.target.value)} />
+                            <input className="results-search-input" type="text" value={locationTerm} onChange={(e) => setLocationTerm(e.target.value)} />
                             <input className="results-search-input" type="text" value={cuisine} onChange={(e) => setCuisine(e.target.value)} />
-                            {/* <button type="submit"><i className="fas fa-search" /></button> */}
                             <button className="search-icon-btn" type="submit"><FaSearch className="search-icon" /></button>
                         </form>
                     </div>
                     <div className="restaurant-activity-container">
                         <div className="search-results">
-                            <SearchResult restaurant={bestRestaurant} type='restaurant'/>
+                            <FaAngleLeft onClick={() => setCurrentRestaurantIdx(currentRestaurantIdx - 1)}/>
+                            <SearchResult restaurant={bestRestaurant} type='restaurant' />
+                            {currentRestaurantIdx}
+                            <FaAngleRight onClick={() => setCurrentRestaurantIdx(currentRestaurantIdx + 1)} />
                         </div>
                         <div className="search-results">
+                            <FaAngleLeft onClick={() => setCurrentActivityIdx(currentActivityIdx - 1)}/>
                             <SearchResult activity={bestActivity} type='activity'/>
+                            {currentActivityIdx}
+                            <FaAngleRight onClick={() => setCurrentActivityIdx(currentActivityIdx + 1)} />
                         </div>
                     </div>
                 </div>

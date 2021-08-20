@@ -15,7 +15,7 @@ export function SearchResult({ restaurant, activity, type }) {
 
     // eslint-disable-next-line
   }, [activity]);
-
+  
   if (type === 'restaurant') {
     return (
       <div className="search-result-item-card">
