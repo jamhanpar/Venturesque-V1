@@ -27,7 +27,7 @@
 .results-search-container {
     background-color: $offWhite;
     border-radius   : 5px;
-    min-width       : 600px;
+    min-width       : 540px;
     height          : 80%;
     display         : flex;
     flex-direction  : column;
@@ -144,8 +144,9 @@
 
 .google-map-img {
     border-radius: 5px;
-    width        : auto;
+    width        : 530px;
     height       : 80%;
+    object-fit: cover;
 }
 
 .list-container {
