@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchGooglePhoto } from "../../util/apis/activities";
 
-import "../stylesheets/results.scss";
-import '../stylesheets/restaurants.scss';
-
 const Activity = ({ activity }) => {
   const [photoURL, setPhotoURL] = useState(null);
 

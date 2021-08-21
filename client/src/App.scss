@@ -2,6 +2,16 @@
 @import '../src/components/stylesheets/colors.scss';
 @import '../src/components/stylesheets/fonts.scss';
 
+@import './components/stylesheets/activities.scss';
+@import './components/stylesheets/authform.scss';
+@import './components/stylesheets/footer.scss';
+@import './components/stylesheets/home.scss';
+@import './components/stylesheets/navbar.scss';
+@import './components/stylesheets/restaurants.scss';
+@import './components/stylesheets/results.scss';
+@import './components/stylesheets/searchResultItem.scss';
+@import './components/stylesheets/splash.scss';
+
 .html, body {
   width: 100%;
   min-height: 100vh;

@@ -12,9 +12,6 @@ import SearchInputForm from "../SearchInputForm";
 
 import googleMap from "../../assets/img/temp-google-map.png";
 
-import "../stylesheets/results.scss";
-import '../stylesheets/searchResultItem.scss';
-
 const Results = () => {
   const searchCtx = useSearchContext();
   const [locationTerm, setLocationTerm] = useState();

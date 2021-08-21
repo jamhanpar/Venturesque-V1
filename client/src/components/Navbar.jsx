@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/temp-logo.png';
-import "./stylesheets/navbar.scss";
 
 export const Nav = () => {
     return (

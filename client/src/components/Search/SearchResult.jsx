@@ -1,5 +1,4 @@
 import React, { useEffect, useState} from 'react';
-import "../stylesheets/searchResultItem.scss";
 import { fetchGooglePhoto } from '../../util/apis/activities';
 
 export function SearchResult({ restaurant, activity, type }) { 

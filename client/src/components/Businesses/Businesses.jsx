@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Restaurant from './Restaurant';
 
-import '../stylesheets/restaurants.scss';
-
 const Restaurants = (props) => {
     const [bestRestaurant, setBestRestaurant] = useState();
     const [currentIdx, setCurrentIdx] = useState(0);

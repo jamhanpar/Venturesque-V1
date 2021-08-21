@@ -7,7 +7,6 @@ import Restaurants from '../Restaurants/Restaurants';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
-import '../stylesheets/testing.scss';
 import Activity from '../Activities/Activities';
 
 const Testing = () => {

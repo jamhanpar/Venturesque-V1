@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useReactRouter from "use-react-router";
-import './stylesheets/splash.scss';
 import { useSearchContext } from '../hooks/contexts/searchContext';
 
 //icons
@@ -33,7 +32,7 @@ const Splash = () => {
         <section className='search-input'>
             <form onSubmit={handleSubmit}>
                 <div className='search-input-item'>
-                    <label className='landing-page-text' htmlFor='location'>the best first date near </label>  
+                    <label className='landing-page-text' htmlFor='location'>the best first date near </label>
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
                     <p className='landing-page-symbol'>&</p>
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/>

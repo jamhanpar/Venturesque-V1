@@ -1,6 +1,5 @@
 import React from 'react';
 import { SearchResult } from './SearchResult';
-import "../stylesheets/searchResultItem.scss";
 
 export function SearchResults(props) {
     if(!props.businesses ||  !props.businesses.length) {

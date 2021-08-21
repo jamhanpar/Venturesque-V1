@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Restaurant from './Restaurant';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-import "../stylesheets/results.scss";
-import '../stylesheets/restaurants.scss';
-
 const Restaurants = (props) => {
     const [currentIdx, setCurrentIdx] = useState(0);
 

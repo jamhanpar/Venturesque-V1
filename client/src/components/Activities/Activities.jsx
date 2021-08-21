@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Activity from './Activity';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-import '../stylesheets/activities.scss';
-
 const Activities = (props) => {
     const [currentIdx, setCurrentIdx] = useState(0);
 
