@@ -11,6 +11,7 @@ import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
 
 import googleMap from "../../assets/img/temp-google-map.png";
+import loadingGif from "../../assets/gifs/loading.gif";
 
 const Results = () => {
   const searchCtx = useSearchContext();
@@ -44,7 +45,11 @@ const Results = () => {
     // eslint-disable-next-line
   }, [searchCtx.search]);
 
-  if (!restaurants || !activities) return null;
+  if (!restaurants || !activities) return (
+    <div className="loading-container">
+      <img className="loading-gif" src={loadingGif} alt="Loading..." />
+    </div>
+  );
 
   const results = (cuisine, location) => {
     const urlEncodedTerm = encodeURI(cuisine);
