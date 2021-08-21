@@ -16,6 +16,12 @@ const Restaurants = (props) => {
         <Restaurant key={ restaurant.id } restaurant={ restaurant }/>
     ))
 
+    //   const sortedRestaurants = restaurants.sort((a,b) => {
+    //       let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
+    //       let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
+    //       return bValue - aValue
+    //   })
+
     return (
         <div className="search-results">
             <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />

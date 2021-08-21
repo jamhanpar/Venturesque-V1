@@ -46,26 +46,6 @@ const Results = () => {
 
   if (!restaurants || !activities) return null;
 
-  // restaurant sorting algo
-//   const sortedRestaurants = restaurants.sort((a,b) => {
-//       let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
-//       let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
-//       return bValue - aValue
-//   })
-
-  // activity sorting algo
-//   const sortedActivities = activities.sort((a, b) => {
-//     let aValue =
-//       a.review_count < 15 || a.rating === 5
-//         ? 0
-//         : a.rating + a.review_count / 100000;
-//     let bValue =
-//       b.review_count < 15 || a.rating === 5
-//         ? 0
-//         : b.rating + b.review_count / 100000;
-//     return bValue - aValue;
-//   });
-
   const results = (cuisine, location) => {
     const urlEncodedTerm = encodeURI(cuisine);
     const urlEncodedLocation = encodeURI(location);
@@ -113,8 +93,10 @@ Results.defaultProps = {
 
 // const msp = () => ({});
 
-const mdp = (dispatch) => ({
-  fetchUser: () => dispatch(fetchUser()),
-});
+// const mdp = (dispatch) => ({
+//   fetchUser: () => dispatch(fetchUser()),
+// });
 
-export default connect(null, mdp)(Results);
+// export default connect(null, mdp)(Results);
+
+export default Results;

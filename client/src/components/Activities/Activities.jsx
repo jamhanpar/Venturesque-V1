@@ -13,6 +13,18 @@ const Activities = (props) => {
         <Activity key={ activity.place_id } activity={ activity }/>
     ))
 
+    //   const sortedActivities = activities.sort((a, b) => {
+    //     let aValue =
+    //       a.review_count < 15 || a.rating === 5
+    //         ? 0
+    //         : a.rating + a.review_count / 100000;
+    //     let bValue =
+    //       b.review_count < 15 || a.rating === 5
+    //         ? 0
+    //         : b.rating + b.review_count / 100000;
+    //     return bValue - aValue;
+    //   });
+
     return (
       <div className="search-results">
         <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
