@@ -15,13 +15,15 @@ import googleMap from "../../assets/img/temp-google-map.png";
 import "../stylesheets/results.scss";
 import '../stylesheets/searchResultItem.scss';
 
-
 const Results = () => {
   const searchCtx = useSearchContext();
   const [locationTerm, setLocationTerm] = useState();
   const [cuisineTerm, setCuisineTerm] = useState();
   const [restaurants, setRestaurants] = useState();
   const [activities, setActivities] = useState();
+  
+  const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
+  const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
 
   let { term, location } = useParams();
   const { history } = useReactRouter();
@@ -77,7 +79,9 @@ const Results = () => {
             />
             <div className="restaurant-activity-container">
               <Restaurants restaurants={restaurants} getBestRestaurant={true} />
+              <button className="toggle-btn" onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}>Show more...</button>
               <Activities activities={activities} getBestActivity={true} />
+              <button className="toggle-btn" onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}>Show more...</button>
             </div>
           </div>
         </div>
@@ -86,8 +90,8 @@ const Results = () => {
         </div>
       </div>
       <div className="show">
-        <Restaurants restaurants={restaurants} />
-        <Activities activities={activities} />
+        {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
+        {showActivitiesToggle && <Activities activities={activities} />}
       </div>
     </div>
   );
