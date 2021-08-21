@@ -21,9 +21,8 @@ const Activity = ({ activity }) => {
       <div className="search-result-item-card">
         <img className="activity-img" src={photoURL} alt="business" />
         <div className="item-info-container">
-          <h2>{activity.name}</h2>
-          <div>{activity.rating}</div>
-          <div>{activity.user_ratings_total}</div>
+          <h2 className="business-info">{activity.name}</h2>
+          <p className="business-info">{activity.rating} / {activity.user_ratings_total}</p>
         </div>
       </div>
     </div>

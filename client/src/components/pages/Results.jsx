@@ -89,7 +89,7 @@ const Results = () => {
           <img className="google-map-img" src={googleMap} alt="google maps" />
         </div>
       </div>
-      <div className="show">
+      <div className={showRestaurantsToggle && showActivitiesToggle && "list-container"}>
         {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
         {showActivitiesToggle && <Activities activities={activities} />}
       </div>
