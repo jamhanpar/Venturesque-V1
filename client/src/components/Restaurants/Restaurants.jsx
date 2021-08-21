@@ -27,7 +27,7 @@ const Restaurants = (props) => {
             <div className="search-results">
                 <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
                 {restaurantIndex[currentIdx]}
-                <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
+                <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length - 1)} />
             </div>
         )
     } else {

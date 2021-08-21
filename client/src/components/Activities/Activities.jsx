@@ -32,8 +32,7 @@ const Activities = (props) => {
           <div className="search-results">
             <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
             {activityIndex[currentIdx]}
-            {currentIdx}
-            <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
+            <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length - 1)} />
           </div>
         );
     } else {
