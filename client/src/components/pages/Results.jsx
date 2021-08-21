@@ -22,9 +22,7 @@ const Results = () => {
     
     let { term, location } = useParams(); 
     const { history } = useReactRouter();
-    
-    // let [bestRestaurant, setBestRestaurant] = useState();
-    let [currentRestaurantIdx, setCurrentRestaurantIdx] = useState(0);
+
     let [currentActivityIdx, setCurrentActivityIdx] = useState(0);
     
     useEffect(() => {
@@ -47,11 +45,11 @@ const Results = () => {
     
     if (!restaurants || !activities) return null;
     
-    const sortedRestaurants = restaurants.sort((a,b) => {
-        let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
-        let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
-        return bValue - aValue
-    })
+    // const sortedRestaurants = restaurants.sort((a,b) => {
+    //     let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
+    //     let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
+    //     return bValue - aValue
+    // })
 
     const sortedActivities = activities.sort((a,b) => {
         let aValue = (a.review_count < 15 || a.rating === 5) ? 0 : a.rating + a.review_count/100000
@@ -59,7 +57,6 @@ const Results = () => {
         return bValue - aValue
     })
 
-    const bestRestaurant = sortedRestaurants[currentRestaurantIdx];
     const bestActivity = sortedActivities[currentActivityIdx];
 
     const results = (cuisine, location) => {

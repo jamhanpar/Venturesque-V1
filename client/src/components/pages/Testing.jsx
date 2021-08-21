@@ -4,7 +4,6 @@ import { fetchActivities, fetchGooglePhoto } from '../../util/apis/activities';
 import { fetchWeather } from '../../util/apis/weather';
 
 import Restaurants from '../Restaurants/Restaurants';
-import Activities from '../Activities/Activities';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
