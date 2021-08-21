@@ -2,34 +2,33 @@
 @import './colors.scss';
 
 .nav-container {
-    // border: 1px solid red;
-    width: 100%;
-    height: 6vh;
-    display: flex;
-    flex-direction: row;
+    width          : 100%;
+    height         : 6vh;
+    display        : flex;
+    flex-direction : row;
     justify-content: space-between;
-    align-items: center;
+    align-items    : center;
 }
 
 .logo {
-    width: auto;
-    max-height: 40px;
+    width      : auto;
+    max-height : 40px;
     margin-left: 36px;
 }
 
 .auth-nav-container {
-    margin-right: 17.5px;
-    display: flex;
-    flex-direction: row;
+    margin-right   : 17.5px;
+    display        : flex;
+    flex-direction : row;
     justify-content: space-around;
-    align-items: center;
+    align-items    : center;
 }
 
 .auth-nav-link {
-    margin: 0px 17.5px;
+    margin         : 0px 17.5px;
     text-decoration: none;
-    font-family: $sourceSansPro;
-    font-weight: bold;
+    font-family    : $sourceSansPro;
+    font-weight    : bold;
 }
 
 .login-button {
@@ -37,8 +36,8 @@
 }
 
 .signup-button {
-    border-radius: 5px;
+    border-radius   : 5px;
     background-color: $offBlue;
-    color: $offWhite;
-    padding: 12px 31px;
+    color           : $offWhite;
+    padding         : 12px 31px;
 }

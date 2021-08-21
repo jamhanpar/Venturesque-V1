@@ -2,122 +2,128 @@
 @import './colors.scss';
 
 .search-input {
-    // border: 1px solid green;
-    width: auto;
-    height: 88vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width          : auto;
+  height         : 88vh;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
 }
 
 form {
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: flex-start;
+  width          : auto;
+  height         : auto;
+  display        : flex;
+  flex-direction : column;
+  justify-content: left;
+  align-items    : flex-start;
 }
 
 .search-input-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 15px 0px;
+  display        : flex;
+  flex-direction : row;
+  justify-content: flex-end;
+  align-items    : center;
+  margin         : 15px 0px;
 }
 
-.landing-page-text, .landing-page-symbol {
-    font-family: $sourceSansPro;
-    font-size: 35px;
-    font-weight: bold;
+.landing-page-text,
+.landing-page-symbol {
+  font-family: $sourceSansPro;
+  font-size  : 35px;
+  font-weight: bold;
 }
 
 .landing-page-symbol {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .typing-text {
-    width: 22ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: $sourceSansPro;
-    font-size: 35px;
-    padding: 0px 78px;
+  width       : 22ch;
+  animation   : typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space : nowrap;
+  overflow    : hidden;
+  border-right: 3px solid;
+  font-family : $sourceSansPro;
+  font-size   : 35px;
+  padding     : 0px 78px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
   }
-  
-  @keyframes typing {
-    from {
-      width: 0
-    }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
   }
-      
-  @keyframes blink {
-    50% {
-      border-color: transparent
-    }
-  }
+}
 
 .landing-page-date-input {
-    border       : 1px solid $inputOutline;
-    max-width    : 300px;
-    border-radius: 5px;
-    text-indent  : 7px;
-    margin-left: 20px;
-    font-family  : $sourceSansPro;
-    font-size    : 35px;
-    font-weight: bold;
-    color        : $inputPlaceholder;
+  border       : 1px solid $inputOutline;
+  max-width    : 300px;
+  border-radius: 5px;
+  text-indent  : 7px;
+  margin-left  : 20px;
+  font-family  : $sourceSansPro;
+  font-size    : 35px;
+  font-weight  : bold;
+  color        : $inputPlaceholder;
 }
 
 .landing-page-input {
-    border: 1px solid $inputOutline;
-    width: auto;
-    max-width: 350px;
-    border-radius: 5px;
-    padding: 7px 15px;
-    margin-left: 20px;
-    font-family: $sourceSansPro;
-    font-size: 35px;
-    font-weight: bold;
-    color: $inputPlaceholder;
+  border       : 1px solid $inputOutline;
+  width        : auto;
+  max-width    : 350px;
+  border-radius: 5px;
+  padding      : 7px 15px;
+  margin-left  : 20px;
+  font-family  : $sourceSansPro;
+  font-size    : 35px;
+  font-weight  : bold;
+  color        : $inputPlaceholder;
 }
 
 .generate-button {
-    background-color: $offBlue;
-    border: 2px solid $offBlue;
-    border-radius: 5px;
-    width: auto;
-    height: 100%;
-    padding: 12px 31px;
-    font-family: $sourceSansPro;
-    font-size: 30px;
-    color: $offWhite;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: $offBlue;
+  border          : 2px solid $offBlue;
+  border-radius   : 5px;
+  width           : auto;
+  height          : 100%;
+  padding         : 12px 31px;
+  font-family     : $sourceSansPro;
+  font-size       : 30px;
+  color           : $offWhite;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : center;
 }
 
-.landing-page-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: $offGrey;
+.landing-page-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color      : $offGrey;
   font-family: $sourceSansPro;
-  font-size: 35px;
-  opacity: 1; /* Firefox */
+  font-size  : 35px;
+  opacity    : 1;
+  /* Firefox */
 }
 
-.landing-page-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: $offGrey;
+.landing-page-input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color      : $offGrey;
   font-family: $sourceSansPro;
-  font-size: 35px;
-  opacity: 1; /* Firefox */
+  font-size  : 35px;
+  opacity    : 1;
+  /* Firefox */
 }
 
-.landing-page-input::-ms-input-placeholder { /* Microsoft Edge */
-  color: $offGrey;
+.landing-page-input::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color      : $offGrey;
   font-family: $sourceSansPro;
-  font-size: 35px;
-  opacity: 1; /* Firefox */
+  font-size  : 35px;
+  opacity    : 1;
+  /* Firefox */
 }

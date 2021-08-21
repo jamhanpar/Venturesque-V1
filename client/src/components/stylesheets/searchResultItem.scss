@@ -3,13 +3,14 @@
 
 .search-result-item-card {
     border: 1px solid black;
-    width: 200px;
+    width : 200px;
     height: 100%;
     margin: 10px;
 }
 
-.restaurant-img, .activity-img {
-    width: 100%;
-    height: auto;
+.restaurant-img,
+.activity-img {
+    width     : 100%;
+    height    : auto;
     max-height: 250px;
 }
