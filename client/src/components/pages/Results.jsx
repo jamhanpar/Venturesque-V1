@@ -79,7 +79,7 @@ const Results = () => {
 
     results(cuisineTerm, locationTerm);
     searchCtx.setSearch(locationTerm);
-    searchCtx.setSearch(cuisineTerm);
+    searchCtx.setCuisine(cuisineTerm);
   };
 
   return (

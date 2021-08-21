@@ -7,8 +7,6 @@ import '../stylesheets/restaurants.scss';
 const Activity = ({ activity }) => {
   const [photoURL, setPhotoURL] = useState(null);
 
-  console.log(activity);
-
   useEffect(() => {
     if (activity.photos) {
         fetchGooglePhoto(activity.photos[0].photo_reference)
