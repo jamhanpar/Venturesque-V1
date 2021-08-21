@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { getWeather, getCities } from '../../hooks/weather-api/api';
 import { fetchRestaurants } from '../../util/restaurants';
 
+import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHe, FaCloudSunRain, FaCloudSun, FaClou, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
+
 export function WeatherDisplay({location}) {
   // const [currentTemp, setCurrentTemp] = useState("");
   

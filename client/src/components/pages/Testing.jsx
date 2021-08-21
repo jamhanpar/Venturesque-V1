@@ -7,6 +7,7 @@ import Restaurants from '../Restaurants/Restaurants';
 import Activities from '../Activities/Activities';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
+import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
 import '../stylesheets/testing.scss';
 import Activity from '../Activities/Activities';
 
@@ -40,8 +41,18 @@ const Testing = () => {
         <div>
             <div className="border">
                 <h1>Icons</h1>
-                <FaTimes style={{ color: 'red', cursor: 'pointer' }}/>
-                <FaSearch style={{ color: 'red' }}/>
+                <FaTimes style={{ color: 'black', cursor: 'pointer' }}/>
+                <FaSearch style={{ color: 'black' }}/>
+                <FaSun />
+                <FaCloudSun />
+                <FaCloudSunRain />
+                <FaCloud />
+                <FaCloudRain />
+                <FaCloudShowersHeavy />
+                <FaMoon />
+                <FaCloudMoon />
+                <FaCloudMoonRain />
+                <FaSnowflake />
             </div>
             <div className="border">
                 <h1>API Testing:</h1>
