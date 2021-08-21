@@ -8,8 +8,8 @@
     margin: 10px;
 }
 
-.restaurant-img {
-    border: 1px solid black;
+.restaurant-img, .activity-img {
     width: 100%;
-    height: 75%;
+    height: auto;
+    max-height: 250px;
 }

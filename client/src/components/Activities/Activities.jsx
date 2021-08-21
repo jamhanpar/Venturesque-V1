@@ -1,21 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Activity from './Activity';
-
-import '../stylesheets/restaurants.scss';
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Activities = (props) => {
-    const sorted = props.activities.sort((a, b) => b.review_count - a.review_count)
-    const filtered = sorted.filter(activity => activity.rating >= 4)
+    const [currentIdx, setCurrentIdx] = useState(0);
 
-    const activityIndex = filtered.map(activity => (
+    const filtered = props.activities.filter(activity => activity.rating >= 4);
+    const sortedByReviewCount = filtered.sort((a, b) => b.user_ratings_total - a.user_ratings_total);
+    const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
+
+    const activityIndex = sortedByRating.map(activity => (
         <Activity key={ activity.place_id } activity={ activity }/>
     ))
 
     return (
-        <div className="restaurant-list">
-            {activityIndex}
-        </div>
-    )
+      <div className="search-results">
+        <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
+        {activityIndex[currentIdx]}
+        {currentIdx}
+        {sortedByRating.length}
+        <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
+      </div>
+    );
 }
 
 export default Activities;
