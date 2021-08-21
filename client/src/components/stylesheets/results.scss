@@ -2,6 +2,7 @@
 @import './colors.scss';
 
 .search-results-container {
+    border: 1px solid blue;
     background-color: $offBlue;
     width: 100%;
     height: 88vh;

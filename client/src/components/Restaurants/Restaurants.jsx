@@ -22,14 +22,26 @@ const Restaurants = (props) => {
     //       return bValue - aValue
     //   })
 
-    return (
-        <div className="search-results">
-            <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
-            {restaurantIndex[currentIdx]}
-            {currentIdx}
-            <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
-        </div>
-    )
+    if (props.getBestRestaurant) {
+        return (
+            <div className="search-results">
+                <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
+                {restaurantIndex[currentIdx]}
+                {currentIdx}
+                <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
+            </div>
+        )
+    } else {
+        return (
+            <div className="restaurant-list">
+                {restaurantIndex.slice(0, 10)}
+            </div>
+        )
+    }
 }
+
+Restaurants.defaultProps = {
+  getBestRestaurant: false,
+};
 
 export default Restaurants;

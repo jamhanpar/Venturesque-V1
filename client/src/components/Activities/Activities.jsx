@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Activity from './Activity';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
+import '../stylesheets/activities.scss';
+
 const Activities = (props) => {
     const [currentIdx, setCurrentIdx] = useState(0);
 
-    const filtered = props.activities.filter(activity => activity.rating >= 4);
+    const filtered = props.activities.filter(activity => activity.rating >= 4 && activity.photos);
     const sortedByReviewCount = filtered.sort((a, b) => b.user_ratings_total - a.user_ratings_total);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
 
@@ -25,14 +27,27 @@ const Activities = (props) => {
     //     return bValue - aValue;
     //   });
 
-    return (
-      <div className="search-results">
-        <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
-        {activityIndex[currentIdx]}
-        {currentIdx}
-        <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
-      </div>
-    );
-}
+    if (props.getBestActivity) {
+        return (
+          <div className="search-results">
+            <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
+            {activityIndex[currentIdx]}
+            {currentIdx}
+            <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length ? currentIdx + 1 : sortedByRating.length)} />
+          </div>
+        );
+    } else {
+        return (
+          <div className="activities-list">
+            {activityIndex.slice(0, 10)}
+          </div>
+        );
+    }
+
+    }
+
+Activities.defaultProps = {
+  getBestActivity: false,
+};
 
 export default Activities;

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useReactRouter from "use-react-router";
-import { connect } from "react-redux";
 
-import { fetchUser } from "../../actions/user_actions";
 import { useSearchContext } from "../../hooks/contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
+
 import Restaurants from "../Restaurants/Restaurants";
 import Activities from "../Activities/Activities";
+import SearchInputForm from "../SearchInputForm";
+
 import googleMap from "../../assets/img/temp-google-map.png";
+
 import "../stylesheets/results.scss";
 import '../stylesheets/searchResultItem.scss';
 
-import SearchInputForm from "../SearchInputForm";
 
 const Results = () => {
   const searchCtx = useSearchContext();
@@ -63,24 +64,30 @@ const Results = () => {
   };
 
   return (
-    <div className="search-results-container">
-      <div className="search-items-container">
-        <div className="results-search-container">
-          <SearchInputForm
-            handleSubmit={handleSubmit}
-            locationTerm={locationTerm}
-            cuisineTerm={cuisineTerm}
-            setLocationTerm={setLocationTerm}
-            setCuisineTerm={setCuisineTerm}
-          />
-          <div className="restaurant-activity-container">
-            <Restaurants restaurants={restaurants} />
-            <Activities activities={activities} />
+    <div className="search-results-divider">
+      <div className="search-results-container">
+        <div className="search-items-container">
+          <div className="results-search-container">
+            <SearchInputForm
+              handleSubmit={handleSubmit}
+              locationTerm={locationTerm}
+              cuisineTerm={cuisineTerm}
+              setLocationTerm={setLocationTerm}
+              setCuisineTerm={setCuisineTerm}
+            />
+            <div className="restaurant-activity-container">
+              <Restaurants restaurants={restaurants} getBestRestaurant={true} />
+              <Activities activities={activities} getBestActivity={true} />
+            </div>
           </div>
         </div>
+        <div className="google-map-container">
+          <img className="google-map-img" src={googleMap} alt="google maps" />
+        </div>
       </div>
-      <div className="google-map-container">
-        <img className="google-map-img" src={googleMap} alt="google maps" />
+      <div className="show">
+        <Restaurants restaurants={restaurants} />
+        <Activities activities={activities} />
       </div>
     </div>
   );
