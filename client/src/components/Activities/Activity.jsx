@@ -7,11 +7,12 @@ import '../stylesheets/restaurants.scss';
 const Activity = ({ activity }) => {
   const [photoURL, setPhotoURL] = useState(null);
 
+  console.log(activity);
+
   useEffect(() => {
-    if (activity.photos[0]) {
-        fetchGooglePhoto(activity.photos[0].photo_reference).then((res) => {
-        setPhotoURL(res);
-        });
+    if (activity.photos) {
+        fetchGooglePhoto(activity.photos[0].photo_reference)
+            .then(res => setPhotoURL(res));
     }
 
     // eslint-disable-next-line
