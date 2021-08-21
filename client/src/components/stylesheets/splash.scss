@@ -2,6 +2,10 @@
 @import './colors.scss';
 
 .search-input {
+<<<<<<< HEAD
+=======
+  // border: 1px solid green;
+>>>>>>> 🎨: responsive splash page that adjusts based on screen shrinkage
   width          : auto;
   height         : 88vh;
   display        : flex;
@@ -126,4 +130,11 @@ form {
   font-size  : 35px;
   opacity    : 1;
   /* Firefox */
+}
+
+@media screen and (max-width: 531px) {
+  .search-input-item {
+    display  : flex;
+    flex-flow: column;
+  }
 }
