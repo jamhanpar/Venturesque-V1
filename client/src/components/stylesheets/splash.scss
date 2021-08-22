@@ -2,7 +2,6 @@
 @import './colors.scss';
 
 .search-input {
-  // border: 1px solid green;
   width          : auto;
   height         : 88vh;
   display        : flex;
@@ -131,7 +130,28 @@ form {
 
 @media screen and (max-width: 531px) {
   .search-input-item {
-    display  : flex;
-    flex-flow: column;
+    display        : flex;
+    flex-flow      : column;
+    justify-content: space-between;
+    align-items    : center;
+  }
+
+  .landing-page-text {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .landing-page-input {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .landing-page-symbol {
+    padding: 0px;
+    margin: 10px 0px;
+  }
+
+  .generate-button {
+    margin: 10px 0px;
   }
 }
