@@ -7,11 +7,11 @@ const Restaurant = ({ restaurant }) => {
 
   for (let i = 0.0; i < 5.0; i++) {
     if (i < restaurant.rating && i + 0.5 !== restaurant.rating) {
-      displayStars.push(<FaStar />);
+      displayStars.push(<FaStar key={i} />);
     } else if (i + 0.5 === restaurant.rating) {
-      displayStars.push(<FaStarHalfAlt />);
+      displayStars.push(<FaStarHalfAlt key={i} />);
     } else {
-      displayStars.push(<FaRegStar />);
+      displayStars.push(<FaRegStar key={i} />);
     }
   }
 

@@ -20,7 +20,8 @@ const Results = () => {
   const [cuisineTerm, setCuisineTerm] = useState();
   const [restaurants, setRestaurants] = useState();
   const [activities, setActivities] = useState();
-  
+  const [coordinates, setCoordinates] = useState();
+
   const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
   const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
 
@@ -34,23 +35,26 @@ const Results = () => {
     // get restaurants
     fetchRestaurants(searchCtx.search, searchCtx.cuisine).then((res) => {
       setRestaurants(res);
-
-      // get activities
-      fetchActivities(
-        res[0].coordinates.latitude,
-        res[0].coordinates.longitude
-      ).then((res) => {
-        setActivities(res);
+      setCoordinates({
+        lat: res[0].coordinates.latitude,
+        long: res[0].coordinates.longitude,
       });
+      // get activities
+      fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude).then(
+        (res) => {
+          setActivities(res);
+        }
+      );
     });
     // eslint-disable-next-line
   }, [searchCtx.search]);
 
-  if (!restaurants || !activities) return (
-    <div className="loading-container">
-      <img className="loading-gif" src={loadingGif} alt="Loading..." />
-    </div>
-  );
+  if (!restaurants || !activities)
+    return (
+      <div className="loading-container">
+        <img className="loading-gif" src={loadingGif} alt="Loading..." />
+      </div>
+    );
 
   const results = (cuisine, location) => {
     const urlEncodedTerm = encodeURI(cuisine);
@@ -100,13 +104,13 @@ const Results = () => {
         </div>
         <div className="google-map-container">
           {/* <img className="google-map-img" src={googleMap} alt="google maps" /> */}
-          <Map />
+          <Map coord={coordinates}/>
         </div>
       </div>
       <div
-        // className={
-        //   showRestaurantsToggle && showActivitiesToggle && "list-container"
-        // }
+      // className={
+      //   showRestaurantsToggle && showActivitiesToggle && "list-container"
+      // }
       >
         {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
         {showActivitiesToggle && <Activities activities={activities} />}

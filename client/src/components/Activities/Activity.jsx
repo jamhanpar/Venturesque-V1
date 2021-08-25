@@ -9,18 +9,19 @@ const Activity = ({ activity }) => {
 
   for (let i = 0.0; i < 5.0; i++) {
     if (i + 0.5 < activity.rating) {
-      displayStars.push(<FaStar />);
+      displayStars.push(<FaStar key={i} />);
     } else if (i > activity.rating) {
-      displayStars.push(<FaStarHalfAlt />);
+      displayStars.push(<FaStarHalfAlt key={i} />);
     } else {
-      displayStars.push(<FaRegStar />);
+      displayStars.push(<FaRegStar key={i} />);
     }
   }
 
   useEffect(() => {
     if (activity.photos) {
-        fetchGooglePhoto(activity.photos[0].photo_reference)
-            .then(res => setPhotoURL(res));
+      fetchGooglePhoto(activity.photos[0].photo_reference).then((res) =>
+        setPhotoURL(res)
+      );
     }
 
     // eslint-disable-next-line
@@ -33,7 +34,9 @@ const Activity = ({ activity }) => {
       </div>
       <div className="item-info-container">
         <h2 className="business-info">{activity.name}</h2>
-        <p className="business-info">{displayStars} {activity.rating} / {activity.user_ratings_total}</p>
+        <p className="business-info">
+          {displayStars} {activity.rating} / {activity.user_ratings_total}
+        </p>
       </div>
     </div>
   );

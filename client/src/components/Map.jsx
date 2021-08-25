@@ -1,13 +1,13 @@
 import React from "react";
 import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 
-const Map = () => {
+const Map = ({ coord }) => {
   const Gmap = () => {
     return (
       <GoogleMap
         className="google-map-img"
         defaultZoom={16}
-        defaultCenter={{ lat: 40.744, lng: -74.0324 }}
+        defaultCenter={{ lat: coord.lat, lng: coord.long }}
       />
     );
   };
