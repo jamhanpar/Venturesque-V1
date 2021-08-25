@@ -6,7 +6,6 @@ import { useSearchContext } from "../../hooks/contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
 
-import Map from '../Map';
 import Restaurants from "../Restaurants/Restaurants";
 import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
