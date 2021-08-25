@@ -18,7 +18,7 @@ router.get('/location=:location', (req, res) => {
     params: {
       location: location,    // hoboken = { lat: 40.7440, lng: 74.0324 }
       radius: 10000,           // 10 km from location
-      type: 'park',
+      type: 'tourist_attraction',
       key: `${process.env.GOOGLE_API_KEY}`,
     },
   }).then(({ data }) => {
