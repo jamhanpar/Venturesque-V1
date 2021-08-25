@@ -5,8 +5,9 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 const Restaurants = (props) => {
     const [currentIdx, setCurrentIdx] = useState(0);
 
-    const filtered = props.restaurants.filter(restaurant => restaurant.rating >= 4);
-    const sortedByReviewCount = filtered.sort((a, b) => b.review_count - a.review_count);
+    const filteredReviewCount = props.restaurants.filter(restaurant => restaurant.review_count >= 20);
+    const filteredRatings = filteredReviewCount.filter(restaurant => restaurant.rating >= 4);
+    const sortedByReviewCount = filteredRatings.sort((a, b) => b.review_count - a.review_count);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
 
     const restaurantIndex = sortedByRating.map(restaurant => (

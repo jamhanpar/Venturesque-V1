@@ -63,9 +63,9 @@ const Results = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    results(cuisineTerm, locationTerm);
     searchCtx.setSearch(locationTerm);
     searchCtx.setCuisine(cuisineTerm);
+    results(cuisineTerm, locationTerm);
   };
 
   return (
