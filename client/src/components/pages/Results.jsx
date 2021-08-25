@@ -6,6 +6,7 @@ import { useSearchContext } from "../../hooks/contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
 
+import Map from '../Map';
 import Restaurants from "../Restaurants/Restaurants";
 import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
@@ -82,18 +83,32 @@ const Results = () => {
             />
             <div className="restaurant-activity-container">
               <Restaurants restaurants={restaurants} getBestRestaurant={true} />
-              <button className="toggle-btn" onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}>Show more...</button>
+              <button
+                className="toggle-btn"
+                onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
+              >
+                Show more...
+              </button>
               <Activities activities={activities} getBestActivity={true} />
-              <button className="toggle-btn" onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}>Show more...</button>
+              <button
+                className="toggle-btn"
+                onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
+              >
+                Show more...
+              </button>
             </div>
           </div>
         </div>
         <div className="google-map-container">
-          <img className="google-map-img" src={googleMap} alt="google maps" />
+          {/* <img className="google-map-img" src={googleMap} alt="google maps" /> */}
           <Map />
         </div>
       </div>
-      <div className={showRestaurantsToggle && showActivitiesToggle && "list-container"}>
+      <div
+        // className={
+        //   showRestaurantsToggle && showActivitiesToggle && "list-container"
+        // }
+      >
         {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
         {showActivitiesToggle && <Activities activities={activities} />}
       </div>
