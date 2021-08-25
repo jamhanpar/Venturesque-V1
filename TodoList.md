@@ -16,3 +16,4 @@ Currently, the user needs to enter a location (city, zipcode, etc) to get result
 
 # incorporate Hotels.com API
 # incorporate coupon APIs
+# add proptypes
