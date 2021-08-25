@@ -17,3 +17,5 @@ Currently, the user needs to enter a location (city, zipcode, etc) to get result
 # incorporate Hotels.com API
 # incorporate coupon APIs
 # add proptypes
+# setting up user auth with third party applications/tools
+# incorporate graphQL into this project
