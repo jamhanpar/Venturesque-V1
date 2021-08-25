@@ -41,7 +41,7 @@
     background-color: $offWhite;
     border-radius   : 5px;
     min-width       : 540px;
-    height          : 90%;
+    height          : 95%;
     display         : flex;
     flex-direction  : column;
     align-items     : center;
@@ -124,6 +124,7 @@
     display        : flex;
     flex-direction : column;
     justify-content: space-between;
+    margin-bottom: 20px
 }
 
 .toggle-btn {
@@ -145,7 +146,7 @@
     flex-direction : row;
     justify-content: space-between;
     align-items    : center;
-    margin         : 0px 10px;
+    margin         : 10px 10px;
 }
 
 .google-map-container {
