@@ -17,7 +17,7 @@ router.get('/location=:location', (req, res) => {
   googleREST("/nearbysearch/json?", {
     params: {
       location: location,    // hoboken = { lat: 40.7440, lng: 74.0324 }
-      radius: 10000,           // 10 km from location
+      radius: 15000,           // 15 km from location
       type: 'tourist_attraction',
       key: `${process.env.GOOGLE_API_KEY}`,
     },
