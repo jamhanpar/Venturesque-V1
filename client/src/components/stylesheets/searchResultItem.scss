@@ -1,39 +1,44 @@
-@import './fonts.scss';
-@import './colors.scss';
+@import "./fonts.scss";
+@import "./colors.scss";
 
 .search-result-item-card {
-    border         : 1px solid #E6E6E6;
-    border-radius  : 5px;
-    width          : 250px;
-    height         : 325px;
-    margin         : 10px;
-    overflow       : hidden;
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    align-items    : center;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  width: 250px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-container {
+  width: 100%;
+  height: 70%;
 }
 
 .restaurant-img,
 .activity-img {
-    width     : 100%;
-    height    : 70%;
-    object-fit: cover;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
 }
 
 .item-info-container {
-    background-color: $offWhite;
-    width           : 100%;
-    height          : 30%;
-    display         : flex;
-    flex-direction  : column;
-    justify-content : space-evenly;
-    padding         : 0px 10px;
+  border: 1px solid green;
+  background-color: $offWhite;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 10px;
 }
 
 .business-info {
-    font-family: $sourceSansPro;
-    color      : $offBlue;
-    font-size  : 14px;
-    padding    : 0px 3px;
+  font-family: $sourceSansPro;
+  color: $offBlue;
+  font-size: 14px;
+  padding: 0px 3px;
 }
