@@ -6,7 +6,7 @@ import { fetchWeather } from '../../util/apis/weather';
 import Restaurants from '../Restaurants/Restaurants';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
-import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
+import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
 import Activity from '../Activities/Activities';
 
 const Testing = () => {
@@ -51,6 +51,9 @@ const Testing = () => {
                 <FaCloudMoon />
                 <FaCloudMoonRain />
                 <FaSnowflake />
+                <FaStar />
+                <FaRegStar />
+                <FaStarHalfAlt />
             </div>
             <div className="border">
                 <h1>API Testing:</h1>

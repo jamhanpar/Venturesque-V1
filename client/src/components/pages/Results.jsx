@@ -9,6 +9,7 @@ import { fetchActivities } from "../../util/apis/activities";
 import Restaurants from "../Restaurants/Restaurants";
 import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
+import Map from "../Map";
 
 import googleMap from "../../assets/img/temp-google-map.png";
 import loadingGif from "../../assets/gifs/loading.gif";
@@ -89,6 +90,7 @@ const Results = () => {
         </div>
         <div className="google-map-container">
           <img className="google-map-img" src={googleMap} alt="google maps" />
+          <Map />
         </div>
       </div>
       <div className={showRestaurantsToggle && showActivitiesToggle && "list-container"}>
