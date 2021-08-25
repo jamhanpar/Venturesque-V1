@@ -13,3 +13,6 @@ Currently, there is a slight delay when the activity image renders on the activi
 # Add a "use current location" alert when user doesn't provide a location input
 
 Currently, the user needs to enter a location (city, zipcode, etc) to get results otherwise, they will not receive any results.
+
+# incorporate Hotels.com API
+# incorporate coupon APIs
