@@ -69,7 +69,7 @@ const Results = () => {
   };
 
   return (
-    <div className="search-results-divider">
+    <div className="search-results-section">
       <div className="search-results-container">
         <div className="search-items-container">
           <div className="results-search-container">

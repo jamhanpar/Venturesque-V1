@@ -14,7 +14,7 @@
     height: 200px;
 }
 
-.search-results-divider {
+.search-results-section {
     width: 100%;
 }
 
@@ -49,8 +49,9 @@
 }
 
 .search-info-container {
+    border: 1px solid blue;
     width          : 100%;
-    height         : 10%;
+    height         : auto;
     display        : flex;
     flex-direction : column;
     justify-content: center;
@@ -72,20 +73,23 @@
     color      : $submitButtonColor;
 }
 
+
 .results-search-input {
-    border-radius: 10px;
-    width        : 179px;
-    height       : 40px;
+    border-radius: 5px;
+    width        : 150px;
+    height       : 30px;
     text-indent  : 10px;
-    margin       : 0px 10px;
+    margin-left: 10px;
 }
 
 .search-icon-btn {
     border-radius   : 5px;
+    border: 1px solid $offBlue;
     background-color: $offBlue;
     outline         : none;
     width           : 100%;
     height          : 100%;
+    margin-left: 10px;
 }
 
 .search-icon {
