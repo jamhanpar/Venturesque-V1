@@ -1,25 +1,49 @@
-import React, { useEffect } from 'react';
-import { getWeather, getCities } from '../../hooks/weather-api/api';
-import { fetchRestaurants } from '../../util/restaurants';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { fetchCity } from '../../util/apis/city';
+import { fetchWeather } from '../../util/apis/weather';
 
-import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHe, FaCloudSunRain, FaCloudSun, FaClou, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
+import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHe, FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
 
-export function WeatherDisplay({location}) {
-  // const [currentTemp, setCurrentTemp] = useState("");
+function WeatherDisplay({location}) {
+  const [currentWeather, setCurrentWeather] = useState();
+  const [city, setCity] = useState();
   
   useEffect(() => {
-    // getWeather(339490)
-    //   .then(res => console.log(res))
-    //   .then(res => setCurrentTemp(res.data))
+    fetchCity(location)
+      .then(res => {
+        setCity(res)
+
+        fetchWeather(res[0].Key)
+          .then(res => {
+            setCurrentWeather(res);
+          })
+      });
   }, []);
+
+  debugger
+  if (!city) return null;
+
+  let weatherIcon;
+
+  switch (currentWeather[0].WeatherText) {
+    case "Mostly sunny":
+      weatherIcon = <FaSun />
+      break;
+  }
 
   return (
     <div>
-      <button onClick={() => getWeather(339490)}>Weather</button>
-      <button onClick={() => getCities("Palisades Park, NJ")}>Cities</button>
-      <button onClick={() => fetchRestaurants('hoboken', 'korean')}>Restaurants</button>
-      <h1>Location: {location}</h1>
-      {/* <h1>Current Temperature: {currentTemp}</h1> */}
+      <h1>Location: {city[0].EnglishName}</h1>
+      <h1>Current Temperature: {currentWeather[0].Temperature.Imperial.Value} {currentWeather[0].Temperature.Imperial.Unit}</h1>
+      <h1>Weather Description: {currentWeather[0].WeatherText}</h1>
+      {weatherIcon}
     </div>
   );
 }
+
+WeatherDisplay.propTypes = {
+  location: PropTypes.string
+};
+
+export default WeatherDisplay;

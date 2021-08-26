@@ -5,10 +5,13 @@ import { fetchWeather } from '../../util/apis/weather';
 import { fetchCity } from '../../util/apis/city';
 
 import Restaurants from '../Restaurants/Restaurants';
+import Activity from '../Activities/Activities';
+import WeatherDisplay from '../Weather/WeatherDisplay';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
-import Activity from '../Activities/Activities';
+
+import '../stylesheets/testing.scss';
 
 const Testing = () => {
     // const [user, setUser] = useState();
@@ -38,8 +41,8 @@ const Testing = () => {
 
     return (
         <div>
-            <div className="border">
-                <h1>Icons</h1>
+            <div className="container">
+                <h1>Icons:</h1>
                 <FaTimes style={{ color: 'black', cursor: 'pointer' }}/>
                 <FaSearch style={{ color: 'black' }}/>
                 <FaSun />
@@ -56,7 +59,7 @@ const Testing = () => {
                 <FaRegStar />
                 <FaStarHalfAlt />
             </div>
-            <div className="border">
+            <div className="container">
                 <h1>API Testing:</h1>
                 <button onClick={() => fetchRestaurants('queens', 'restaurant')}>Restaurants</button>
                 <button onClick={() => fetchActivities( 40.7440, -74.0324)}>Activities</button>
@@ -64,10 +67,11 @@ const Testing = () => {
                 <button onClick={() => fetchWeather(339490)}>Weather</button>
                 <button onClick={() => fetchCity('hoboken, nj')}>City</button>
             </div>
-            <div className="border">
-                <h1>Component Testing</h1>
-                <Restaurants restaurants={restaurants} />
-                <Activity activities={activities} />
+            <div className="container">
+                <h1>Component Testing:</h1>
+                {/* <Restaurants restaurants={restaurants} />
+                <Activity activities={activities} /> */}
+                <WeatherDisplay location={'hoboken, nj'} />
             </div>
         </div>
     )
