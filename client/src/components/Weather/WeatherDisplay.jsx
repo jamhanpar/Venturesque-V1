@@ -21,7 +21,6 @@ function WeatherDisplay({location}) {
       });
   }, []);
 
-  debugger
   if (!city) return null;
 
   let weatherIcon;
