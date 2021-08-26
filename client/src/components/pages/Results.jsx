@@ -5,6 +5,7 @@ import useReactRouter from "use-react-router";
 import { useSearchContext } from "../../hooks/contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
+import { fetchCity } from "../../util/apis/city";
 
 import Restaurants from "../Restaurants/Restaurants";
 import Activities from "../Activities/Activities";
@@ -21,6 +22,7 @@ const Results = () => {
   const [restaurants, setRestaurants] = useState();
   const [activities, setActivities] = useState();
   const [coordinates, setCoordinates] = useState();
+  const [city, setCity] = useState();
 
   const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
   const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
@@ -32,16 +34,23 @@ const Results = () => {
     setLocationTerm(location);
     setCuisineTerm(term);
 
+    // get city
+    fetchCity(location)
+      .then(res => {
+        setCity(res);
+      });
+
     // get restaurants
-    fetchRestaurants(searchCtx.search, searchCtx.cuisine).then((res) => {
-      setRestaurants(res);
-      setCoordinates({
-        lat: res[0].coordinates.latitude,
-        long: res[0].coordinates.longitude,
+    fetchRestaurants(searchCtx.search, searchCtx.cuisine)
+      .then((res) => {
+        setRestaurants(res);
+        setCoordinates({
+          lat: res[0].coordinates.latitude,
+          long: res[0].coordinates.longitude,
       });
       // get activities
-      fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude).then(
-        (res) => {
+      fetchActivities(res[0].coordinates.latitude, res[0].coordinates.longitude)
+        .then((res) => {
           setActivities(res);
         }
       );
