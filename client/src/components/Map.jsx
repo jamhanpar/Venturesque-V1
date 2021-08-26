@@ -7,13 +7,11 @@ import {
   InfoWindow,
 } from "react-google-maps";
 
-const Map = ({
-  coord,
-  activities,
-  restaurants,
-  currentRestIdx,
-  currentActIdx,
-}) => {
+const {
+  MarkerWithLabel,
+} = require("react-google-maps/lib/components/addons/MarkerWithLabel");
+
+const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
   //pass restaurant coordinates down here
   const currRestaurant = restaurants[currentRestIdx];
   const currActivity = activities[currentActIdx];
@@ -49,6 +47,16 @@ const Map = ({
             lng: currActivity.geometry.location.lng,
           }}
         />
+        {/* <MarkerWithLabel
+          position={{ lat: -34.397, lng: 150.644 }}
+          labelStyle={{
+            backgroundColor: "yellow",
+            fontSize: "32px",
+            padding: "16px",
+          }}
+        >
+          <div>{currRestaurant.name}</div>
+        </MarkerWithLabel> */}
       </GoogleMap>
     );
   };
