@@ -14,6 +14,7 @@ const yelp = require('./routes/api/yelp');
 const googleActivities = require('./routes/api/googleActivities');
 const googlePhoto = require('./routes/api/googlePhoto');
 const accuweather = require('./routes/api/weather');
+const city = require('./routes/api/city');
 
 // parsing all incoming req and outgoing res to json
 app.use(express.json())
@@ -35,6 +36,7 @@ app.use('/api/yelp', yelp);
 app.use('/api/google/activities', googleActivities);
 app.use('/api/google/photo', googlePhoto);
 app.use('/api/accuweather', accuweather);
+app.use('/api/city', city);
 
 // connecting our ports
 const port = process.env.PORT || 5000
