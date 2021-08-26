@@ -23,6 +23,8 @@ const Results = () => {
   const [activities, setActivities] = useState();
   const [coordinates, setCoordinates] = useState();
   const [city, setCity] = useState();
+  const [currentRestIdx, setCurrentRestIdx] = useState(0);
+  const [currentActIdx, setCurrentActIdx] = useState(0);
 
   const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
   const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
@@ -94,14 +96,24 @@ const Results = () => {
               setCuisineTerm={setCuisineTerm}
             />
             <div className="restaurant-activity-container">
-              <Restaurants restaurants={restaurants} getBestRestaurant={true} />
+              <Restaurants
+                restaurants={restaurants}
+                getBestRestaurant={true}
+                setCurrentIdx={setCurrentRestIdx}
+                currentIdx={currentRestIdx}
+              />
               <button
                 className="toggle-btn"
                 onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
               >
                 Show more...
               </button>
-              <Activities activities={activities} getBestActivity={true} />
+              <Activities
+                activities={activities}
+                getBestActivity={true}
+                setCurrentIdx={setCurrentActIdx}
+                currentIdx={currentActIdx}
+              />
               <button
                 className="toggle-btn"
                 onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
@@ -113,7 +125,13 @@ const Results = () => {
         </div>
         <div className="google-map-container">
           {/* <img className="google-map-img" src={googleMap} alt="google maps" /> */}
-          <Map coord={coordinates}/>
+          <Map
+            coord={coordinates}
+            restaurants={restaurants}
+            currentRestIdx={currentRestIdx}
+            activities={activities}
+            currentActIdx={currentActIdx}
+          />
         </div>
       </div>
       <div

@@ -1,14 +1,55 @@
 import React from "react";
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
+import {
+  GoogleMap,
+  withScriptjs,
+  withGoogleMap,
+  Marker,
+  InfoWindow,
+} from "react-google-maps";
 
-const Map = ({ coord }) => {
+const Map = ({
+  coord,
+  activities,
+  restaurants,
+  currentRestIdx,
+  currentActIdx,
+}) => {
+  //pass restaurant coordinates down here
+  const currRestaurant = restaurants[currentRestIdx];
+  const currActivity = activities[currentActIdx];
+  const mapCoord = {
+    lat:
+      (currRestaurant.coordinates.latitude +
+        currActivity.geometry.location.lat) /
+      2,
+    long:
+      (currRestaurant.coordinates.longitude +
+        currActivity.geometry.location.lng) /
+      2,
+  };
+
   const Gmap = () => {
     return (
       <GoogleMap
         className="google-map-img"
-        defaultZoom={16}
-        defaultCenter={{ lat: coord.lat, lng: coord.long }}
-      />
+        defaultZoom={15}
+        defaultCenter={{ lat: mapCoord.lat, lng: mapCoord.long }}
+      >
+        <Marker
+          key={currRestaurant.id}
+          position={{
+            lat: currRestaurant.coordinates.latitude,
+            lng: currRestaurant.coordinates.longitude,
+          }}
+        />
+        <Marker
+          key={currActivity.place_id}
+          position={{
+            lat: currActivity.geometry.location.lat,
+            lng: currActivity.geometry.location.lng,
+          }}
+        />
+      </GoogleMap>
     );
   };
 

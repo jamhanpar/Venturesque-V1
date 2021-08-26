@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Activity from './Activity';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const Activities = (props) => {
-    const [currentIdx, setCurrentIdx] = useState(0);
+const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) => {
 
-    const filteredReviewCount = props.activities.filter(activity => activity.user_ratings_total >= 20);
+    const filteredReviewCount = activities.filter(activity => activity.user_ratings_total >= 20);
     const filteredRatings = filteredReviewCount.filter(activity => activity.rating >= 4 && activity.photos);
     const sortedByReviewCount = filteredRatings.sort((a, b) => b.user_ratings_total - a.user_ratings_total);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
@@ -26,7 +25,7 @@ const Activities = (props) => {
     //     return bValue - aValue;
     //   });
 
-    if (props.getBestActivity) {
+    if (getBestActivity) {
         return (
           <div className="search-results">
             <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />

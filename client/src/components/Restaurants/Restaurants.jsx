@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import Restaurant from './Restaurant';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
-const Restaurants = (props) => {
-    const [currentIdx, setCurrentIdx] = useState(0);
-
-    const filteredReviewCount = props.restaurants.filter(restaurant => restaurant.review_count >= 20);
+const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}) => {
+    const filteredReviewCount = restaurants.filter(restaurant => restaurant.review_count >= 20);
     const filteredRatings = filteredReviewCount.filter(restaurant => restaurant.rating >= 4);
     const sortedByReviewCount = filteredRatings.sort((a, b) => b.review_count - a.review_count);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
@@ -20,7 +18,7 @@ const Restaurants = (props) => {
     //       return bValue - aValue
     //   })
 
-    if (props.getBestRestaurant) {
+    if (getBestRestaurant) {
         return (
             <div className="search-results">
                 <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} />
