@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Restaurant from './Restaurant';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 

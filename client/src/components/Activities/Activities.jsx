@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Activity from './Activity';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) => {
-
     const filteredReviewCount = activities.filter(activity => activity.user_ratings_total >= 20);
     const filteredRatings = filteredReviewCount.filter(activity => activity.rating >= 4 && activity.photos);
     const sortedByReviewCount = filteredRatings.sort((a, b) => b.user_ratings_total - a.user_ratings_total);

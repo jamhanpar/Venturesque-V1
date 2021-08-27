@@ -12,7 +12,7 @@ import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
 import Map from "../Map";
 
-import googleMap from "../../assets/img/temp-google-map.png";
+// import googleMap from "../../assets/img/temp-google-map.png";
 import loadingGif from "../../assets/gifs/loading.gif";
 
 const Results = () => {

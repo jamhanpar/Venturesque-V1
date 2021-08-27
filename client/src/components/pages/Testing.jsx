@@ -4,8 +4,8 @@ import { fetchActivities, fetchGooglePhoto } from '../../util/apis/activities';
 import { fetchWeather } from '../../util/apis/weather';
 import { fetchCity } from '../../util/apis/city';
 
-import Restaurants from '../Restaurants/Restaurants';
-import Activity from '../Activities/Activities';
+// import Restaurants from '../Restaurants/Restaurants';
+// import Activity from '../Activities/Activities';
 import WeatherDisplay from '../Weather/WeatherDisplay';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';

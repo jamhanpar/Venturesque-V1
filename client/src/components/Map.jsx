@@ -4,12 +4,11 @@ import {
   withScriptjs,
   withGoogleMap,
   Marker,
-  InfoWindow,
 } from "react-google-maps";
 
-const {
-  MarkerWithLabel,
-} = require("react-google-maps/lib/components/addons/MarkerWithLabel");
+// const {
+//   MarkerWithLabel,
+// } = require("react-google-maps/lib/components/addons/MarkerWithLabel");
 
 const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
   //pass restaurant coordinates down here
