@@ -4,7 +4,7 @@ import { fetchCity } from '../../util/apis/city';
 import { fetchWeather } from '../../util/apis/weather';
 
 // import { FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHe, FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
-import { FaSun } from 'react-icons/fa';
+import { FaSun, FaCloud } from 'react-icons/fa';
 
 function WeatherDisplay({location}) {
   const [currentWeather, setCurrentWeather] = useState();
@@ -22,13 +22,18 @@ function WeatherDisplay({location}) {
       });
   }, []);
 
-  if (!city) return null;
+  if (!city || !currentWeather) return null;
 
   let weatherIcon;
+
+  debugger
 
   switch (currentWeather[0].WeatherText) {
     case "Mostly sunny":
       weatherIcon = <FaSun />
+      break;
+    case "Mostly cloudy":
+      weatherIcon = <FaCloud />
       break;
   }
 
