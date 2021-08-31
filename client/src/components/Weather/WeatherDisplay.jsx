@@ -20,6 +20,8 @@ function WeatherDisplay({location}) {
             setCurrentWeather(res);
           })
       });
+
+    // eslint-disable-next-line
   }, []);
 
   if (!city || !currentWeather) return null;
@@ -34,6 +36,9 @@ function WeatherDisplay({location}) {
       break;
     case "Mostly cloudy":
       weatherIcon = <FaCloud />
+      break;
+    default:
+      weatherIcon = null;
       break;
   }
 
