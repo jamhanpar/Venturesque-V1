@@ -7,6 +7,7 @@ import { fetchCity } from '../../util/apis/city';
 // import Restaurants from '../Restaurants/Restaurants';
 // import Activity from '../Activities/Activities';
 import WeatherDisplay from '../Weather/WeatherDisplay';
+import Card from '../card';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
@@ -72,6 +73,7 @@ const Testing = () => {
                 {/* <Restaurants restaurants={restaurants} />
                 <Activity activities={activities} /> */}
                 <WeatherDisplay location={'hoboken, nj'} />
+                <Card />
             </div>
         </div>
     )
