@@ -12,6 +12,9 @@ import Card from '../card';
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
 
+import logo from "../../assets/img/temp-logo.png";
+import amusementPark from "../../assets/img/amusement-park.svg";
+
 import '../stylesheets/testing.scss';
 
 const Testing = () => {
@@ -59,6 +62,11 @@ const Testing = () => {
                 <FaStar />
                 <FaRegStar />
                 <FaStarHalfAlt />
+            </div>
+            <div className="container">
+                <h1>Images:</h1>
+                <img className="logo" src={logo} alt="App Logo" />
+                <img className="img-testing" src={amusementPark} alt="Amusement Park" />
             </div>
             <div className="container">
                 <h1>API Testing:</h1>

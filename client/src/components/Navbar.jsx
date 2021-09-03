@@ -5,6 +5,7 @@ import logo from '../assets/img/temp-logo.png';
 export const Nav = () => {
     return (
         <div className="nav-container">
+            {/* <Link className="auth-nav-link login-button" to="/">Venturesque</Link> */}
             <Link to="/"><img className="logo" src={logo} alt="App Logo" /></Link>
             {/* <A href="/"><img className="logo" src={logo} alt="App Logo" /></A> */}
             <ul className="auth-nav-container">
