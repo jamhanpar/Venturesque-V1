@@ -87,14 +87,14 @@ const Results = () => {
     <div className="search-results-section">
       <div className="search-results-container">
         <div className="search-items-container">
-          <div className="results-search-container">
-            <SearchInputForm
+          {/* <div className="results-search-container"> */}
+            {/* <SearchInputForm
               handleSubmit={handleSubmit}
               locationTerm={locationTerm}
               cuisineTerm={cuisineTerm}
               setLocationTerm={setLocationTerm}
               setCuisineTerm={setCuisineTerm}
-            />
+            /> */}
             <div className="restaurant-activity-container">
               <Restaurants
                 restaurants={restaurants}
@@ -102,43 +102,37 @@ const Results = () => {
                 setCurrentIdx={setCurrentRestIdx}
                 currentIdx={currentRestIdx}
               />
-              <button
+              {/* <button
                 className="toggle-btn"
                 onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
               >
                 Show more...
-              </button>
+              </button> */}
+              <p className="decoration">&</p>
               <Activities
                 activities={activities}
                 getBestActivity={true}
                 setCurrentIdx={setCurrentActIdx}
                 currentIdx={currentActIdx}
               />
-              <button
+              {/* <button
                 className="toggle-btn"
                 onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
               >
                 Show more...
-              </button>
+              </button> */}
             </div>
-          </div>
+          {/* </div> */}
         </div>
-        <div className="google-map-container">
-          {/* <img className="google-map-img" src={googleMap} alt="google maps" /> */}
-          <Map
-            coord={coordinates}
-            restaurants={restaurants}
-            currentRestIdx={currentRestIdx}
-            activities={activities}
-            currentActIdx={currentActIdx}
-          />
-        </div>
+        <Map
+          coord={coordinates}
+          restaurants={restaurants}
+          currentRestIdx={currentRestIdx}
+          activities={activities}
+          currentActIdx={currentActIdx}
+        />
       </div>
-      <div
-      // className={
-      //   showRestaurantsToggle && showActivitiesToggle && "list-container"
-      // }
-      >
+      <div>
         {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
         {showActivitiesToggle && <Activities activities={activities} />}
       </div>
