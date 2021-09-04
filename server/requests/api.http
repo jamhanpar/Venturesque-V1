@@ -24,3 +24,23 @@ Content-Type: application/json
 ### Yelp
 GET https://api.yelp.com/v3/businesses/search?term=burgers&location=palisades%park
 Content-Type: application/json
+
+### Signup a new user
+POST http://127.0.0.1:5000/api/signup
+Content-Type: application/json
+
+{
+    "name": "John Test",
+    "email": "johntest@testing.com",
+    "password": "password",
+    "password_confirmation": "password"
+}
+
+### Signin
+POST http://127.0.0.1:5000/api/signin
+Content-Type: application/json
+
+{
+    "email": "johntest@testing.com",
+    "password": "password"
+}
