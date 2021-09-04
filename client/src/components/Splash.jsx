@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import useReactRouter from "use-react-router";
 import { useSearchContext } from '../hooks/contexts/searchContext';
 
+import ImgCarousel from './ImgCarousel';
+
 //icons
 import { FaSistrix } from 'react-icons/fa';
 import amusementPark from "../assets/img/amusement-park.svg";
@@ -44,13 +46,7 @@ const Splash = () => {
                     <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
             </form>
-            <div className="images-container">
-                <img className="img-testing" src={amusementPark} alt="Amusement Park" />
-                <img className="img-testing" src={artMuseum} alt="Amusement Park" />
-                <img className="img-testing" src={camping} alt="Amusement Park" />
-                <img className="img-testing" src={eatingTogether} alt="Amusement Park" />
-                <img className="img-testing" src={throughThePark} alt="Amusement Park" />
-            </div>
+            <ImgCarousel />
         </section>
     );
 }
