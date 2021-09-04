@@ -4,6 +4,11 @@ import { useSearchContext } from '../hooks/contexts/searchContext';
 
 //icons
 import { FaSistrix } from 'react-icons/fa';
+import amusementPark from "../assets/img/amusement-park.svg";
+import artMuseum from "../assets/img/art-museum.svg";
+import camping from "../assets/img/camping.svg";
+import eatingTogether from "../assets/img/eating-together.svg";
+import throughThePark from "../assets/img/through-the-park.svg";
 
 const Splash = () => {
     const searchCtx = useSearchContext();
@@ -30,15 +35,22 @@ const Splash = () => {
 
     return (
         <section className='search-input'>
-            <form onSubmit={handleSubmit}>
+            <form className='search-form-container' onSubmit={handleSubmit}>
                 <div className='search-input-item'>
-                    <label className='landing-page-text' htmlFor='location'>the best first date near </label>
+                    <label className='landing-page-text' htmlFor='location'>the best date near </label>
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
-                    <p className='landing-page-symbol'>&</p>
-                    <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/>
+                    {/* <p className='landing-page-symbol'>&</p>
+                    <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/> */}
                     <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
                 </div>
             </form>
+            <div className="images-container">
+                <img className="img-testing" src={amusementPark} alt="Amusement Park" />
+                <img className="img-testing" src={artMuseum} alt="Amusement Park" />
+                <img className="img-testing" src={camping} alt="Amusement Park" />
+                <img className="img-testing" src={eatingTogether} alt="Amusement Park" />
+                <img className="img-testing" src={throughThePark} alt="Amusement Park" />
+            </div>
         </section>
     );
 }
