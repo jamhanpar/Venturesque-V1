@@ -6,11 +6,6 @@ import ImgCarousel from './ImgCarousel';
 
 //icons
 import { FaSistrix } from 'react-icons/fa';
-import amusementPark from "../assets/img/amusement-park.svg";
-import artMuseum from "../assets/img/art-museum.svg";
-import camping from "../assets/img/camping.svg";
-import eatingTogether from "../assets/img/eating-together.svg";
-import throughThePark from "../assets/img/through-the-park.svg";
 
 const Splash = () => {
     const searchCtx = useSearchContext();
