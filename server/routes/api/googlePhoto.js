@@ -20,8 +20,8 @@ router.get('/photoref=:photoref', (req, res) => {
       key: `${process.env.GOOGLE_API_KEY}`,
     },
   }).then((data) => {
-      res.send(data.request._redirectable._options.href) 
-  })
+    res.send(data.request._redirectable._options.href);
+  });
 
 });
 
