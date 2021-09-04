@@ -11,7 +11,7 @@ Include API keys for various APIs
 Add "proxy": "http://localhost:5000/" to package.json file in client folder
 
 
-### User Authentication
+# User Authentication Setup
 ## Npm install necessary packages
     - npm i express jsonwebtoken bcrypt body-parser cors mongoose dotenv
         - express
