@@ -150,6 +150,7 @@
 }
 
 .google-map-container {
+    border: 1px solid red;
     width          : 50%;
     height         : 100%;
     display        : flex;
@@ -160,6 +161,7 @@
 }
 
 .google-map-img {
+    border: 1px solid $offBlue;
     border-radius: 5px;
     width        : 530px;
     height       : 90%;
