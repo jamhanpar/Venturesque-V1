@@ -28,7 +28,7 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
         return (
           <div className="search-results">
             {/* <FaAngleLeft onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)} /> */}
-            <h3 className="search-title">something to eat</h3>
+            <h3 className="search-title">something to do</h3>
             {activityIndex[currentIdx]}
             {/* <FaAngleRight onClick={() => setCurrentIdx(currentIdx < sortedByRating.length - 1 ? currentIdx + 1 : sortedByRating.length - 1)} /> */}
           </div>
