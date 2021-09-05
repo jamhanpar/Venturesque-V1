@@ -18,4 +18,13 @@ const SearchInputForm = (props) => {
     )
 }
 
+SearchInputForm.propTypes = {
+  handleSubmit: PropTypes.func,
+  locationTerm: PropTypes.string,
+  cuisineTerm: PropTypes.string,
+  setLocationTerm: PropTypes.func,
+  setCuisineTerm: PropTypes.func,
+};
+
+
 export default SearchInputForm;

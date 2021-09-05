@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export function SearchBar(props) {
     const [term, setTerm] = useState(props.term || '');
@@ -21,3 +22,7 @@ export function SearchBar(props) {
         </form>
     )
 }
+
+SearchBar.propTypes = {
+    search: PropTypes.func
+};

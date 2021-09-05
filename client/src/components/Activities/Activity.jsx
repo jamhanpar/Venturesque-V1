@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchGooglePhoto } from "../../util/apis/activities";
+import PropTypes from "prop-types";
 
+import { fetchGooglePhoto } from "../../util/apis/activities";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Activity = ({ activity }) => {
@@ -40,6 +41,10 @@ const Activity = ({ activity }) => {
       </div>
     </div>
   );
+};
+
+Activity.propTypes = {
+  activity: PropTypes.object,
 };
 
 export default Activity;

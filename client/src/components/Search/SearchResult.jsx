@@ -1,4 +1,6 @@
 import React, { useEffect, useState} from 'react';
+import PropTypes from 'prop-types';
+
 import { fetchGooglePhoto } from '../../util/apis/activities';
 
 export function SearchResult({ restaurant, activity, type }) { 
@@ -40,3 +42,9 @@ export function SearchResult({ restaurant, activity, type }) {
     );
   }
 }
+
+SearchResult.propTypes = {
+  restaurant: PropTypes.object,
+  activity: PropTypes.object,
+  type: PropTypes.string,
+};

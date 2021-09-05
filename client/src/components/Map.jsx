@@ -29,7 +29,7 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
     return (
       <GoogleMap
         className="google-map-img"
-        defaultZoom={15}
+        defaultZoom={14}          // ideally 15
         defaultCenter={{ lat: mapCoord.lat, lng: mapCoord.long }}
       >
         <Marker

@@ -9,12 +9,4 @@ const PageNotFound = () => {
   );
 };
 
-// const msp = () => ({
-
-// });
-
-// const mdp = dispatch => ({
-
-// });
-
-export default connect(null, null)(PageNotFound);
+export default PageNotFound;

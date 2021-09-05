@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { SearchResult } from './SearchResult';
 
 export function SearchResults(props) {
@@ -25,3 +26,7 @@ export function SearchResults(props) {
         </div>
     )
 }
+
+SearchResults.propTypes = {
+  businesses: PropTypes.array,
+};

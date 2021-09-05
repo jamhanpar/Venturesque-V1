@@ -18,6 +18,11 @@ const Form = ({ submitQuestion }) => {
     )
 }
 
+Form.propTypes = {
+  submitQuestion: PropTypes.func,
+};
+
+
 const mdp = dispatch => ({
     submitQuestion: question => dispatch(submitQuestion(question))
 })

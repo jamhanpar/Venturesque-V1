@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Restaurant from './Restaurant';
 
 const Restaurants = (props) => {
@@ -25,4 +26,8 @@ const Restaurants = (props) => {
     )
 }
 
-export default Restaurants
+Restaurants.propTypes = {
+  restaurants: PropTypes.array,
+};
+
+export default Restaurants;

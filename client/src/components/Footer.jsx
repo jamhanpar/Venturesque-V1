@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 const Footer = () => {
     return (
@@ -9,7 +8,4 @@ const Footer = () => {
     );
 }
 
-// const msp = () => ({});
-// const mdp = dispatch => ({});
-
-export default connect(null, null)(Footer);
+export default Footer;

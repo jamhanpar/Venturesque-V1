@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Restaurant from './Restaurant';
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}) => {
     const filteredReviewCount = restaurants.filter(restaurant => restaurant.review_count >= 20);
@@ -35,6 +36,14 @@ const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}
         )
     }
 }
+
+Restaurants.propTypes = {
+  restaurants: PropTypes.array,
+  setBestRestaurant: PropTypes.func,
+  currentIdx: PropTypes.number,
+  setCurrentIdx: PropTypes.func,
+};
+
 
 Restaurants.defaultProps = {
   getBestRestaurant: false,

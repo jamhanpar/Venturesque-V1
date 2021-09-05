@@ -41,8 +41,7 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
           </div>
         );
     }
-
-    }
+}
 
 Activities.propTypes = {
   activities: PropTypes.array,

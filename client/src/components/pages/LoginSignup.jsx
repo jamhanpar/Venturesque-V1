@@ -5,5 +5,5 @@ import { useParams } from 'react-router-dom';
 export const LoginSignup = () => {
     const { toggle } = useParams();
     
-    return <AuthForm toggle={ toggle } />
+    return (<AuthForm toggle={ toggle } />)
 };

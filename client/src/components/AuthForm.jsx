@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { A } from 'hookrouter';
 
 export const AuthForm = ({ toggle }) => {
@@ -54,3 +55,7 @@ export const AuthForm = ({ toggle }) => {
         </div>
     )
 }
+
+AuthForm.propTypes = {
+  toggle: PropTypes.string,
+};

@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 
 const Restaurant = ({ restaurant }) => {
   const displayStars = [];
@@ -33,6 +34,10 @@ const Restaurant = ({ restaurant }) => {
       </div>
     </div>
   );
+};
+
+Restaurant.propTypes = {
+  restaurant: PropTypes.object
 };
 
 export default Restaurant;
