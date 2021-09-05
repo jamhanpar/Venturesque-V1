@@ -83,7 +83,7 @@ form {
   color        : $inputPlaceholder;
 }
 
-.search-location-container {
+.location-input {
   width          : auto;
   height         : 60px;
   display        : flex;
@@ -206,12 +206,4 @@ form {
   .generate-button {
     margin: 10px 0px;
   }
-
-  // .search-location-container {
-  //   height: 60px;
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
 }

@@ -36,7 +36,7 @@ const Splash = () => {
             <form className='search-form-container' onSubmit={handleSubmit}>
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best date near </label>
-                    <div className="search-location-container">
+                    <div className="location-input">
                         <input className='landing-page-input' type='text' id='location' placeholder='city, state' onChange={(e) => setLocation(e.target.value)} value={location}/>
                         <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-blue"/></button>
                     </div>
