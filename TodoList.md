@@ -18,4 +18,11 @@ Currently, the user needs to enter a location (city, zipcode, etc) to get result
 # incorporate coupon APIs
 # add proptypes
 # setting up user auth with third party applications/tools
+
+Work on setting up user auth using firebase or any other relevant third party app.
+
 # incorporate graphQL into this project
+
+# Surprise Me Feature
+
+Randomly select a town near the location you provide and pull search results and create a date for you based on the highest rated activities. Ultimately, searching beyond the radius of just the location you are in.

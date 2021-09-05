@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from "react-redux";
+
 import { fetchRestaurants } from '../../util/apis/restaurants';
 import { fetchActivities, fetchGooglePhoto } from '../../util/apis/activities';
 import { fetchWeather } from '../../util/apis/weather';
@@ -87,4 +89,12 @@ const Testing = () => {
     )
 }
 
-export default Testing;
+// const msp = () => ({
+
+// });
+
+// const mdp = dispatch => ({
+
+// });
+
+export default connect(null, null)(Testing);

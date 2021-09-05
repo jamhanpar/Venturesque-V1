@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Activity from './Activity';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
@@ -42,6 +43,13 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
     }
 
     }
+
+Activities.propTypes = {
+  activities: PropTypes.array,
+  setBestActivity: PropTypes.func,
+  currentIdx: PropTypes.number,
+  setCurrentIdx: PropTypes.func,
+};
 
 Activities.defaultProps = {
   getBestActivity: false,

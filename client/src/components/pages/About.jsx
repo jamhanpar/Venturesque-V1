@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FaUserTie, FaUserAstronaut, FaWineGlassAlt, FaUsers, FaRegGem } from 'react-icons/fa';
 
-const About = (props) => {
+const About = () => {
     return (
         <section className="about-us-container">
             <div className="our-work-container">
