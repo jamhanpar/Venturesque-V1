@@ -29,10 +29,10 @@ form {
 }
 
 .search-input-item {
-  display: flex;
-  flex-direction: row;
+  display        : flex;
+  flex-direction : row;
   justify-content: center;
-  align-items: center;
+  align-items    : center;
   margin         : 15px 0px;
 }
 
@@ -41,7 +41,7 @@ form {
   font-family: $sourceSansPro;
   font-size  : 35px;
   font-weight: bold;
-  width: auto;
+  width      : auto;
 }
 
 .landing-page-symbol {
@@ -84,7 +84,7 @@ form {
 }
 
 .search-location-container {
-  width: auto;
+  width          : auto;
   height         : 60px;
   display        : flex;
   flex-direction : row;
@@ -107,6 +107,17 @@ form {
   font-size                 : 35px;
   font-weight               : bold;
   color                     : $inputPlaceholder;
+
+  &:-webkit-autofill::first-line,
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    font-family               : $sourceSansPro;
+    font-size                 : 35px;
+    font-weight               : bold;
+    color                     : $inputPlaceholder;
+  }
 }
 
 .landing-page-input:focus {
@@ -138,7 +149,7 @@ form {
 }
 
 .search-icon-blue {
-  color       : $offBlue;
+  color: $offBlue;
 }
 
 .landing-page-input::placeholder {
