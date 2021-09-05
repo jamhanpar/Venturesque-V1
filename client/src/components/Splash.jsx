@@ -11,7 +11,7 @@ import { FaSistrix } from 'react-icons/fa';
 const Splash = () => {
     const searchCtx = useSearchContext();
 
-    const [location, setLocation] = useState('hoboken');
+    const [location, setLocation] = useState('hoboken, nj');
     const [cuisine, setCuisine] = useState('restaurant');
 
     const { history } = useReactRouter();
