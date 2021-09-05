@@ -17,6 +17,9 @@ Currently, the user needs to enter a location (city, zipcode, etc) to get result
 # incorporate Hotels.com API
 # incorporate coupon APIs
 # add proptypes
+
+Completed. Add proptypes and default proptypes if needed for each component.
+
 # setting up user auth with third party applications/tools
 
 Work on setting up user auth using firebase or any other relevant third party app.
@@ -26,3 +29,5 @@ Work on setting up user auth using firebase or any other relevant third party ap
 # Surprise Me Feature
 
 Randomly select a town near the location you provide and pull search results and create a date for you based on the highest rated activities. Ultimately, searching beyond the radius of just the location you are in.
+
+# Fix google maps re-rendering every single time locationTerm is updated in the results page

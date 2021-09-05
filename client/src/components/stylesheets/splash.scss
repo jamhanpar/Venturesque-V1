@@ -23,16 +23,16 @@ form {
   width          : 100%;
   height         : 70%;
   display        : flex;
-  flex-direction : column;
+  flex-direction : row;
   justify-content: center;
   align-items    : center;
 }
 
 .search-input-item {
-  display        : flex;
-  flex-direction : row;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items    : center;
+  align-items: center;
   margin         : 15px 0px;
 }
 
@@ -41,6 +41,7 @@ form {
   font-family: $sourceSansPro;
   font-size  : 35px;
   font-weight: bold;
+  width: auto;
 }
 
 .landing-page-symbol {
@@ -82,37 +83,62 @@ form {
   color        : $inputPlaceholder;
 }
 
+.search-location-container {
+  width: auto;
+  height         : 60px;
+  display        : flex;
+  flex-direction : row;
+  justify-content: center;
+  align-items    : center;
+}
+
 .landing-page-input {
-  border       : 1px solid $inputOutline;
-  width        : auto;
-  max-width    : 200px;
-  border-radius: 5px;
-  padding      : 7px 15px;
-  margin-left  : 20px;
-  font-family  : $sourceSansPro;
-  font-size    : 35px;
-  font-weight  : bold;
-  color        : $inputPlaceholder;
+  background-color          : $offWhite;
+  border                    : 1px solid $inputOutline;
+  border-right              : none;
+  border-radius             : 5px;
+  border-top-right-radius   : 0px;
+  border-bottom-right-radius: 0px;
+  width                     : auto;
+  max-width                 : 200px;
+  padding                   : 7px 15px;
+  margin-left               : 20px;
+  font-family               : $sourceSansPro;
+  font-size                 : 35px;
+  font-weight               : bold;
+  color                     : $inputPlaceholder;
+}
+
+.landing-page-input:focus {
+  outline: none;
 }
 
 .generate-button {
-  background-color: $offBlue;
-  border          : 2px solid $offBlue;
-  border-radius   : 5px;
-  width           : auto;
-  height          : 100%;
-  padding         : 12px 31px;
-  font-family     : $sourceSansPro;
-  font-size       : 30px;
-  color           : $offWhite;
-  display         : flex;
-  flex-direction  : column;
-  justify-content : center;
-  align-items     : center;
+  background-color         : $offWhite;
+  outline                  : none;
+  border                   : 1px solid $inputOutline;
+  border-left              : none;
+  border-radius            : 5px;
+  border-top-left-radius   : 0px;
+  border-bottom-left-radius: 0px;
+  width                    : 60px;
+  height                   : 100%;
+  padding                  : 14px 31px;
+  font-family              : $sourceSansPro;
+  font-size                : 30px;
+  color                    : $offWhite;
+  display                  : flex;
+  flex-direction           : column;
+  justify-content          : center;
+  align-items              : center;
 }
 
-.search-icon-white {
-  color: $offWhite;
+.generate-button {
+  cursor: pointer;
+}
+
+.search-icon-blue {
+  color       : $offBlue;
 }
 
 .landing-page-input::placeholder {
@@ -169,4 +195,12 @@ form {
   .generate-button {
     margin: 10px 0px;
   }
+
+  // .search-location-container {
+  //   height: 60px;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 }

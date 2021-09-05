@@ -36,10 +36,12 @@ const Splash = () => {
             <form className='search-form-container' onSubmit={handleSubmit}>
                 <div className='search-input-item'>
                     <label className='landing-page-text' htmlFor='location'>the best date near </label>
-                    <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
+                    <div className="search-location-container">
+                        <input className='landing-page-input' type='text' id='location' placeholder='city, state' onChange={(e) => setLocation(e.target.value)} value={location}/>
+                        <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-blue"/></button>
+                    </div>
                     {/* <p className='landing-page-symbol'>&</p>
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/> */}
-                    <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-white"/></button>
                 </div>
             </form>
             <ImgCarousel />
