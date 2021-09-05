@@ -38,7 +38,7 @@ const Splash = () => {
                     <input className='landing-page-input' type='text' id='location' placeholder='address, city, zipcode' onChange={(e) => setLocation(e.target.value)} value={location}/>
                     {/* <p className='landing-page-symbol'>&</p>
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/> */}
-                    <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon"/></button>
+                    <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-white"/></button>
                 </div>
             </form>
             <ImgCarousel />

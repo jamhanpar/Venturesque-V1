@@ -36,7 +36,7 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
     } else {
         return (
           <div className="activities-list">
-            {activityIndex.slice(0, 10)}
+            {activityIndex.slice(0, 6)}
           </div>
         );
     }

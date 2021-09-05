@@ -18,7 +18,7 @@
     justify-content: center;
 }
 
-.auth-form>h1 {
+.auth-form > h1 {
     width        : 100%;
     font-family  : $sourceSansPro;
     font-size    : 24px;
@@ -38,8 +38,8 @@
     width: 100%;
 }
 
-.auth-form input {
-    border       : 1px solid $inputOutline;
+.auth-form > input {
+    // border       : 1px solid $inputOutline;
     border-radius: 5px;
     height       : 44px;
     text-indent  : 10px;
@@ -62,7 +62,7 @@ form div {
     justify-content: space-between;
 }
 
-.name-input-item input {
+.name-input-item > input {
     width: 199px;
 }
 

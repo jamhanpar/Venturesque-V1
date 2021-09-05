@@ -111,6 +111,10 @@ form {
   align-items     : center;
 }
 
+.search-icon-white {
+  color: $offWhite;
+}
+
 .landing-page-input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color      : $offGrey;

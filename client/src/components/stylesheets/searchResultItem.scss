@@ -4,12 +4,15 @@
 .search-result-item-card {
   border-radius: 5px;
   width: 100%;
+  max-width: 240px;
   height: 90%;
+  max-height: 290px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0px 10px;
 }
 
 .img-container {

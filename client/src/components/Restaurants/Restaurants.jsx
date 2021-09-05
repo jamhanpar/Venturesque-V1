@@ -30,7 +30,7 @@ const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}
     } else {
         return (
             <div className="restaurant-list">
-                {restaurantIndex.length > 10 ? restaurantIndex.slice(0, 10) : restaurantIndex}
+                {restaurantIndex.length > 10 ? restaurantIndex.slice(0, 6) : restaurantIndex}
             </div>
         )
     }

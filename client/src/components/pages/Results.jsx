@@ -85,44 +85,46 @@ const Results = () => {
 
   return (
     <div className="search-results-section">
+      <SearchInputForm
+        handleSubmit={handleSubmit}
+        locationTerm={locationTerm}
+        cuisineTerm={cuisineTerm}
+        setLocationTerm={setLocationTerm}
+        setCuisineTerm={setCuisineTerm}
+      />
       <div className="search-results-container">
         <div className="search-items-container">
-          {/* <div className="results-search-container"> */}
-            {/* <SearchInputForm
-              handleSubmit={handleSubmit}
-              locationTerm={locationTerm}
-              cuisineTerm={cuisineTerm}
-              setLocationTerm={setLocationTerm}
-              setCuisineTerm={setCuisineTerm}
-            /> */}
             <div className="restaurant-activity-container">
-              <Restaurants
-                restaurants={restaurants}
-                getBestRestaurant={true}
-                setCurrentIdx={setCurrentRestIdx}
-                currentIdx={currentRestIdx}
-              />
-              {/* <button
-                className="toggle-btn"
-                onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
-              >
-                Show more...
-              </button> */}
+              <div className="single-card-container">
+                <Restaurants
+                  restaurants={restaurants}
+                  getBestRestaurant={true}
+                  setCurrentIdx={setCurrentRestIdx}
+                  currentIdx={currentRestIdx}
+                />
+                <button
+                  className="toggle-btn"
+                  onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
+                >
+                  Show more...
+                </button>
+              </div>
               <p className="decoration">&</p>
-              <Activities
-                activities={activities}
-                getBestActivity={true}
-                setCurrentIdx={setCurrentActIdx}
-                currentIdx={currentActIdx}
-              />
-              {/* <button
-                className="toggle-btn"
-                onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
-              >
-                Show more...
-              </button> */}
+              <div className="single-card-container">
+                <Activities
+                  activities={activities}
+                  getBestActivity={true}
+                  setCurrentIdx={setCurrentActIdx}
+                  currentIdx={currentActIdx}
+                />
+                <button
+                  className="toggle-btn"
+                  onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
+                >
+                  Show more...
+                </button>
+              </div>
             </div>
-          {/* </div> */}
         </div>
         <Map
           coord={coordinates}
