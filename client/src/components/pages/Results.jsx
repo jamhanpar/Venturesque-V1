@@ -7,8 +7,8 @@ import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
 import { fetchCity } from "../../util/apis/city";
 
-import Restaurants from "../restaurants/Restaurants";
-import Activities from "../activities/Activities";
+import Restaurants from "../Restaurants/Restaurants";
+import Activities from "../Activities/Activities";
 import SearchInputForm from "../SearchInputForm";
 import Map from "../Map";
 
