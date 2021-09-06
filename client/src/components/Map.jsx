@@ -68,7 +68,7 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
       containerElement={<div style={{ height: "100%" }} />}
       mapElement={<div style={{ height: "100%" }} />}
     />
-  }, [activities, restaurants])
+  }, [activities, restaurants, currentActIdx, currentRestIdx])
 
   return (
     <div className="google-map-container">

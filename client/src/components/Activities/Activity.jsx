@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { fetchGooglePhoto } from "../../util/apis/activities";
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
-const Activity = ({ activity }) => {
+const Activity = ({ activity, setCurrentIdx, idx }) => {
   const [photoURL, setPhotoURL] = useState(null);
   const displayStars = [];
 
@@ -29,7 +29,7 @@ const Activity = ({ activity }) => {
   }, [activity]);
 
   return (
-    <div className="search-result-item-card">
+    <div className="search-result-item-card" onClick={() => setCurrentIdx(idx)}>
       <div className="img-container">
         <img className="activity-img" src={photoURL} alt="business" />
       </div>

@@ -9,8 +9,8 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
     const sortedByReviewCount = filteredRatings.sort((a, b) => b.user_ratings_total - a.user_ratings_total);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
 
-    const activityIndex = sortedByRating.map(activity => (
-        <Activity key={ activity.place_id } activity={ activity }/>
+    const activityIndex = sortedByRating.map((activity, idx) => (
+        <Activity key={ activity.place_id } activity={ activity } setCurrentIdx={ setCurrentIdx } idx={ idx }/>
     ))
 
     //   const sortedActivities = activities.sort((a, b) => {
