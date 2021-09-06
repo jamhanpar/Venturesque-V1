@@ -9,8 +9,8 @@ const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}
     const sortedByReviewCount = filteredRatings.sort((a, b) => b.review_count - a.review_count);
     const sortedByRating = sortedByReviewCount.sort((a, b) => b.rating - a.rating);
 
-    const restaurantIndex = sortedByRating.map(restaurant => (
-        <Restaurant key={ restaurant.id } restaurant={ restaurant }/>
+    const restaurantIndex = sortedByRating.map((restaurant, idx) => (
+        <Restaurant key={ restaurant.id } restaurant={ restaurant } idx={idx} setCurrentIdx={setCurrentIdx}/>
     ))
 
     //   const sortedRestaurants = restaurants.sort((a,b) => {

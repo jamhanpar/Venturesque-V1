@@ -103,7 +103,10 @@ const Results = () => {
               />
               <button
                 className="toggle-btn"
-                onClick={() => setShowRestaurantsToggle(!showRestaurantsToggle)}
+                onClick={() => {
+                  setShowRestaurantsToggle(!showRestaurantsToggle)
+                  setShowActivitiesToggle(false)
+                }}
               >
                 {showRestaurantsToggle ? "Hide" : "Show more..."}
               </button>
@@ -118,7 +121,10 @@ const Results = () => {
               />
               <button
                 className="toggle-btn"
-                onClick={() => setShowActivitiesToggle(!showActivitiesToggle)}
+                onClick={() => { 
+                  setShowActivitiesToggle(!showActivitiesToggle) 
+                  setShowRestaurantsToggle(false)
+                }}
               >
                 {showActivitiesToggle ? "Hide" : "Show more..."}
               </button>
@@ -134,8 +140,8 @@ const Results = () => {
         />
       </div>
       <div>
-        {showRestaurantsToggle && <Restaurants restaurants={restaurants} />}
-        {showActivitiesToggle && <Activities activities={activities} />}
+        {showRestaurantsToggle && <Restaurants restaurants={restaurants} setCurrentIdx={setCurrentRestIdx} />}
+        {showActivitiesToggle && <Activities activities={activities} setCurrentIdx={setCurrentActIdx}/>}
       </div>
     </div>
   );

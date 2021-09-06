@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
 
-const Restaurant = ({ restaurant }) => {
+const Restaurant = ({ restaurant, setCurrentIdx, idx }) => {
   const displayStars = [];
 
   for (let i = 0.0; i < 5.0; i++) {
@@ -17,7 +17,7 @@ const Restaurant = ({ restaurant }) => {
   }
 
   return (
-    <div className="search-result-item-card">
+    <div className="search-result-item-card" onClick={() => setCurrentIdx(idx)}>
       <div className="img-container">
         <img
           className="restaurant-img"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   GoogleMap,
   withScriptjs,
@@ -61,16 +61,19 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
   };
 
   const WrappedMap = withScriptjs(withGoogleMap(Gmap));
+  const memoMap = useMemo(() => {
+    return <WrappedMap
+      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
+      loadingElement={<div style={{ height: "100%" }} />}
+      containerElement={<div style={{ height: "100%" }} />}
+      mapElement={<div style={{ height: "100%" }} />}
+    />
+  }, [activities, restaurants])
 
   return (
     <div className="google-map-container">
       <div className="google-map-img">
-        <WrappedMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
-          loadingElement={<div style={{ height: "100%" }} />}
-          containerElement={<div style={{ height: "100%" }} />}
-          mapElement={<div style={{ height: "100%" }} />}
-        />
+        {memoMap}
       </div>
     </div>
   );
