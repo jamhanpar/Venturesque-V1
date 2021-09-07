@@ -88,8 +88,7 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
 	};
 
 	const WrappedMap = withScriptjs(withGoogleMap(Gmap));
-	const memoMap = useMemo(
-		() => {
+	const memoMap = useMemo(() => {
 			return (
 				<WrappedMap
 					googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process

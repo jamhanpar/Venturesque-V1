@@ -69,9 +69,7 @@ const Results = () => {
   const results = (cuisine, location) => {
     const urlEncodedTerm = encodeURI(cuisine);
     const urlEncodedLocation = encodeURI(location);
-    history.push(
-      `/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`
-    );
+    history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
   };
 
   const handleSubmit = (e) => {
