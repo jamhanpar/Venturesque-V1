@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { SearchProvider } from './hooks/contexts/searchContext';
+import { AuthProvider } from './hooks/contexts/AuthContext';
 import './App.scss';
 
 // Components
@@ -20,13 +21,15 @@ export const App = ({ store }) => (
     <Provider store={store}>
       <Nav />
       <Switch>
+        <AuthProvider>
           <SearchProvider>
             <Route exact path='/' component={Home}/>
             <Route path='/about' component={About}/>
             <Route path='/testing' component={Testing}/>
             <Route path='/search/term=:term&location=:location' component={Results}/>
           </SearchProvider>
-        <Route path='/auth/:toggle' component={LoginSignup}/>
+          <Route path='/auth/:toggle' component={LoginSignup}/>
+        </AuthProvider>
       </Switch>
       <Footer />
     </Provider>

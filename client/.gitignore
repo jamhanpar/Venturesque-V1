@@ -31,3 +31,6 @@ yarn-error.log*
 /src/hooks/config.js
 /src/actions/weather_action.js
 /config/keys.js
+
+# Auth
+/util/apis/auth.js
