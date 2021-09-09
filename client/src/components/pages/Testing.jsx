@@ -19,18 +19,12 @@ import amusementPark from "../../assets/img/amusement-park.svg";
 
 import '../stylesheets/testing.scss';
 
-// auth
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import app from '../../util/apis/firebase';
-
 const Testing = () => {
     // const [user, setUser] = useState();
     const [restaurants, setRestaurants] = useState([]);
     const [activities, setActivities] = useState([]);
     const city = 'palisades park';
     const cuisine = 'restaurant';
-
-    const auth = app.auth();
 
     useEffect(() => {
         // const fetchUser = async () => {
@@ -50,9 +44,6 @@ const Testing = () => {
     }, [])
 
     if (!restaurants) return null;
-
-    const email = 'test@test.com';
-    const password = 'Password!123456!';
 
     return (
         <div>
@@ -93,17 +84,6 @@ const Testing = () => {
                 <Activity activities={activities} /> */}
                 <WeatherDisplay location={'hoboken, nj'} />
                 <Card />
-                <button onClick={() => {createUserWithEmailAndPassword(auth, email, password)
-                    .then((userCredential) => {
-                        // Signed in
-                        const user = userCredential.user;
-                        // ...
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        // ..
-                    })}}></button>
             </div>
         </div>
     )

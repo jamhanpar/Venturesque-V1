@@ -28,8 +28,6 @@ function WeatherDisplay({location}) {
 
   let weatherIcon;
 
-  debugger
-
   switch (currentWeather[0].WeatherText) {
     case "Mostly sunny":
       weatherIcon = <FaSun />
