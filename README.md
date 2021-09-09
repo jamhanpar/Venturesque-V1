@@ -23,7 +23,8 @@ https://www.jameshansungpark.com/Venturesque/
 * query-string 7.0.0
 * json-server 0.16.3
 * react-icons 4.2.0
-* firebase
+* firebase 9.0.1
+* tailwindcss 
 ## Backend
 * axios 0.21.1
 * concurrently 6.2.1
