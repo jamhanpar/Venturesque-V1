@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { App } from './App';
 import { configureAppStore } from './store/store';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter } from 'react-router-dom';
 

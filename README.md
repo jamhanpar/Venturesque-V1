@@ -25,6 +25,8 @@ https://www.jameshansungpark.com/Venturesque/
 * react-icons 4.2.0
 * firebase 9.0.1
 * tailwindcss 
+* bootstrap
+* react-boostrap
 ## Backend
 * axios 0.21.1
 * concurrently 6.2.1
