@@ -57,7 +57,7 @@ const Results = () => {
       });
     });
     // eslint-disable-next-line
-  }, [searchCtx.search]);
+  }, [searchCtx.search, searchCtx.cuisine]);
 
   if (!restaurants || !activities)
     return (
