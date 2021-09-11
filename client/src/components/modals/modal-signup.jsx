@@ -1,7 +1,12 @@
 import React, { useState, useRef } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
 
 import { useAuth } from "../../hooks/contexts/AuthContext";
+
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
 
 const ModalSignup = () => {
   const emailRef = useRef();
@@ -10,6 +15,7 @@ const ModalSignup = () => {
   const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +28,7 @@ const ModalSignup = () => {
       setError('');
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
+      history.push("/");
     } catch {
       setError("Failed to create an account");
     }
@@ -117,7 +124,7 @@ const ModalSignup = () => {
         </Form>
       </Card.Body>
       <div className="w-100 text-center mt-2">
-        <p>Already have an account? Log In</p>
+        Already have an account? <Link className="" to="/auth/login">Login</Link>
       </div>
     </Card>
   );
