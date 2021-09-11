@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useReactRouter from "use-react-router";
-import { useSearchContext } from '../hooks/contexts/searchContext';
+import { useSearchContext } from '../contexts/searchContext';
 
 // components
 import ImgCarousel from './ImgCarousel';

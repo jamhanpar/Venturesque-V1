@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 
-import { useAuth } from "../../hooks/contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 

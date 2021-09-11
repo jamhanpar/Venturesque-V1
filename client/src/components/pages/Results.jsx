@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useReactRouter from "use-react-router";
 
-import { useSearchContext } from "../../hooks/contexts/searchContext";
+import { useSearchContext } from "../../contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
 import { fetchCity } from "../../util/apis/city";

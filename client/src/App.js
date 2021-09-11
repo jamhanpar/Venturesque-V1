@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { SearchProvider } from './hooks/contexts/searchContext';
-import { AuthProvider } from './hooks/contexts/AuthContext';
+import { SearchProvider } from './contexts/searchContext';
+import { AuthProvider } from './contexts/AuthContext';
 import './App.scss';
 
 // Components
