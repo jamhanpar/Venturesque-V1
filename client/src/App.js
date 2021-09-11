@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Home from './components/pages/Home';
 import Testing from './components/pages/Testing';
 import { LoginSignup } from './components/pages/LoginSignup';
+import { LoginSignupComponent } from "./components/pages/LoginSignupComponent";
 import Results from './components/pages/Results';
 import About from './components/pages/About';
 
@@ -23,12 +24,16 @@ export const App = ({ store }) => (
       <Switch>
         <AuthProvider>
           <SearchProvider>
-            <Route exact path='/' component={Home}/>
-            <Route path='/about' component={About}/>
-            <Route path='/testing' component={Testing}/>
-            <Route path='/search/term=:term&location=:location' component={Results}/>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/testing" component={Testing} />
+            <Route
+              path="/search/term=:term&location=:location"
+              component={Results}
+            />
           </SearchProvider>
-          <Route path='/auth/:toggle' component={LoginSignup}/>
+          <Route path="/auth/:toggle" component={LoginSignup} />
+          <Route path="/:toggle" component={LoginSignupComponent} />
         </AuthProvider>
       </Switch>
       <Footer />

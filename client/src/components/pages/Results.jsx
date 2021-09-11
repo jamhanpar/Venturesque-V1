@@ -5,7 +5,7 @@ import useReactRouter from "use-react-router";
 import { useSearchContext } from "../../contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
-import { fetchCity } from "../../util/apis/city";
+// import { fetchCity } from "../../util/apis/city";
 
 import Restaurants from "../restaurants/Restaurants";
 import Activities from "../activities/Activities";
@@ -22,7 +22,7 @@ const Results = () => {
   const [restaurants, setRestaurants] = useState();
   const [activities, setActivities] = useState();
   const [coordinates, setCoordinates] = useState();
-  const [city, setCity] = useState();
+  // const [city, setCity] = useState();
   const [currentRestIdx, setCurrentRestIdx] = useState(0);
   const [currentActIdx, setCurrentActIdx] = useState(0);
 
@@ -37,9 +37,9 @@ const Results = () => {
     setCuisineTerm(term);
 
     // get city
-    fetchCity(location).then((res) => {
-      setCity(res);
-    });
+    // fetchCity(location).then((res) => {
+    //   setCity(res);
+    // });
 
     // get restaurants
     fetchRestaurants(searchCtx.search, searchCtx.cuisine).then((res) => {

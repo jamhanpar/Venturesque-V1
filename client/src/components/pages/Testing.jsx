@@ -6,8 +6,8 @@ import { fetchActivities, fetchGooglePhoto } from '../../util/apis/activities';
 import { fetchWeather } from '../../util/apis/weather';
 import { fetchCity } from '../../util/apis/city';
 
-// import Restaurants from '../Restaurants/Restaurants';
-// import Activity from '../Activities/Activities';
+import Restaurants from '../restaurants/Restaurants';
+import Activities from '../activities/Activities';
 import WeatherDisplay from '../weather/WeatherDisplay';
 import Card from '../card';
 
@@ -80,8 +80,8 @@ const Testing = () => {
             </div>
             <div className="container">
                 <h1>Component Testing:</h1>
-                {/* <Restaurants restaurants={restaurants} />
-                <Activity activities={activities} /> */}
+                <Restaurants restaurants={restaurants} />
+                <Activities activities={activities} />
                 <WeatherDisplay location={'hoboken, nj'} />
                 <Card />
             </div>

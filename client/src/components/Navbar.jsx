@@ -28,6 +28,15 @@ export const Nav = () => {
             <Link
               className="auth-nav-link login-button modal-trigger"
               data-target="modal-login"
+              to="/login"
+            >
+              Login/Signup
+            </Link>
+          </li>
+          <li className="logged-in">
+            <Link
+              className="auth-nav-link login-button modal-trigger"
+              data-target="modal-login"
               to="/auth/login"
             >
               Login

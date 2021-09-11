@@ -4,10 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 
 import { useAuth } from "../../contexts/AuthContext";
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-const auth = getAuth();
-
 const ModalSignup = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -25,7 +21,7 @@ const ModalSignup = () => {
     }
 
     try {
-      setError('');
+      setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
       history.push("/");
@@ -108,23 +104,46 @@ const ModalSignup = () => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Email" ref={emailRef} required/>
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              ref={emailRef}
+              required
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" ref={passwordRef} required/>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              ref={passwordRef}
+              required
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password Confirmation</Form.Label>
-            <Form.Control type="password" placeholder="Password" ref={passwordConfirmRef} required/>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              ref={passwordConfirmRef}
+              required
+            />
           </Form.Group>
-          <Button disabled={loading} className="w-100 text-center" variant="primary" type="submit">
+          <Button
+            disabled={loading}
+            className="w-100 text-center"
+            variant="primary"
+            type="submit"
+          >
             Sign Up
           </Button>
         </Form>
       </Card.Body>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link className="" to="/auth/login">Login</Link>
+        Already have an account?{" "}
+        <Link className="" to="/auth/login">
+          Login
+        </Link>
       </div>
     </Card>
   );

@@ -1,12 +1,9 @@
 import React from "react";
-import { AuthForm } from '../../components/AuthForm';
+import { AuthForm } from '../AuthForm';
 import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
-import ModalSignup from "../modals/modal-signup";
-import ModalLogin from "../modals/modal-login";
-
-export const LoginSignup = () => {
+export const LoginSignupComponent = () => {
     const { toggle } = useParams();
     
     return (
@@ -16,9 +13,6 @@ export const LoginSignup = () => {
           style={{ minHeight: "100vh" }}
         >
           <AuthForm toggle={ toggle } />
-          <div className="w-100" style={{ maxWidth: '400px'}}>
-            {toggle === 'signup' ? <ModalSignup /> : <ModalLogin />}
-          </div>
         </Container>
       </section>
     );

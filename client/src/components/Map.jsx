@@ -15,35 +15,35 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
 		long: (currRestaurant.coordinates.longitude + currActivity.geometry.location.lng) / 2
 	};
 
-	// const locInfo = () => {
-	// 	if (!selected) return null;
+	const locInfo = () => {
+		if (!selected) return null;
 
-	// 	if (selected === 'restaurant') {
-	// 		return (
-	// 			<InfoWindow
-	// 				position={{
-	// 					lat: currRestaurant.coordinates.latitude,
-	// 					lng: currRestaurant.coordinates.longitude
-	// 				}}
-  //         onCloseClick={() => setSelected(null)}
-	// 			>
-	// 				<div>details</div>
-	// 			</InfoWindow>
-	// 		);
-	// 	} else if (selected === 'activity') {
-	// 		return (
-	// 			<InfoWindow
-	// 				position={{
-	// 					lat: currActivity.geometry.location.lat,
-	// 					lng: currActivity.geometry.location.lng
-	// 				}}
-  //         onCloseClick={() => setSelected(null)}
-	// 			>
-	// 				<div>details</div>
-	// 			</InfoWindow>
-	// 		);
-	// 	}
-	// };
+		if (selected === 'restaurant') {
+			return (
+				<InfoWindow
+					position={{
+						lat: currRestaurant.coordinates.latitude,
+						lng: currRestaurant.coordinates.longitude
+					}}
+          onCloseClick={() => setSelected(null)}
+				>
+					<div>details</div>
+				</InfoWindow>
+			);
+		} else if (selected === 'activity') {
+			return (
+				<InfoWindow
+					position={{
+						lat: currActivity.geometry.location.lat,
+						lng: currActivity.geometry.location.lng
+					}}
+          onCloseClick={() => setSelected(null)}
+				>
+					<div>details</div>
+				</InfoWindow>
+			);
+		}
+	};
 
 	const Gmap = () => {
 		return (
@@ -72,7 +72,7 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
 						setSelected('activity');
 					}}
 				/>
-				{/* {locInfo()} */}
+				{locInfo()}
 				{/* <MarkerWithLabel
           position={{ lat: -34.397, lng: 150.644 }}
           labelStyle={{
@@ -88,6 +88,7 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
 	};
 
 	const WrappedMap = withScriptjs(withGoogleMap(Gmap));
+
 	const memoMap = useMemo(() => {
 			return (
 				<WrappedMap
@@ -99,7 +100,8 @@ const Map = ({ activities, restaurants, currentRestIdx, currentActIdx }) => {
 				/>
 			);
 		},
-		[ activities, restaurants, currentActIdx, currentRestIdx ]
+		// [ activities, restaurants, currentActIdx, currentRestIdx ]
+		[]
 	);
 
 	return (

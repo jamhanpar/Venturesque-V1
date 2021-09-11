@@ -12,7 +12,7 @@ const Splash = () => {
     const searchCtx = useSearchContext();
 
     const [location, setLocation] = useState('hoboken, nj');
-    const [cuisine, setCuisine] = useState('restaurant');
+    // const [cuisine, setCuisine] = useState('restaurant');
 
     const { history } = useReactRouter();
 
@@ -27,8 +27,8 @@ const Splash = () => {
 
         // on submission route to results page with location and default search parameter for now
         searchCtx.setSearch(location);
-        searchCtx.setCuisine(cuisine);
-        results(cuisine, location);
+        searchCtx.setCuisine('restaurant');
+        results('restaurant', location);
     }
 
     return (
