@@ -15,7 +15,6 @@ export const LoginSignup = () => {
           className="d-flex align-items-center justify-content-center"
           style={{ minHeight: "100vh" }}
         >
-          <AuthForm toggle={ toggle } />
           <div className="w-100" style={{ maxWidth: '400px'}}>
             {toggle === 'signup' ? <ModalSignup /> : <ModalLogin />}
           </div>

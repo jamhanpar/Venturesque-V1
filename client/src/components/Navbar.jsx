@@ -24,7 +24,7 @@ export const Nav = () => {
               Account
             </Link>
           </li>
-          <li className="logged-in">
+          {/* <li className="logged-in">
             <Link
               className="auth-nav-link login-button modal-trigger"
               data-target="modal-login"
@@ -32,7 +32,7 @@ export const Nav = () => {
             >
               Login/Signup
             </Link>
-          </li>
+          </li> */}
           <li className="logged-in">
             <Link
               className="auth-nav-link login-button modal-trigger"
@@ -42,13 +42,13 @@ export const Nav = () => {
               Login
             </Link>
           </li>
-          <li className="logged-in">
-            <Link className="auth-nav-link signup-button" to="/auth/signup">
+          <li className="logged-in nav-button">
+            <Link className="link-button" to="/auth/signup">
               Logout
             </Link>
           </li>
-          <li className="logged-in">
-            <Link className="auth-nav-link signup-button" to="/auth/signup">
+          <li className="logged-in nav-button">
+            <Link className="link-button" to="/auth/signup">
               Sign Up
             </Link>
           </li>

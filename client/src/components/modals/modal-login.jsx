@@ -50,46 +50,48 @@ const ModalLogin = () => {
     //   </div>
     // </div>
 
-    <Card>
-      <Card.Body>
-        <h2 className="text-center mb-4">Login</h2>
-        {error && <Alert variant="danger">{error}</Alert>}
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Email"
-              ref={emailRef}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              ref={passwordRef}
-              required
-            />
-          </Form.Group>
-          <Button
-            disabled={loading}
-            className="w-100 text-center"
-            variant="primary"
-            type="submit"
-          >
-            Submit
-          </Button>
-        </Form>
-      </Card.Body>
+    <>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">Login</h2>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Email"
+                ref={emailRef}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                ref={passwordRef}
+                required
+              />
+            </Form.Group>
+            <Button
+              disabled={loading}
+              className="w-100 text-center"
+              variant="primary"
+              type="submit"
+            >
+              Submit
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
       <div className="w-100 text-center mt-2">
         Need an account?{" "}
         <Link className="" to="/auth/signup">
           Sign Up
         </Link>
       </div>
-    </Card>
+    </>
   );
 };
 

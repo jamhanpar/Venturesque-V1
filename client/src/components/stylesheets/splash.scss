@@ -103,7 +103,7 @@ form {
   border-bottom-right-radius: 0px;
   width                     : auto;
   height                    : 100%;
-  max-width                 : 375px; // ideally 200px
+  max-width                 : 250px; // ideally 250px
   padding                   : 0px 15px;
   font-family               : $sourceSansPro;
   font-size                 : 35px;
@@ -180,7 +180,24 @@ form {
 }
 
 @media screen and (max-width: 768px) {
+  .search-input {
+    // border: 1px solid red;
+    width : 100%;
+    height: 100%;
+  }
+
+  .search-form-container {
+    // border         : 1px solid green;
+    width          : 100%;
+    height         : 70%;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+  }
+
   .search-input-item {
+    // border         : 1px solid blue;
+    width          : 90%;
     display        : flex;
     flex-flow      : column;
     justify-content: center;
@@ -188,24 +205,71 @@ form {
   }
 
   .landing-page-text {
-    width     : 100%;
-    margin    : 10px 0px;
-    text-align: center;
+    // border     : 1px solid orange;
+    width      : 100%;
+    font-family: $sourceSansPro;
+    font-size  : 30px;
+    font-weight: bold;
+    text-align : center;
+    padding-bottom: 10px;
+  }
+
+  .location-input {
+    // border         : 1px solid purple;
+    width          : 100%;
+    height         : 60px;
+    display        : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items    : center;
+    margin-left    : 0px;
   }
 
   .landing-page-input {
-    width : 100%;
-    margin: 10px 0px;
-  }
+    background-color          : $offWhite;
+    border                    : 1px solid $inputOutline;
+    border-right              : none;
+    border-radius             : 5px;
+    border-top-right-radius   : 0px;
+    border-bottom-right-radius: 0px;
+    width                     : auto;
+    height                    : 100%;
+    max-width                 : 250px;
+    padding                   : 0px 20px;
+    font-family               : $sourceSansPro;
+    font-size                 : 30px;
+    font-weight               : bold;
+    color                     : $inputPlaceholder;
 
-  .landing-page-symbol {
-    padding: 0px;
-    margin : 10px 0px;
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      font-family: $sourceSansPro;
+      font-size  : 30px;
+      font-weight: bold;
+      color      : $inputPlaceholder;
+    }
   }
 
   .generate-button {
-    margin: 10px 0px;
-    height: 100%;
+    background-color         : $offWhite;
+    outline                  : none;
+    border                   : 1px solid $inputOutline;
+    border-left              : none;
+    border-radius            : 5px;
+    border-top-left-radius   : 0px;
+    border-bottom-left-radius: 0px;
+    height                   : 100%;
+    padding                  : 0px 13px;
+    font-family              : $sourceSansPro;
+    font-size                : 30px;
+    color                    : $offBlue;
+    display                  : flex;
+    justify-content          : center;
+    align-items              : center;
+    cursor                   : pointer;
   }
 }
 
@@ -241,6 +305,7 @@ form {
     font-size  : 30px;
     font-weight: bold;
     text-align : center;
+    padding-bottom: 10px;
   }
 
   .location-input {

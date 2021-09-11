@@ -33,7 +33,7 @@ export const App = ({ store }) => (
             />
           </SearchProvider>
           <Route path="/auth/:toggle" component={LoginSignup} />
-          <Route path="/:toggle" component={LoginSignupComponent} />
+          <Route exact path="/:toggle" component={LoginSignupComponent} />
         </AuthProvider>
       </Switch>
       <Footer />
