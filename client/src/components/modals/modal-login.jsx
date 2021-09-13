@@ -6,8 +6,8 @@ import { useAuth } from "../../contexts/AuthContext";
 
 const ModalLogin = () => {
   const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
+  const passwordRef = useRef('');
+  const passwordConfirmRef = useRef('');
   const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -24,7 +24,7 @@ const ModalLogin = () => {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/dashboard");
     } catch {
       setError("Failed to sign in");
     }
@@ -80,9 +80,12 @@ const ModalLogin = () => {
               variant="primary"
               type="submit"
             >
-              Submit
+              Login
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to='/forgot-password'>Forgot Password?</Link>
+          </div>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

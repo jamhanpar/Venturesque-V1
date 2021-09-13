@@ -19,11 +19,11 @@ export const Nav = () => {
               Testing
             </Link>
           </li>
-          {/* <li className="logged-in">
-            <Link className="auth-nav-link login-button" to="/about">
+          <li className="logged-in">
+            <Link className="auth-nav-link login-button" to="/dashboard">
               Account
             </Link>
-          </li> */}
+          </li>
           {/* <li className="logged-in">
             <Link
               className="auth-nav-link login-button modal-trigger"

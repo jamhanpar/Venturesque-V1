@@ -5,6 +5,9 @@ import { SearchProvider } from './contexts/searchContext';
 import { AuthProvider } from './contexts/AuthContext';
 import './App.scss';
 
+// Custom Routes
+import PrivateRoute from './components/pages/PrivateRoute';
+
 // Components
 import { Nav } from './components/Navbar';
 import Footer from './components/Footer';
@@ -16,6 +19,8 @@ import { LoginSignup } from './components/pages/LoginSignup';
 import { LoginSignupComponent } from "./components/pages/LoginSignupComponent";
 import Results from './components/pages/Results';
 import About from './components/pages/About';
+import Dashboard from './components/pages/Dashboard';
+import ForgotPassword from './components/pages/ForgotPassword';
 
 export const App = ({ store }) => (
   <div className="App">
@@ -27,13 +32,16 @@ export const App = ({ store }) => (
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/testing" component={Testing} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+            <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route
               path="/search/term=:term&location=:location"
               component={Results}
             />
+            
           </SearchProvider>
           <Route path="/auth/:toggle" component={LoginSignup} />
-          <Route exact path="/:toggle" component={LoginSignupComponent} />
+          {/* <Route exact path="/:toggle" component={LoginSignupComponent} /> */}
         </AuthProvider>
       </Switch>
       <Footer />
