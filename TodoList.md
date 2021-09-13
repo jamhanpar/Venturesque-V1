@@ -31,3 +31,5 @@ Work on setting up user auth using firebase or any other relevant third party ap
 Randomly select a town near the location you provide and pull search results and create a date for you based on the highest rated activities. Ultimately, searching beyond the radius of just the location you are in.
 
 # Fix google maps re-rendering every single time locationTerm is updated in the results page
+
+# Fix reset password for Firebase and add update email and password for user
