@@ -11,7 +11,7 @@ import Activities from '../activities/Activities';
 import WeatherDisplay from '../weather/WeatherDisplay';
 import Card from '../card';
 
-import { FaTimes, FaSearch } from 'react-icons/fa';
+import { FaTimes, FaSearch, FaBars } from 'react-icons/fa';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
 
 import logo from "../../assets/img/temp-logo.png";
@@ -64,6 +64,7 @@ const Testing = () => {
                 <FaStar />
                 <FaRegStar />
                 <FaStarHalfAlt />
+                <FaBars />
             </div>
             <div className="container">
                 <h1>Images:</h1>
