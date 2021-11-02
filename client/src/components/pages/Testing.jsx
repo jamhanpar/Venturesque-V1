@@ -10,6 +10,7 @@ import Restaurants from '../restaurants/Restaurants';
 import Activities from '../activities/Activities';
 import WeatherDisplay from '../weather/WeatherDisplay';
 import Card from '../card';
+import Filter from '../filter/Filter';
 
 import { FaTimes, FaSearch } from 'react-icons/fa';
 import { FaStar, FaRegStar, FaStarHalfAlt, FaCloudMoonRain, FaCloudMoon, FaCloudRain, FaCloudShowersHeavy , FaCloudSunRain, FaCloudSun, FaCloud, FaSun, FaMoon, FaSnowflake } from 'react-icons/fa';
@@ -80,6 +81,7 @@ const Testing = () => {
             </div>
             <div className="container">
                 <h1>Component Testing:</h1>
+                <Filter />
                 <Restaurants restaurants={restaurants} />
                 <Activities activities={activities} />
                 <WeatherDisplay location={'hoboken, nj'} />
