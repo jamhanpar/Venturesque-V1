@@ -33,3 +33,9 @@ Randomly select a town near the location you provide and pull search results and
 # Fix google maps re-rendering every single time locationTerm is updated in the results page
 
 # Fix reset password for Firebase and add update email and password for user
+
+# Add restaurant and activity range adjuster
+
+# Add activity preference search input (multiselection)
+
+# Geometry error pops up after a searches
