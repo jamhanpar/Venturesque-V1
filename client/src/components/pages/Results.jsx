@@ -91,7 +91,7 @@ const Results = () => {
       />
       <div className="search-results-container">
         <div className="search-items-container">
-          <div className="restaurant-activity-container">
+          {/* <div className="restaurant-activity-container"> */}
             <div className="single-card-container">
               <Restaurants
                 restaurants={restaurants}
@@ -127,7 +127,7 @@ const Results = () => {
                 {showActivitiesToggle ? "Hide" : "Show more..."}
               </button>
             </div>
-          </div>
+          {/* </div> */}
         </div>
         <Map
           coord={coordinates}

@@ -3,7 +3,7 @@
 
 .search-input {
   width          : auto;
-  height         : 88vh;
+  height         : 87vh;
   display        : flex;
   flex-direction : column;
   justify-content: center;
@@ -140,7 +140,7 @@ form {
   // padding                  : 14px 31px;
   font-family                 : $sourceSansPro;
   font-size                   : 30px;
-  color                       : $offWhite;
+  color                       : $grey;
   display                     : flex;
   flex-direction              : column;
   justify-content             : center;
@@ -149,7 +149,7 @@ form {
 }
 
 .search-icon-blue {
-  color: $offBlue;
+  color: $grey;
 }
 
 .landing-page-input::placeholder {

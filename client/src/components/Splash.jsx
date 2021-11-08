@@ -38,7 +38,7 @@ const Splash = () => {
                     <label className='landing-page-text' htmlFor='location'>the best date near </label>
                     <div className="location-input">
                         <input className='landing-page-input' type='text' id='location' placeholder='city, state' onChange={(e) => setLocation(e.target.value)} value={location}/>
-                        <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-blue"/></button>
+                        <button className='generate-button' type='submit' onClick={handleSubmit}><FaSistrix className="search-icon-grey"/></button>
                     </div>
                     {/* <p className='landing-page-symbol'>&</p>
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/> */}
