@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/temp-logo.png';
+import { FaUserCircle } from 'react-icons/fa';
 
 export const Nav = () => {
     return (
@@ -20,17 +21,8 @@ export const Nav = () => {
             </Link>
           </li>
           {/* <li className="logged-in">
-            <Link className="auth-nav-link login-button" to="/dashboard">
-              Account
-            </Link>
-          </li> */}
-          {/* <li className="logged-in">
-            <Link
-              className="auth-nav-link login-button modal-trigger"
-              data-target="modal-login"
-              to="/login"
-            >
-              Login/Signup
+            <Link>
+              <FaUserCircle />
             </Link>
           </li> */}
           <li className="logged-in">
