@@ -5,14 +5,12 @@ import useReactRouter from "use-react-router";
 import { useSearchContext } from "../../contexts/searchContext";
 import { fetchRestaurants } from "../../util/apis/restaurants";
 import { fetchActivities } from "../../util/apis/activities";
-// import { fetchCity } from "../../util/apis/city";
 
 import Restaurants from "../restaurants/Restaurants";
 import Activities from "../activities/Activities";
 import SearchInputForm from "../SearchInputForm";
 import Map from "../Map";
 
-// import googleMap from "../../assets/img/temp-google-map.png";
 import loadingGif from "../../assets/gifs/loading.gif";
 
 const Results = () => {
@@ -22,7 +20,6 @@ const Results = () => {
   const [restaurants, setRestaurants] = useState();
   const [activities, setActivities] = useState();
   const [coordinates, setCoordinates] = useState();
-  // const [city, setCity] = useState();
   const [currentRestIdx, setCurrentRestIdx] = useState(0);
   const [currentActIdx, setCurrentActIdx] = useState(0);
 
@@ -69,7 +66,9 @@ const Results = () => {
   const results = (cuisine, location) => {
     const urlEncodedTerm = encodeURI(cuisine);
     const urlEncodedLocation = encodeURI(location);
-    history.push(`/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`);
+    history.push(
+      `/search/term=${urlEncodedTerm}&location=${urlEncodedLocation}`
+    );
   };
 
   const handleSubmit = (e) => {
@@ -90,8 +89,22 @@ const Results = () => {
         setCuisineTerm={setCuisineTerm}
       />
       <div className="search-results-container">
-        <div className="search-items-container">
-          {/* <div className="restaurant-activity-container"> */}
+        <div className="recommendations-container">
+          <h1 class="search-results-header">Something To Eat...</h1>
+          {/* add restaurant recommendation carousel */}
+          <Restaurants
+                restaurants={restaurants}
+                getBestRestaurant={true}
+                setCurrentIdx={setCurrentRestIdx}
+                currentIdx={currentRestIdx}
+              />
+        </div>
+        <div className="recommendations-container">
+          <h1 class="search-results-header">Something To Do...</h1>
+          {/* add activity recommendation carousel */}
+        </div>
+        {/* <div className="search-items-container">
+          <div className="restaurant-activity-container">
             <div className="single-card-container">
               <Restaurants
                 restaurants={restaurants}
@@ -127,8 +140,8 @@ const Results = () => {
                 {showActivitiesToggle ? "Hide" : "Show more..."}
               </button>
             </div>
-          {/* </div> */}
-        </div>
+          </div>
+        </div> */}
         <Map
           coord={coordinates}
           restaurants={restaurants}
@@ -138,8 +151,18 @@ const Results = () => {
         />
       </div>
       <div>
-        {showRestaurantsToggle && <Restaurants restaurants={restaurants} setCurrentIdx={setCurrentRestIdx} />}
-        {showActivitiesToggle && <Activities activities={activities} setCurrentIdx={setCurrentActIdx}/>}
+        {showRestaurantsToggle && (
+          <Restaurants
+            restaurants={restaurants}
+            setCurrentIdx={setCurrentRestIdx}
+          />
+        )}
+        {showActivitiesToggle && (
+          <Activities
+            activities={activities}
+            setCurrentIdx={setCurrentActIdx}
+          />
+        )}
       </div>
     </div>
   );
@@ -149,13 +172,5 @@ Results.defaultProps = {
   location: "hoboken",
   cuisine: "restaurant",
 };
-
-// const msp = () => ({});
-
-// const mdp = (dispatch) => ({
-//   fetchUser: () => dispatch(fetchUser()),
-// });
-
-// export default connect(null, mdp)(Results);
 
 export default Results;
