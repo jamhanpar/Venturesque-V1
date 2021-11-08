@@ -93,15 +93,21 @@ const Results = () => {
           <h1 class="search-results-header">Something To Eat...</h1>
           {/* add restaurant recommendation carousel */}
           <Restaurants
-                restaurants={restaurants}
-                getBestRestaurant={true}
-                setCurrentIdx={setCurrentRestIdx}
-                currentIdx={currentRestIdx}
-              />
+            restaurants={restaurants}
+            getBestRestaurant={true}
+            setCurrentIdx={setCurrentRestIdx}
+            currentIdx={currentRestIdx}
+          />
         </div>
         <div className="recommendations-container">
           <h1 class="search-results-header">Something To Do...</h1>
           {/* add activity recommendation carousel */}
+          <Activities
+            activities={activities}
+            getBestActivity={true}
+            setCurrentIdx={setCurrentActIdx}
+            currentIdx={currentActIdx}
+          />
         </div>
         {/* <div className="search-items-container">
           <div className="restaurant-activity-container">

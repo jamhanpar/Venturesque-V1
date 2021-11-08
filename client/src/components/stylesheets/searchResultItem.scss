@@ -5,7 +5,7 @@
   border-radius: 5px;
   width: 100%;
   max-width: 240px;
-  height: 90%;
+  height: 100%;
   max-height: 290px;
   overflow: hidden;
   display: flex;
@@ -52,6 +52,6 @@
 @media screen and (max-width: 375px) {
   .search-result-item-card {
     width: 157px;
-    height: 125px;
+    height: 100%;
   }
 }

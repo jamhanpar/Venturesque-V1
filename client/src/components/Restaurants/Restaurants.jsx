@@ -22,7 +22,6 @@ const Restaurants = ({restaurants, getBestRestaurant, setCurrentIdx, currentIdx}
     if (getBestRestaurant) {
         return (
             <div className="search-results">
-                <h3 className="search-title">something to eat</h3>
                 {restaurantIndex[currentIdx]}
             </div>
         )

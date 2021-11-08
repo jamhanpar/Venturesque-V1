@@ -28,7 +28,6 @@ const Activities = ({activities, getBestActivity, setCurrentIdx, currentIdx}) =>
     if (getBestActivity) {
         return (
           <div className="search-results">
-            <h3 className="search-title">something to do</h3>
             {activityIndex[currentIdx]}
           </div>
         );
