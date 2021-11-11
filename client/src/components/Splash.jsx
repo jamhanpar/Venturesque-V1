@@ -44,7 +44,7 @@ const Splash = () => {
                     <input className='landing-page-input' type='text' id='cuisine' placeholder='cuisine' onChange={(e) => setCuisine(e.target.value)} value={cuisine}/> */}
                 </div>
             </form>
-            <ImgCarousel />
+            {/* <ImgCarousel /> */}
         </section>
     );
 }
