@@ -20,6 +20,11 @@ export const Nav = () => {
               Testing
             </Link>
           </li>
+          <li className="logged-in">
+            <Link className="auth-nav-link login-button" to="/results-layout">
+              Layout
+            </Link>
+          </li>
           {/* <li className="logged-in">
             <Link>
               <FaUserCircle />

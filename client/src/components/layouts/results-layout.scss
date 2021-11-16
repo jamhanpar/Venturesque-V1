@@ -1,0 +1,55 @@
+.results-layout-container {
+  border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.side-nav {
+  border: 1px solid orange;
+  height: 87vh;
+  width: 16%;
+}
+
+.results-section {
+  border: 1px solid yellow;
+  height: 87vh;
+  width: 84%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;  
+}
+
+.results-list {
+    border: 1px solid purple;
+    height: 430px;
+    width: 730px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.restaurant-list, .activity-list {
+    border: 1px solid blue;
+    width: 730px;
+    height: auto;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.results-item {
+  border: 1px solid green;
+  height: 206px;
+  width: 275px;
+}
+
+.map-item {
+    border: 1px solid green;
+    height: 430px;
+    width: 420px;
+}

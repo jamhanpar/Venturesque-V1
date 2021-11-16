@@ -22,6 +22,9 @@ import About from './components/pages/About';
 import Dashboard from './components/pages/Dashboard';
 import ForgotPassword from './components/pages/ForgotPassword';
 
+// Layouts
+import ResultsLayout from './components/layouts/results-layout';
+
 export const App = ({ store }) => (
   <div className="App">
     <Provider store={store}>
@@ -32,6 +35,7 @@ export const App = ({ store }) => (
             <Route exact path="/" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/testing" component={Testing} />
+            <Route path="/results-layout" component={ResultsLayout} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <PrivateRoute path="/dashboard" component={Dashboard} />
             <Route
