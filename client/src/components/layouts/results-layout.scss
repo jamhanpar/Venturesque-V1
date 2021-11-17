@@ -13,7 +13,7 @@
 }
 
 .results-section {
-  border: 1px solid yellow;
+  //   border: 1px solid yellow;
   height: 87vh;
   width: 84%;
   display: flex;
@@ -24,51 +24,57 @@
 }
 
 .results-list {
-  border: 1px solid purple;
+//   border: 1px solid purple;
   height: 437px;
   width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
 }
 
 .restaurant-list,
 .activity-list {
-  border: 1px solid blue;
+//   border: 1px solid blue;
   width: 100%;
   min-width: min-content;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
-.restaurant-item, .activity-item {
-    border: 1px solid pink;
-    height: 206px;
-    width: 275px;
-    margin: 0px 12px;
-}
-
-.restaurant-item:first-child, .activity-item:first-child {
-  border: 1px solid pink;
+.restaurant-item,
+.activity-item {
+//   border: 1px solid pink;
   height: 206px;
   width: 275px;
+  margin: 0px 12px;
+}
+
+.restaurant-item:first-child,
+.activity-item:first-child {
   margin-left: 0px;
   margin-right: 12px;
 }
 
-.restaurant-item:last-child, .activity-item:last-child {
-  border: 1px solid pink;
-  height: 206px;
-  width: 275px;
+.restaurant-item:last-child,
+.activity-item:last-child {
   margin-left: 12px;
   margin-right: 0px;
 }
 
+.restaurant-item img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+    display: inline-block;
+}
+
 .featured-list {
-  border: 1px solid blue;
+//   border: 1px solid blue;
   width: 97%;
   height: auto;
   display: flex;
@@ -88,6 +94,12 @@
   width: 420px;
 }
 
+.map-item img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .side-nav {
     // border: 1px solid orange;
@@ -95,7 +107,7 @@
   }
 
   .results-section {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     height: auto;
     width: 100%;
     display: flex;
@@ -106,7 +118,7 @@
   }
 
   .results-list {
-    border: 1px solid purple;
+    // border: 1px solid purple;
     height: 437px;
     width: 100%;
     display: flex;
@@ -117,7 +129,7 @@
 
   .restaurant-list,
   .activity-list {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     width: 100%;
     height: auto;
     display: flex;
@@ -133,18 +145,18 @@
   }
 
   .results-section {
-    border: 1px solid yellow;
+    // border: 1px solid yellow;
     height: auto;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
-    align-items:flex-start;
+    align-items: flex-start;
   }
 
   .results-list {
-    border: 1px solid purple;
+    // border: 1px solid purple;
     height: 437px;
     width: 100%;
     display: flex;
@@ -154,12 +166,13 @@
 
   .restaurant-list,
   .activity-list {
-    border: 1px solid blue;
+    // border: 1px solid blue;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    flex-flow: row;
+    overflow-x: scroll;
+    white-space: nowrap;
   }
 }
