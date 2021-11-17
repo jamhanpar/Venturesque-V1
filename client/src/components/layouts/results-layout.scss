@@ -1,5 +1,5 @@
 .results-layout-container {
-  border: 1px solid red;
+  //   border: 1px solid red;
   height: 100%;
   width: 100%;
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 .side-nav {
-  border: 1px solid orange;
+  //   border: 1px solid orange;
   height: 87vh;
   width: 16%;
 }
@@ -17,29 +17,63 @@
   height: 87vh;
   width: 84%;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-items: center;  
+  align-items: center;
 }
 
 .results-list {
-    border: 1px solid purple;
-    height: 430px;
-    width: 730px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  border: 1px solid purple;
+  height: 437px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-.restaurant-list, .activity-list {
-    border: 1px solid blue;
-    width: 730px;
-    height: auto;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: hidden;
+.restaurant-list,
+.activity-list {
+  border: 1px solid blue;
+  width: 100%;
+  min-width: min-content;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.restaurant-item, .activity-item {
+    border: 1px solid pink;
+    height: 206px;
+    width: 275px;
+    margin: 0px 12px;
+}
+
+.restaurant-item:first-child, .activity-item:first-child {
+  border: 1px solid pink;
+  height: 206px;
+  width: 275px;
+  margin-left: 0px;
+  margin-right: 12px;
+}
+
+.restaurant-item:last-child, .activity-item:last-child {
+  border: 1px solid pink;
+  height: 206px;
+  width: 275px;
+  margin-left: 12px;
+  margin-right: 0px;
+}
+
+.featured-list {
+  border: 1px solid blue;
+  width: 97%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .results-item {
@@ -49,7 +83,83 @@
 }
 
 .map-item {
-    border: 1px solid green;
-    height: 430px;
-    width: 420px;
+  border: 1px solid green;
+  height: 438px;
+  width: 420px;
+}
+
+@media screen and (max-width: 768px) {
+  .side-nav {
+    // border: 1px solid orange;
+    display: none;
+  }
+
+  .results-section {
+    border: 1px solid yellow;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .results-list {
+    border: 1px solid purple;
+    height: 437px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .restaurant-list,
+  .activity-list {
+    border: 1px solid blue;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .side-nav {
+    // border: 1px solid orange;
+    display: none;
+  }
+
+  .results-section {
+    border: 1px solid yellow;
+    height: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items:flex-start;
+  }
+
+  .results-list {
+    border: 1px solid purple;
+    height: 437px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .restaurant-list,
+  .activity-list {
+    border: 1px solid blue;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-flow: row;
+  }
 }

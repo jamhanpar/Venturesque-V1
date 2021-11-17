@@ -10,21 +10,23 @@ const ResultsLayout = () => {
       <div className="results-section">
         <div className="results-list">
           <div className="restaurant-list">
-            <div className="results-item">restaurant</div>
-            {/* <div className="results-item">restaurant</div>
-            <div className="results-item">restaurant</div> */}
+            <div className="restaurant-item">restaurant</div>
+            <div className="restaurant-item">restaurant</div>
+            <div className="restaurant-item">restaurant</div>
           </div>
           <div className="activity-list">
-            <div className="results-item">activity</div>
-            {/* <div className="results-item">activity</div>
-            <div className="results-item">activity</div> */}
+            <div className="activity-item">activity</div>
+            <div className="activity-item">activity</div>
+            <div className="activity-item">activity</div>
           </div>
         </div>
         <div className="map-item">map</div>
-        <div className="results-item">content</div>
-        <div className="results-item">content</div>
-        <div className="results-item">content</div>
-        <div className="results-item">content</div>
+        <div className="featured-list">
+          <div className="results-item">random-content</div>
+          <div className="results-item">random-content</div>
+          <div className="results-item">random-content</div>
+          <div className="results-item">random-content</div>
+        </div>
       </div>
     </div>
   );
