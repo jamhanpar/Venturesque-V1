@@ -90,6 +90,10 @@
   font-size: 15px;
 }
 
+.results-search-input:focus {
+  outline: none;
+}
+
 .search-icon-btn {
   border: none;
   border-radius: 5px;
@@ -185,6 +189,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.search-results-header {
+  width: 90%;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
 }
 
 // .search-title {

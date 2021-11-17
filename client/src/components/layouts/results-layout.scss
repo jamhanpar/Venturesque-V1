@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  overflow : auto;
 }
 
 .side-nav {
@@ -52,6 +53,8 @@
   height: 206px;
   width: 275px;
   margin: 0px 12px;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .restaurant-item:first-child,
@@ -70,7 +73,12 @@
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%;
-    display: inline-block;
+}
+
+.activity-item img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .featured-list {
