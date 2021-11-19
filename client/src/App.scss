@@ -1,4 +1,4 @@
-@import '../src/components/stylesheets/reset.css';
+@import '../src/components/stylesheets/reset.scss';
 @import '../src/components/stylesheets/colors.scss';
 @import '../src/components/stylesheets/fonts.scss';
 
@@ -15,11 +15,14 @@
 @import './components/stylesheets/splash.scss';
 @import './components/stylesheets/maps.scss';
 @import './components/stylesheets/filter.scss';
+@import './components/stylesheets/card.scss';
 
-.html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+body {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
 }
 
 .App-logo {

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { FaStar, FaRegStar, FaStarHalfAlt } from 'react-icons/fa';
+import Card from '../card';
 
 const Restaurant = ({ restaurant, setCurrentIdx, idx }) => {
   const displayStars = [];
@@ -17,22 +18,26 @@ const Restaurant = ({ restaurant, setCurrentIdx, idx }) => {
   }
 
   return (
-    <div className="search-result-item-card" onClick={() => setCurrentIdx(idx)}>
-      <div className="img-container">
-        <img
-          className="restaurant-img"
-          src={restaurant.image_url}
-          alt="business"
-        />
-      </div>
-      <div className="item-info-container">
-        <h2 className="business-info">{restaurant.name}</h2>
-        <p className="business-info">
-          {displayStars} {restaurant.rating} / {restaurant.review_count} /{" "}
-          {restaurant.price}
-        </p>
-      </div>
-    </div>
+    <Card 
+      onClick={() => setCurrentIdx(idx)}
+      restaurant={restaurant}
+    />
+    // <div className="search-result-item-card" onClick={() => setCurrentIdx(idx)}>
+    //   <div className="img-container">
+    //     <img
+    //       className="restaurant-img"
+    //       src={restaurant.image_url}
+    //       alt="business"
+    //     />
+    //   </div>
+    //   <div className="item-info-container">
+    //     <h2 className="business-info">{restaurant.name}</h2>
+    //     <p className="business-info">
+    //       {displayStars} {restaurant.rating} / {restaurant.review_count} /{" "}
+    //       {restaurant.price}
+    //     </p>
+    //   </div>
+    // </div>
   );
 };
 
