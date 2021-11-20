@@ -17,7 +17,7 @@ const Card = ({ restaurant }) => {
   }
 
   return (
-    <div class="card">
+    <div class="card-item">
       <div class="slide-img">
         <img src={restaurant.image_url} alt="business image" />
       </div>
