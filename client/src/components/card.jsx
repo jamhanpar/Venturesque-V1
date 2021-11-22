@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Card = ({ restaurant, activity, imageURL }) => {
   const displayStars = [];
+  const rating = restaurant ? restaurant.rating : activity.rating;
 
-  
-  if (restaurant) {
-    for (let i = 0.0; i < 5.0; i++) {
-      if (i < restaurant.rating && i + 0.5 !== restaurant.rating) {
-        displayStars.push(<FaStar key={i} />);
-      } else if (i + 0.5 === restaurant.rating) {
-        displayStars.push(<FaStarHalfAlt key={i} />);
-      } else {
-        displayStars.push(<FaRegStar key={i} />);
-      }
+  for (let i = 0.0; i < 5.0; i++) {
+    if (i < rating && i + 0.5 !== rating) {
+      displayStars.push(<FaStar key={i} />);
+    } else if (i + 0.5 === rating) {
+      displayStars.push(<FaStarHalfAlt key={i} />);
+    } else {
+      displayStars.push(<FaRegStar key={i} />);
     }
+  }
 
+  if (restaurant) {
     return (
       <div class="card-item">
         <div class="slide-img">
@@ -35,16 +35,6 @@ const Card = ({ restaurant, activity, imageURL }) => {
       </div>
     );
   } else {
-    for (let i = 0.0; i < 5.0; i++) {
-      if (i + 0.5 < activity.rating) {
-        displayStars.push(<FaStar key={i} />);
-      } else if (i > activity.rating) {
-        displayStars.push(<FaStarHalfAlt key={i} />);
-      } else {
-        displayStars.push(<FaRegStar key={i} />);
-      }
-    }
-
     return (
       <div class="card-item">
         <div class="slide-img">
@@ -56,7 +46,7 @@ const Card = ({ restaurant, activity, imageURL }) => {
             <div>{displayStars}</div>
           </div>
           <a href="#" class="price">
-            {activity.rating}
+            {rating}
           </a>
         </div>
       </div>
