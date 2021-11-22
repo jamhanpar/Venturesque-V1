@@ -9,7 +9,7 @@ import { fetchCity } from '../../util/apis/city';
 import Restaurants from '../restaurants/Restaurants';
 import Activities from '../activities/Activities';
 import WeatherDisplay from '../weather/WeatherDisplay';
-import Card from '../card';
+import Card from '../Card';
 import Filter from '../filter/Filter';
 
 import { FaTimes, FaSearch, FaBars } from 'react-icons/fa';
