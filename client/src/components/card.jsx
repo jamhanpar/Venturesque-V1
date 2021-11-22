@@ -24,10 +24,9 @@ const Card = ({ restaurant }) => {
       <div class="detail-box">
         <div class="type">
           <a href="#">{restaurant.name}</a>
-          <span>
-            {displayStars} {restaurant.rating}
-          </span>
-          <span>Hiking</span>
+          <div>
+            {displayStars}
+          </div>
         </div>
         <a href="#" class="price">
           {restaurant.price}

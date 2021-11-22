@@ -1,16 +1,24 @@
+a:link {
+  text-decoration: none;
+}
+
 .card-item {
+  // border: 1px solid green;
   background-color: #eef8ff;
-  width: 300px;
+  width: 325px;
+  height: 100%;
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // left: 50%;
+  // top: 50%;
+  // transform: translate(-50%, -50%);
+  position: relative;
 }
 
 .slide-img {
+  // border: 1px solid purple;
   height: 100%;
 }
 
@@ -22,36 +30,82 @@
 }
 
 .detail-box {
+  // border: 1px solid blue;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 15px;
   box-sizing: border-box;
-  font-family: calibri;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgba(54, 54, 54, 0.5);
+  position: absolute;
+  left: 50%;
+  top: 91%;
+  transform: translate(-50%, -50%);
 }
 
 .type {
   display: flex;
   flex-direction: column;
+white-space: nowrap;
+overflow: hidden; 
 }
 
 .type a {
-  color: #222222;
-  margin: 5px 0px;
+  // border: 1px solid green;
+  color: white;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  padding-right: 8px;
+  // padding-right: 8px;
+  overflow: hidden;
 }
 
-.type span {
-  color: rgba(26, 26, 26, 0.5);
+.type div {
+  // border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
 }
 
 .price {
-  color: #333333;
+  // border: 1px solid orange;
+  color: white;
   font-weight: 600;
   font-size: 1.1rem;
-  font-family: poppins;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 375px) {
+  .card-item {
+    // border: 1px solid green;
+    background-color: #eef8ff;
+    width: 330px;
+    height: 100%;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .detail-box {
+    // border: 1px solid red;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: rgba(54, 54, 54, 0.4);
+    position: absolute;
+    left: 50%;
+    top: 88%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+  }
 }
