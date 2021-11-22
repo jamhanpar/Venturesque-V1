@@ -3,22 +3,16 @@ a:link {
 }
 
 .card-item {
-  // border: 1px solid green;
   background-color: #eef8ff;
   width: 250px;
   height: 100%;
   box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-  // position: absolute;
-  // left: 50%;
-  // top: 50%;
-  // transform: translate(-50%, -50%);
   position: relative;
 }
 
 .slide-img {
-  // border: 1px solid purple;
   height: 100%;
 }
 
@@ -30,7 +24,6 @@ a:link {
 }
 
 .detail-box {
-  // border: 1px solid blue;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -53,17 +46,14 @@ overflow: hidden;
 }
 
 .type a {
-  // border: 1px solid green;
   color: white;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  // padding-right: 8px;
   overflow: hidden;
 }
 
 .type div {
-  // border: 1px solid red;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -72,7 +62,6 @@ overflow: hidden;
 }
 
 .price {
-  // border: 1px solid orange;
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
@@ -82,7 +71,6 @@ overflow: hidden;
 
 @media screen and (max-width: 375px) {
   .card-item {
-    // border: 1px solid green;
     background-color: #eef8ff;
     width: 330px;
     height: 100%;
@@ -93,7 +81,6 @@ overflow: hidden;
   }
 
   .detail-box {
-    // border: 1px solid red;
     width: 100%;
     height: auto;
     display: flex;

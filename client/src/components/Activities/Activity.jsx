@@ -1,24 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-
 import Card from "../Card";
-
 import { fetchGooglePhoto } from "../../util/apis/activities";
-import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Activity = ({ activity, setCurrentIdx, idx }) => {
   const [photoURL, setPhotoURL] = useState(null);
-  const displayStars = [];
-
-  for (let i = 0.0; i < 5.0; i++) {
-    if (i + 0.5 < activity.rating) {
-      displayStars.push(<FaStar key={i} />);
-    } else if (i > activity.rating) {
-      displayStars.push(<FaStarHalfAlt key={i} />);
-    } else {
-      displayStars.push(<FaRegStar key={i} />);
-    }
-  }
 
   useEffect(() => {
     if (activity.photos) {
@@ -31,18 +17,11 @@ const Activity = ({ activity, setCurrentIdx, idx }) => {
   }, [activity]);
 
   return (
-    <Card onClick={() => setCurrentIdx(idx)} activity={activity} imageURL={photoURL} />
-    // <div className="search-result-item-card" onClick={() => setCurrentIdx(idx)}>
-    //   <div className="img-container">
-    //     <img className="activity-img" src={photoURL} alt="business" />
-    //   </div>
-    //   <div className="item-info-container">
-    //     <h2 className="business-info">{activity.name}</h2>
-    //     <p className="business-info">
-    //       {displayStars} {activity.rating} / {activity.user_ratings_total}
-    //     </p>
-    //   </div>
-    // </div>
+    <Card
+      onClick={() => setCurrentIdx(idx)}
+      activity={activity}
+      imageURL={photoURL}
+    />
   );
 };
 
