@@ -11,7 +11,6 @@
 @import './components/stylesheets/navbar.scss';
 @import './components/stylesheets/restaurants.scss';
 @import './components/stylesheets/results.scss';
-@import './components/stylesheets/searchResultItem.scss';
 @import './components/stylesheets/splash.scss';
 @import './components/stylesheets/maps.scss';
 @import './components/stylesheets/filter.scss';
@@ -38,7 +37,6 @@ a {
 
 .App-header {
   background-color: #282c34;
-  // min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,12 +56,4 @@ a {
   to {
     transform: rotate(360deg);
   }
-}
-
-@media screen and (max-width: 375px) {
-  // html, body {
-  //   height: 100%;
-  //   width: 100%;
-  //   overflow: hidden;
-  // }
 }
