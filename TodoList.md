@@ -39,3 +39,5 @@ Randomly select a town near the location you provide and pull search results and
 # Add activity preference search input (multiselection)
 
 # Geometry error pops up after a searches
+
+# _reboot.scss from Bootstrap adds unwanted padding-left to ul element (check <ul class:"cs-hidden"></ul>)
