@@ -2,6 +2,24 @@ a:link {
   text-decoration: none;
 }
 
+.cs-hidden {
+  border: 1px solid red;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: center;
+}
+
+.slider {
+  border: 1px solid greenyellow;
+  width: 50%;
+  height: 75%;
+  // display: flex;
+  // justify-content: start;
+  // align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .card-item {
   background-color: #eef8ff;
   width: 250px;
@@ -41,8 +59,8 @@ a:link {
 .type {
   display: flex;
   flex-direction: column;
-white-space: nowrap;
-overflow: hidden; 
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .type a {
@@ -70,6 +88,17 @@ overflow: hidden;
 }
 
 @media screen and (max-width: 375px) {
+  .slider {
+    border: 1px solid greenyellow;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    // justify-content: space;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
   .card-item {
     background-color: #eef8ff;
     width: 330px;
@@ -78,6 +107,7 @@ overflow: hidden;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    // margin: 10px;
   }
 
   .detail-box {
@@ -87,7 +117,8 @@ overflow: hidden;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
     background-color: rgba(54, 54, 54, 0.4);
     position: absolute;
     left: 50%;
