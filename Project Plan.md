@@ -3,6 +3,7 @@ Phase 1:
 
 Phase 2:
 - filters to adjust search and user authentication
+- filter alters API requests (mileage, distance, search preferences)
 
 Phase 3:
 - invite others and accounts for user preference similarities
