@@ -8,6 +8,8 @@ a:link {
   // display: flex;
   // flex-direction: row;
   // justify-content: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .slider {
@@ -97,7 +99,7 @@ a:link {
 @media screen and (max-width: 375px) {
   .slider {
     border: 1px solid greenyellow;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     // justify-content: space;

@@ -8,15 +8,14 @@ const Activity = ({ activity, setCurrentIdx, idx }) => {
 
   useEffect(() => {
     if (activity.photos) {
-      fetchGooglePhoto(activity.photos[0].photo_reference).then((res) =>
-        setPhotoURL(res)
-      );
+      fetchGooglePhoto(activity.photos[0].photo_reference).then(res => setPhotoURL(res));
     }
 
     // eslint-disable-next-line
   }, [activity]);
 
-  console.log(activity);
+  // TODO: add loading render or consider alternative approach to pre-rendering all the activities
+  if (!photoURL) return "hello";
 
   return (
     <Card

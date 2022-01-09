@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
-
 import { FaStar, FaRegStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Card = ({ restaurant, activity, imageURL }) => {
   const displayStars = [];
   const rating = restaurant ? restaurant.rating : activity.rating;
+  const name = restaurant ? restaurant.name : activity.name;
 
+  // creating start illustration based on the rating
   for (let i = 0.0; i < 5.0; i++) {
     if (i < rating && i + 0.5 !== rating) {
       displayStars.push(<FaStar key={i} />);
@@ -17,6 +18,12 @@ const Card = ({ restaurant, activity, imageURL }) => {
     }
   }
 
+  // shorten restaurant/activity name
+  let shortenedName;
+  if (name.length > 30) {
+    shortenedName = name.slice(0, 30) + "...";
+  }
+
   if (restaurant) {
     return (
       <div class="card-item">
@@ -25,12 +32,11 @@ const Card = ({ restaurant, activity, imageURL }) => {
         </div>
         <div class="detail-box">
           <div class="type">
-            <a href="#">{restaurant.name}</a>
+            {/* TODO: find yelp link for restaurant */}
+            <a href="#">{shortenedName ? shortenedName : name}</a>
             <div>{displayStars}</div>
           </div>
-          <a href="#" class="price">
-            {restaurant.price}
-          </a>
+          <div class="price">{restaurant.price}</div>
         </div>
       </div>
     );
@@ -42,12 +48,11 @@ const Card = ({ restaurant, activity, imageURL }) => {
         </div>
         <div class="detail-box">
           <div class="type">
-            <a href="#">{activity.name}</a>
+            {/* TODO: link to google search page or activity website */}
+            <a href="#">{shortenedName ? shortenedName : name}</a>
             <div>{displayStars}</div>
           </div>
-          <a href="#" class="price">
-            {rating}
-          </a>
+          <div class="price">{rating}</div>
         </div>
       </div>
     );
