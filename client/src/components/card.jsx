@@ -21,7 +21,7 @@ const Card = ({ restaurant, activity, imageURL }) => {
     return (
       <div class="card-item">
         <div class="slide-img">
-          <img src={restaurant.image_url} alt="business image" />
+          <img src={restaurant.image_url} alt="business" />
         </div>
         <div class="detail-box">
           <div class="type">
@@ -38,7 +38,7 @@ const Card = ({ restaurant, activity, imageURL }) => {
     return (
       <div class="card-item">
         <div class="slide-img">
-          <img src={imageURL} alt="business image" />
+          <img src={imageURL} alt="business" />
         </div>
         <div class="detail-box">
           <div class="type">

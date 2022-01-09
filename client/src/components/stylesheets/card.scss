@@ -4,6 +4,7 @@ a:link {
 
 .cs-hidden {
   border: 1px solid red;
+  height: 100%;
   // display: flex;
   // flex-direction: row;
   // justify-content: center;
@@ -11,8 +12,8 @@ a:link {
 
 .slider {
   border: 1px solid greenyellow;
-  width: 50%;
-  height: 75%;
+  width: 100%;
+  height: 300px;
   // display: flex;
   // justify-content: start;
   // align-items: center;
@@ -20,7 +21,13 @@ a:link {
   overflow-y: hidden;
 }
 
+.item {
+  border: 1px solid orange;
+  height: 100%;
+}
+
 .card-item {
+  border: 1px solid blue;
   background-color: #eef8ff;
   width: 250px;
   height: 100%;

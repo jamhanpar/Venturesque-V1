@@ -16,6 +16,8 @@ const Activity = ({ activity, setCurrentIdx, idx }) => {
     // eslint-disable-next-line
   }, [activity]);
 
+  console.log(activity);
+
   return (
     <Card
       onClick={() => setCurrentIdx(idx)}
