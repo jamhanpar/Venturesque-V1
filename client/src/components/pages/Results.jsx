@@ -23,8 +23,9 @@ const Results = () => {
   const [currentRestIdx, setCurrentRestIdx] = useState(0);
   const [currentActIdx, setCurrentActIdx] = useState(0);
 
-  const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
-  const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
+  // TODO: add show more options toggles
+  // const [showRestaurantsToggle, setShowRestaurantsToggle] = useState(false);
+  // const [showActivitiesToggle, setShowActivitiesToggle] = useState(false);
 
   let { term, location } = useParams();
   const { history } = useReactRouter();
@@ -91,7 +92,7 @@ const Results = () => {
       <div className="search-results-container">
         <div className="recommendations-container">
           <h1 class="search-results-header">Something To Eat...</h1>
-          {/* add restaurant recommendation carousel */}
+          {/* TODO: add restaurant recommendation carousel */}
           <Restaurants
             restaurants={restaurants}
             getBestRestaurant={true}
@@ -101,7 +102,7 @@ const Results = () => {
         </div>
         <div className="recommendations-container">
           <h1 class="search-results-header">Something To Do...</h1>
-          {/* add activity recommendation carousel */}
+          {/* TODO: add activity recommendation carousel */}
           <Activities
             activities={activities}
             getBestActivity={true}
@@ -156,7 +157,7 @@ const Results = () => {
           currentActIdx={currentActIdx}
         />
       </div>
-      <div>
+      {/* <div>
         {showRestaurantsToggle && (
           <Restaurants
             restaurants={restaurants}
@@ -169,7 +170,7 @@ const Results = () => {
             setCurrentIdx={setCurrentActIdx}
           />
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

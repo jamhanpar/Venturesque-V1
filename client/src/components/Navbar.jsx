@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/temp-logo.png';
-import { FaUserCircle } from 'react-icons/fa';
 
 export const Nav = () => {
     return (
@@ -25,11 +24,6 @@ export const Nav = () => {
               Layout
             </Link>
           </li>
-          {/* <li className="logged-in">
-            <Link>
-              <FaUserCircle />
-            </Link>
-          </li> */}
           <li className="logged-in">
             <Link
               className="auth-nav-link login-button modal-trigger"
@@ -39,11 +33,6 @@ export const Nav = () => {
               Login
             </Link>
           </li>
-          {/* <li className="logged-in nav-button">
-            <Link className="link-button" to="/auth/signup">
-              Logout
-            </Link>
-          </li> */}
           <li className="logged-in nav-button">
             <Link className="link-button" to="/auth/signup">
               Sign Up

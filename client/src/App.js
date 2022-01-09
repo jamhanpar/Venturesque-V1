@@ -16,7 +16,6 @@ import Footer from './components/Footer';
 import Home from './components/pages/Home';
 import Testing from './components/pages/Testing';
 import { LoginSignup } from './components/pages/LoginSignup';
-import { LoginSignupComponent } from "./components/pages/LoginSignupComponent";
 import Results from './components/pages/Results';
 import About from './components/pages/About';
 import Dashboard from './components/pages/Dashboard';

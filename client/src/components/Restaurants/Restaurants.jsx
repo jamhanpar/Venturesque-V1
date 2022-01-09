@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Restaurant from "./Restaurant";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const Restaurants = ({
   restaurants,
@@ -9,20 +8,14 @@ const Restaurants = ({
   setCurrentIdx,
   currentIdx,
 }) => {
-  const filteredReviewCount = restaurants.filter(
-    (restaurant) => restaurant.review_count >= 20
+  const filteredRestaurants = restaurants.filter(
+    (restaurant) => restaurant.review_count >= 20 || restaurant.rating >= 4
   );
-  const filteredRatings = filteredReviewCount.filter(
-    (restaurant) => restaurant.rating >= 4
-  );
-  const sortedByReviewCount = filteredRatings.sort(
-    (a, b) => b.review_count - a.review_count
-  );
-  const sortedByRating = sortedByReviewCount.sort(
-    (a, b) => b.rating - a.rating
-  );
+  const sortedRestaurants = filteredRestaurants
+    .sort((a, b) => b.review_count - a.review_count)
+    .sort((a, b) => b.rating - a.rating);
 
-  const restaurantIndex = sortedByRating.map((restaurant, idx) => (
+  const restaurantIndex = sortedRestaurants.map((restaurant, idx) => (
     <li class="item">
       <Restaurant
         key={restaurant.id}
@@ -33,48 +26,17 @@ const Restaurants = ({
     </li>
   ));
 
-  //   const sortedRestaurants = restaurants.sort((a,b) => {
-  //       let aValue = (a.user_ratings_total < 15 || a.rating === 5) ? 0 : a.rating + a.user_ratings_total/100000
-  //       let bValue = (b.user_ratings_total < 15 || a.rating === 5) ? 0 : b.rating + b.user_ratings_total/100000
-  //       return bValue - aValue
-  //   })
+  let displayOptions = restaurantIndex.length > 6 ? restaurantIndex.length : 6;
 
-  if (getBestRestaurant) {
-    return (
-      <div className="slider">
-        <ul id="autoWidth" class="cs-hidden">
-          {restaurantIndex[currentIdx]}
-        </ul>
-      </div>
-    );
-  } else {
-    return (
-      <div className="slider">
-        <ul id="autoWidth" class="cs-hidden">
-          {restaurantIndex.length > 10
-            ? restaurantIndex.slice(0, 6)
-            : restaurantIndex}
-        </ul>
-      </div>
-      //   <div className="restaurant-list">
-      //     <FaAngleLeft
-      //       onClick={() => setCurrentIdx(currentIdx > 0 ? currentIdx - 1 : 0)}
-      //     />
-      //     {restaurantIndex.length > 10
-      //       ? restaurantIndex.slice(0, 6)
-      //       : restaurantIndex}
-      //     <FaAngleRight
-      //       onClick={() =>
-      //         setCurrentIdx(
-      //           currentIdx < sortedByRating.length - 1
-      //             ? currentIdx + 1
-      //             : sortedByRating.length - 1
-      //         )
-      //       }
-      //     />
-      //   </div>
-    );
-  }
+  return (
+    <div className="slider">
+      <ul id="autoWidth" class="cs-hidden">
+        {getBestRestaurant
+          ? restaurantIndex[currentIdx]
+          : restaurantIndex.slice(0, displayOptions)}
+      </ul>
+    </div>
+  );
 };
 
 Restaurants.propTypes = {

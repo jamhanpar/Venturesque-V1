@@ -33,7 +33,9 @@ const Card = ({ restaurant, activity, imageURL }) => {
         <div class="detail-box">
           <div class="type">
             {/* TODO: find yelp link for restaurant */}
-            <a href="#">{shortenedName ? shortenedName : name}</a>
+            <a href="https://www.yelp.com/">
+              {shortenedName ? shortenedName : name}
+            </a>
             <div>{displayStars}</div>
           </div>
           <div class="price">{restaurant.price}</div>
@@ -49,7 +51,9 @@ const Card = ({ restaurant, activity, imageURL }) => {
         <div class="detail-box">
           <div class="type">
             {/* TODO: link to google search page or activity website */}
-            <a href="#">{shortenedName ? shortenedName : name}</a>
+            <a href="https://www.google.com/">
+              {shortenedName ? shortenedName : name}
+            </a>
             <div>{displayStars}</div>
           </div>
           <div class="price">{rating}</div>
