@@ -91,7 +91,7 @@ const Results = () => {
       />
       <div className="search-results-container">
         <div className="recommendations-container">
-          <h1 class="search-results-header">Something To Eat...</h1>
+          <h1 class="search-results-header">Places To Eat</h1>
           {/* TODO: add restaurant recommendation carousel */}
           <Restaurants
             restaurants={restaurants}
@@ -101,7 +101,7 @@ const Results = () => {
           />
         </div>
         <div className="recommendations-container">
-          <h1 class="search-results-header">Something To Do...</h1>
+          <h1 class="search-results-header">Things To Do</h1>
           {/* TODO: add activity recommendation carousel */}
           <Activities
             activities={activities}

@@ -25,7 +25,6 @@
 }
 
 .results-list {
-//   border: 1px solid purple;
   height: 437px;
   width: 60%;
   display: flex;
@@ -35,7 +34,6 @@
 
 .restaurant-list,
 .activity-list {
-//   border: 1px solid blue;
   width: 100%;
   min-width: min-content;
   height: auto;
@@ -82,7 +80,6 @@
 }
 
 .featured-list {
-//   border: 1px solid blue;
   width: 97%;
   height: auto;
   display: flex;
@@ -110,12 +107,10 @@
 
 @media screen and (max-width: 768px) {
   .side-nav {
-    // border: 1px solid orange;
     display: none;
   }
 
   .results-section {
-    // border: 1px solid yellow;
     height: auto;
     width: 100%;
     display: flex;
@@ -126,7 +121,6 @@
   }
 
   .results-list {
-    // border: 1px solid purple;
     height: 437px;
     width: 100%;
     display: flex;
@@ -137,7 +131,6 @@
 
   .restaurant-list,
   .activity-list {
-    // border: 1px solid blue;
     width: 100%;
     height: auto;
     display: flex;
@@ -164,7 +157,6 @@
   }
 
   .results-list {
-    // border: 1px solid purple;
     height: 437px;
     width: 100%;
     display: flex;
@@ -174,7 +166,6 @@
 
   .restaurant-list,
   .activity-list {
-    // border: 1px solid blue;
     width: 100%;
     height: auto;
     display: flex;
