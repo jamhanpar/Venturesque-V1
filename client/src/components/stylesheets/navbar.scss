@@ -1,103 +1,91 @@
 @import './fonts.scss';
 @import './colors.scss';
 
-.nav-container {
-    width          : 100%;
-    height         : 7vh;
-    display        : flex;
-    flex-direction : row;
-    justify-content: space-between;
-    align-items    : center;
-    padding-right  : 15px;
-    padding-left   : 15px;
-}
-
-.home-link {
-    height     : 100%;
-    display    : flex;
-    align-items: center;
+.nav {
+    display           : flex;
+    justify-content   : space-between;
+    align-items       : center;
+    // position       : relative;
 }
 
 .logo {
     max-height: 40px;
-}
-
-.auth-nav-container {
-    height         : 100%;
-    display        : flex;
-    flex-direction : row;
-    justify-content: space-around;
-    align-items    : center;
-    margin         : 0px;
-    padding        : 0px;
-}
-
-.auth-nav-link {
-    margin-left    : 15px;
-    text-decoration: none;
-    font-family    : $sourceSansPro;
-    font-weight    : bold;
-    cursor         : pointer;
-}
-
-.login-button {
-    color: $offBlue;
-}
-
-.nav-button {
-    height          : 70%;
-    border-radius   : 5px;
-    background-color: $offBlue;
-    color           : $offWhite;
-    padding         : 18px 15px;
-    margin-left     : 15px;
-    text-decoration : none;
-    cursor          : pointer;
-    display         : flex;
-    justify-content : center;
-    align-items     : center;
-}
-
-.link-button {
-    color          : $offWhite;
-    text-decoration: none;
-    text-align     : center;
+    margin    : 0.5rem;
 }
 
 .toggle-button {
     position: absolute;
-    top     : 0.85rem;
+    top     : 0.80rem;
     right   : 0.75rem;
-    size    : 32;
-    color   : $offBlue;
     display : none;
 }
 
-// @media screen and (max-width: 768px) {}
+.navbar-links-container {
+    padding-right: 0.5rem;
+}
 
-@media screen and (max-width: 412px) {
-    .nav-container {
+.navbar-links {
+    margin : 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-link-item {
+    list-style: none;
+}
+
+.nav-link-item a {
+    color      : $offBlue;
+    font-weight: bold;
+}
+
+.nav-link-item a:hover {
+    color: white;
+}
+
+.nav-link {
+    // color: $offBlue;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: $offBlue;
+}
+
+// // @media screen and (max-width: 768px) {}
+
+@media (max-width: 412px) {
+    .nav {
         flex-direction: column;
         align-items   : flex-start;
     }
 
-    .auth-nav-container {
-        display       : none;
-        flex-direction: column;
-        align-items   : flex-end;
-        width         : 100%;
-        height        : auto;
-    }
-
-    .auth-nav-container li a {
-        padding: 0.5rem 1rem;
+    .navbar-logo-container {
+        width: 100%;
     }
 
     .toggle-button {
         display: flex;
     }
 
-    .active {
-        display: flex;
+    .navbar-links-container {
+        display: none;
+        width  : 100%;
+    }
+
+    .navbar-links {
+        width         : 100%;
+        flex-direction: column;
+        text-align    : right;
+    }
+
+    .nav-link {
+        width: 100%;
+    }
+
+    .navbar-links-container.active {
+        display : flex;
+        position: relative;
+        padding : 0;
     }
 }
