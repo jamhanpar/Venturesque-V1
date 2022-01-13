@@ -6,8 +6,6 @@ import { FaBars } from "react-icons/fa";
 export const Nav = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  console.log(toggleMenu);
-
   return (
     <div className="nav-container">
       <div className="home-link">
