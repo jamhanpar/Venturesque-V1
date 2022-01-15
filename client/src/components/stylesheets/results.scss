@@ -15,15 +15,14 @@
 }
 
 .search-results-section {
-  width            : 100%;
-  // height        : auto;
-  display          : flex;
-  flex-direction   : column;
-  align-items      : center;
+  width         : 100%;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
 }
 
 .search-results-container {
-  width          : 70%;
+  width          : 80vw;
   height         : 100%;
   display        : flex;
   flex-direction : row;
@@ -41,20 +40,20 @@
 }
 
 .search-info-container {
-  width          : 80%;
-  height         : auto;
+  width          : 80vw;
   display        : flex;
   flex-direction : row;
-  justify-content: space-around;
+  justify-content: center;
   align-items    : center;
   padding        : 10px 0px;
 }
 
 .results-search-container-title {
-  font-family: $sourceSansPro;
-  font-size  : 36px;
-  font-weight: 900;
-  color      : $offBlue;
+  font-family : $sourceSansPro;
+  font-size   : 2rem;
+  font-weight : 900;
+  color       : $offBlue;
+  margin-right: 1rem;
 }
 
 .result-text {
@@ -184,24 +183,25 @@
 }
 
 .google-map-container {
-  width          : 100%;
-  height         : 100%;
+  // border         : 1px solid red;
+  border-radius  : 10px;
+  width          : auto;
+  max-width      : 477px;
   display        : flex;
-  flex-direction : column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items    : center;
   overflow       : hidden;
+  box-shadow     : 2px 2px 30px 0px rgba(0, 0, 0, 0.3);
 }
 
 .google-map-img {
-  border       : 1px solid $offBlue;
-  border-radius: 5px;
-  width        : 100%;
-  max-width    : 460px;
-  height       : 100%;
-  max-height   : 560px;
-  object-fit   : cover;
-  margin       : 0px 10px;
+  border-radius : 10px;
+  // box-shadow : 2px 2px 30px 0px rgba(0, 0, 0, 0.3);
+  width         : 500px;
+  height        : 300px;
+  object-fit    : cover;
+  margin        : 0px 10px;
+  overflow      : hidden;
 }
 
 .list-container {
@@ -209,9 +209,7 @@
 }
 
 .recommendations-container {
-  width     : 100%;
-  padding   : 15px;
-  box-sizing: border-box;
+  padding: 15px;
 }
 
 @media screen and (max-width: 768px) {

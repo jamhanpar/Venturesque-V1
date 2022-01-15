@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import useReactRouter from 'use-react-router';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import useReactRouter from "use-react-router";
 
-import { useSearchContext } from '../../contexts/searchContext';
-import { fetchRestaurants } from '../../util/apis/restaurants';
-import { fetchActivities } from '../../util/apis/activities';
+import { useSearchContext } from "../../contexts/searchContext";
+import { fetchRestaurants } from "../../util/apis/restaurants";
+import { fetchActivities } from "../../util/apis/activities";
 
-import Restaurants from '../restaurants/Restaurants';
-import Activities from '../activities/Activities';
-import SearchInputForm from '../SearchInputForm';
-import Map from '../Map';
+import Restaurants from "../restaurants/Restaurants";
+import Activities from "../activities/Activities";
+import SearchInputForm from "../SearchInputForm";
+import Map from "../Map";
 
-import loadingGif from '../../assets/gifs/loading.gif';
+import loadingGif from "../../assets/gifs/loading.gif";
 
 const Results = () => {
   const searchCtx = useSearchContext();
@@ -39,7 +39,7 @@ const Results = () => {
     //   setCity(res);
     // });
 
-    // get restaurants    
+    // get restaurants
     fetchRestaurants(searchCtx.search, searchCtx.cuisine).then((res) => {
       setRestaurants(res);
 
@@ -164,8 +164,8 @@ const Results = () => {
 };
 
 Results.defaultProps = {
-  location: 'hoboken',
-  cuisine: 'restaurant',
+  location: "hoboken",
+  cuisine: "restaurant",
 };
 
 export default Results;
