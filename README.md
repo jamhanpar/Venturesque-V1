@@ -5,9 +5,9 @@ Planning a date or itinerary for your friends can be complicated and time consum
 http://venturesque.io/
 
 # App Features
-### Landing Page - In Progress
-### Frontend Auth - Not Started - Need to setup backend
-### Populate Weather Information into a component - Work In Progress
+### Landing Page - Complete
+### Frontend Auth - In Progress - need to add Forgot Password
+### Populate Weather Information into a component - In Progress
 
 # Dependencies & Version
 ## Frontend
