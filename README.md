@@ -7,6 +7,8 @@ http://venturesque.io/
 # App Features
 ### Landing Page - Complete
 ### Frontend Auth - In Progress - need to add Forgot Password
+### Location Search - Complete
+### Search Filters - In Progress
 ### Populate Weather Information into a component - In Progress
 
 # Dependencies & Version
